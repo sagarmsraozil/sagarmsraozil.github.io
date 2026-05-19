@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sagarmishra.dev/sitemap.xml
+Sitemap: https://sagarmsraozil.github.io/sitemap.xml

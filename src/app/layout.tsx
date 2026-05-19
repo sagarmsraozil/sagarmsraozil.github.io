@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lato, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.scss";
 
-const SITE_URL = "https://sagarmishra.dev";
+const SITE_URL = "https://sagarmsraozil.github.io";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
