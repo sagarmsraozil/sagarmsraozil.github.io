@@ -1,0 +1,53 @@
+:root {
+  --color-bg: #fafaf8;
+  --color-surface: #f2f1ee;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+  --color-rule: #dddddd;
+  --color-cta-bg: #111111;
+  --color-cta-text: #fafaf8;
+
+  --font-body: var(--font-lato), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  --font-mono: var(--font-jetbrains), 'Courier New', monospace;
+
+  --section-padding: 96px;
+  --section-padding-mobile: 64px;
+  --max-width-reading: 720px;
+  --max-width-hero: 900px;
+  --header-height: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

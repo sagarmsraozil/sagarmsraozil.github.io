@@ -1,0 +1,77 @@
+.caseStudy {
+  padding: 48px 0;
+  border-top: 1px solid var(--color-rule);
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-rule);
+  }
+}
+
+.caseStudyTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.caseStudyTag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.caseStudyTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.8vw, 28px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+
+.caseStudyBody {
+  p {
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  p + p {
+    margin-top: 1em;
+  }
+}
+
+.caseStudyFooter {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.caseStudyStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.caseStudyGithubLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--color-text-primary);
+  }
+}
+
+@media (max-width: 640px) {
+  .caseStudy {
+    padding: 36px 0;
+  }
+}
