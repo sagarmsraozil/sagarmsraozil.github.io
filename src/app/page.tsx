@@ -3,7 +3,7 @@ import type { PortfolioData } from '@/types/portfolio'
 import { Header } from '@/components/layout/Header'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { ProblemSection } from '@/components/sections/ProblemSection'
-import { WorkSection } from '@/components/sections/WorkSection'
+import { ExperienceSection } from '@/components/sections/ExperienceSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { EducationSection } from '@/components/sections/EducationSection'
 import { SkillsSection } from '@/components/sections/SkillsSection'
@@ -19,7 +19,7 @@ export default function HomePage() {
       <main>
         <HeroSection data={data.hero} />
         <ProblemSection data={data.problem} />
-        <WorkSection data={data.work} />
+        <ExperienceSection data={data.experience} />
         <AboutSection data={data.about} />
         <EducationSection data={data.education} />
         <SkillsSection data={data.skills} />

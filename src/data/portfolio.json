@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sagar Mishra — Full-stack Engineer",
-    "description": "Full-stack engineer with experience at Programiz Pro and personal systems projects. Based in Melbourne. Open to engineering roles and serious collaboration.",
+    "description": "Full-stack engineer. Two years shipping product at Programiz Pro, recent team lead at ApplyKart. Based in Melbourne. Open to engineering roles and serious collaboration.",
     "social": {
       "linkedin": "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
       "github": "https://github.com/sagarmsraozil"
@@ -10,7 +10,7 @@
   "navigation": {
     "name": "Sagar Mishra",
     "links": [
-      { "label": "Work", "href": "#work" },
+      { "label": "Experience", "href": "#experience" },
       { "label": "About", "href": "#about" },
       { "label": "Contact", "href": "#contact" },
       { "label": "CV", "href": "/Sagar-Mishra-CV.pdf", "download": true }
@@ -19,8 +19,8 @@
   "hero": {
     "headlineNormal": "Most engineers build what you ask for.",
     "headlineBold": "The interesting ones ask what you're actually trying to solve.",
-    "subheadline": "Sagar Mishra — Full-stack engineer. Two years shipping product at Programiz Pro (100,000+ paid learners). Currently in Melbourne, completing a Master's in Software Engineering.",
-    "ctaPrimary": { "label": "See the work →", "href": "#work" },
+    "subheadline": "Sagar Mishra. Full-stack engineer, six years writing code that ships. Two of those at Programiz Pro, building the surface 100,000+ paid learners use every day. Based in Melbourne, wrapping up a Master's in Software Engineering.",
+    "ctaPrimary": { "label": "See the work →", "href": "#experience" },
     "ctaSecondary": { "label": "Get in touch", "href": "#contact" }
   },
   "problem": {
@@ -28,92 +28,107 @@
     "heading": "A working product is not the same as a solved problem.",
     "body": [
       "Most software projects fail quietly.",
-      "The code ships. The feature goes live. The metrics look fine for a few weeks. Then something starts to bend — a workflow nobody uses, a system that handles ninety percent of cases and creates chaos in the remaining ten, a product that works technically and fails commercially.",
+      "The code ships. The feature goes live. Metrics look fine for a couple of weeks. Then something bends — a workflow nobody uses, a system that handles ninety percent of cases and breaks on the rest.",
       "The build was never the problem. The diagnosis was.",
-      "The engineers who are genuinely useful in a team are not the ones who write the cleanest code or know the most frameworks. They are the ones who ask enough questions before writing anything that the thing they eventually build is the right thing. Who push back in the planning phase, not the post-mortem. Who understand that a system is not done when it compiles — it is done when the person who uses it stops having to think about it.",
-      "That is the work. The code is just how it gets expressed."
+      "I've watched teams skip the 'why are we building this' conversation and go straight to the 'how.' The code comes out fine. The product doesn't. The engineers I've worked alongside who are actually useful in a room are the ones who ask enough questions before writing anything that the thing they build ends up being the right thing. Who push back during planning, not the post-mortem. Who know a system isn't done when it compiles — it's done when the person using it stops having to think about it.",
+      "That's the work. The code is just how it gets expressed."
     ]
   },
   "work": {
     "label": "THE WORK",
-    "heading": "Three problems worth showing.",
-    "intro": "The following are not portfolio pieces. They are records of specific decisions made under real constraints — time, team size, unclear requirements, changing scope. The interesting part of any engineering project is not what was built. It is what was understood before building began.",
-    "caseStudies": [
+    "heading": "",
+    "intro": "",
+    "caseStudies": [],
+    "additionalLabel": "",
+    "additionalProjects": []
+  },
+  "experience": {
+    "label": "EXPERIENCE",
+    "heading": "The work so far.",
+    "entries": [
       {
-        "id": "programiz-pro",
-        "tags": ["Product Engineering", "EdTech", "Team Leadership"],
-        "title": "Building the surface that 100,000 learners use to progress through a course.",
+        "id": "applykart",
+        "company": "ApplyKart",
+        "product": "Jobss AI",
+        "role": "Intern — Team Lead",
+        "period": "Feb 2026 – May 2026",
+        "location": "Flinders Street, Melbourne",
+        "tags": ["Startup", "Job Distribution", "Team Leadership"],
         "body": [
-          "Programiz.com is one of the most-visited programming education sites in the world. Programiz Pro is the paid product sitting on top of it — a structured, course-based learning experience for people who want to move from reading about code to actually writing it.",
-          "The real problem was not \"build a course platform.\" Every LMS does that. The problem was: how do you design a progression system that keeps a beginner moving forward without making them feel like they are failing every time they get stuck?",
-          "The interactive course flow, the learner dashboard, the certificate engine, the learning paths — these were all downstream of that question. The code followed the diagnosis. Alongside those: embedded Python and JavaScript compilers, the initial version of an AI assistant called sensAI, conversion-focused landing pages, and analytics through Mixpanel and Microsoft Clarity.",
-          "Additionally: I led the Programiz Reports project with a team of six across engineering and management. That project ran through whiteboard sessions, a groomed backlog, and weekly delivery cycles. I also sat in on board-level conversations about product direction — unusual access for someone two years into their career. Leading a cross-functional team that early teaches you things about communication that no course covers."
+          "ApplyKart is building a job distribution platform in Melbourne — somewhere between Airtasker and LinkedIn. Not just listings, but a system that connects employers with people looking for work in a way that's structured, searchable, and fair.",
+          "I came in as an intern and ended up leading a four-person team through the core product build. Role-based auth separating employers and receivers. A dashboard for posting jobs and tasks. A recruitment pipeline — shortlist, hire, reject. Marketing pages organized by job category so each listing type had its own surface.",
+          "On the systems side: paginated and cursor-based APIs that surface active listings within their valid date range. A two-way search system funneling keyword queries into a dedicated search page across both jobs and tasks. An algorithm for distributing employee slots across listings — stock allocation logic, applied to headcount.",
+          "The biggest thing I took away was learning to use AI tooling as a development accelerator — boilerplates, feature scaffolding — without letting it replace the thinking that makes architecture hold together."
         ],
-        "stack": [
-          "React",
-          "Next.js",
-          "Node.js",
-          "C#",
-          "Python",
-          "Directus",
-          "Mixpanel",
-          "Microsoft Clarity"
-        ],
-        "github": null
+        "websiteUrl": "https://jobss.ai/"
       },
       {
         "id": "nexus",
+        "company": "Nexus",
+        "product": "Warehouse Management System",
+        "role": "Software Engineer",
+        "period": "Jan 2025 – Feb 2026",
+        "location": "Melbourne, Australia",
         "tags": ["Systems Design", "Inventory", "Personal Project"],
-        "title": "A warehouse management system that started because stock kept going missing.",
         "body": [
-          "This project did not begin with a specification. It began with a side business selling anime apparel that was running on spreadsheets and goodwill.",
-          "Stock was disappearing. Orders were being fulfilled without knowing which lot the item came from. Suppliers had no formal onboarding. Return requests were handled manually with no data trail. The root cause was not carelessness — it was the absence of a system that matched the actual complexity of the operation.",
-          "Nexus is that system. A hierarchical, labelled inventory model. A state-machine workflow for product drops: supplier registration, lot intake, pricing strategy, market pipeline. A replenishment engine with lot-level tracking. An addon system for managing sales and discounts on specific products. A Return-to-Order path that resolves refunds and exchanges back to the correct inventory state. An order marshalling pipeline that batches retail orders at intervals and tracks each through fulfilment.",
-          "The project is an engineering build on localhost. It has not launched to market. But the entire system exists, was built to handle the full complexity of the domain, and demonstrates what happens when you model the real problem before writing the first line of code."
+          "This one didn't start with a spec. It started with a side business selling anime apparel that was running on spreadsheets and goodwill.",
+          "Stock was disappearing. Orders were getting fulfilled without knowing which lot the item came from. Suppliers had no formal onboarding. Returns were handled manually with no data trail. The problem wasn't carelessness — there just wasn't a system that matched the actual complexity of the operation.",
+          "Nexus is that system. Hierarchical, labelled inventory. A state-machine workflow for product drops: supplier registration, lot intake, pricing strategy, market pipeline. A replenishment engine with lot-level tracking. An addon system for managing sales and discounts on specific products. A return-to-order path that resolves refunds and exchanges back to the correct inventory state. An order marshalling pipeline that batches retail orders and tracks each through fulfilment.",
+          "The project lives on localhost — it hasn't launched. But the entire system exists, handles the full complexity of the domain, and shows what happens when you model the real problem before writing the first line of code."
         ],
+        "websiteUrl": null,
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
-        "github": null
+        "githubLinks": []
       },
       {
         "id": "aroma",
-        "tags": ["Multi-tenant Architecture", "E-commerce", "Personal Project"],
-        "title": "A clothing marketplace designed for sellers who are currently making do with Instagram DMs and crossed fingers.",
+        "company": "Aroma",
+        "product": "Clothing Marketplace",
+        "role": "Software Engineer",
+        "period": "Mar 2024 – Jan 2026",
+        "location": "Melbourne, Australia",
+        "tags": ["Multi-tenant", "E-commerce", "Personal Project"],
         "body": [
-          "The clothing businesses this platform was designed for are not small. They move real volume. But they operate entirely through social media marketplaces where pricing is inconsistent, inventory is invisible, and a customer who has already paid has no way to find out where their order is.",
-          "Aroma is the alternative. Each seller runs an isolated storefront on shared backend infrastructure — a multi-tenant architecture where the data boundaries are hard, the catalog is always current, and the buyer gets a post-purchase status view as a matter of course.",
-          "The buyer journey is complete: search and catalog, product detail, cart, reservation, checkout, order history, order status. Built on top of Nexus's inventory layer so the storefront and the warehouse are always in sync.",
-          "Also a pre-launch engineering build. Designed for a real market, built to production-grade standards, waiting for the right moment."
+          "The clothing businesses this was designed for aren't small. They move real volume. But they run entirely through social media — pricing is inconsistent, inventory is invisible, and a customer who's already paid has no way to find out where their order is.",
+          "Aroma is the alternative. Each seller runs an isolated storefront on shared backend infrastructure — multi-tenant architecture where data boundaries are hard, the catalog is always current, and the buyer gets order status as a matter of course.",
+          "Full buyer journey: search, catalog, product detail, cart, reservation, checkout, order history, order status. Built on top of Nexus's inventory layer so the storefront and the warehouse stay in sync.",
+          "Also pre-launch. Designed for a real market, built to production standards, waiting for the right moment."
         ],
+        "websiteUrl": null,
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL"],
-        "github": null
-      }
-    ],
-    "additionalLabel": "EARLIER WORK",
-    "additionalProjects": [
+        "githubLinks": []
+      },
       {
-        "id": "futsal-finder",
-        "name": "Futsal Opponent Finder",
-        "period": "Oct 2020 – Jul 2021",
-        "tags": ["Matchmaking", "Sports Tech", "Full-stack"],
-        "summary": "Competitive futsal teams in Nepal tend to play the same opponents week after week — there is no system for connecting them with anyone outside their existing circle. The platform borrowed Tinder's matching logic and applied it to sport: teams register, set preferences, and get paired with opponents nearby. Other features included Clash of Clans-style team dashboards, league and knockout tournaments with a Champions League format, battle seasons with tier progression from Bronze to Champion, and court booking in the style of Airbnb. My first end-to-end system.",
-        "stack": ["React.js", "Node.js", "Chart.js", "MongoDB"],
-        "githubLinks": [
-          {
-            "label": "Backend →",
-            "href": "https://github.com/sagarmsraozil/FutsalBooking-Backend_Node-"
-          },
-          {
-            "label": "Frontend →",
-            "href": "https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-"
-          }
-        ]
+        "id": "programiz-pro",
+        "company": "Programiz",
+        "product": "Programiz Pro",
+        "role": "Software Engineer",
+        "period": "Oct 2021 – Dec 2023",
+        "location": "Kathmandu, Nepal",
+        "tags": ["Product Engineering", "EdTech", "Team Leadership"],
+        "body": [
+          "Programiz.com is one of the most visited programming education sites in the world. Programiz Pro is the paid product on top of it — a structured, course-based learning experience for people who want to go from reading about code to actually writing it.",
+          "The real problem was never 'build a course platform.' Every LMS does that. The problem was: how do you design a progression system that keeps a beginner moving forward without making them feel like they're failing every time they get stuck?",
+          "The interactive course flow, the learner dashboard, the certificate engine, the learning paths — all downstream of that question. The code followed the diagnosis. Alongside those: embedded Python and JavaScript compilers, the first version of an AI assistant called sensAI, conversion-focused landing pages, and analytics through Mixpanel and Microsoft Clarity.",
+          "I also led the Programiz Reports project — a team of six across engineering and management. That project ran through whiteboard sessions, a groomed backlog, and weekly delivery cycles. I sat in on board-level conversations about product direction, which was unusual access for someone two years into their career. Leading a cross-functional team that early teaches you things about communication that no course covers."
+        ],
+        "websiteUrl": "https://www.programiz.com/",
+        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel", "Microsoft Clarity"],
+        "githubLinks": []
       },
       {
         "id": "hospital-eticket",
-        "name": "Hospital E-Ticketing Platform",
+        "company": "Hospital E-Ticketing",
+        "product": "Appointment Booking Platform",
+        "role": "Software Engineer",
         "period": "Aug 2021 – Oct 2021",
+        "location": "Kathmandu, Nepal",
         "tags": ["Healthcare", "University Project", "Full-stack"],
-        "summary": "A university group project addressing a persistent problem in Nepal: booking a doctor's appointment means going to the hospital and queuing for hours, often without knowing which doctor is available or when. The platform lets hospitals and doctors register digitally, open appointment slots for the week, and allows patients to book online. An inversion test algorithm prevents double-bookings. Roles were divided between Doctor, Patient, and Hospital Admin. A notification system sent reminders before appointments.",
+        "body": [
+          "A university group project, but one addressing a real problem. In Nepal, booking a doctor's appointment means physically going to the hospital and queuing for hours — often without knowing which doctor is available or when you'll be seen.",
+          "We built a platform where hospitals and doctors register digitally, open appointment slots for the week, and patients book online. An inversion test algorithm prevents double-bookings. Three roles — Doctor, Patient, Hospital Admin — each with their own view, and a notification system that sends reminders before appointments."
+        ],
+        "websiteUrl": null,
         "stack": ["React.js", "Node.js", "Chart.js"],
         "githubLinks": [
           {
@@ -125,6 +140,32 @@
             "href": "https://github.com/Abishek180181/E-ticketing-Frontend"
           }
         ]
+      },
+      {
+        "id": "futsal-finder",
+        "company": "Futsal Finder",
+        "product": "Team Matchmaking Platform",
+        "role": "Software Engineer",
+        "period": "Oct 2020 – Jul 2021",
+        "location": "Kathmandu, Nepal",
+        "tags": ["Matchmaking", "Sports Tech", "Full-stack"],
+        "body": [
+          "Competitive futsal teams in Nepal play the same opponents week after week. There's no system for connecting them with anyone outside their circle.",
+          "The platform borrowed Tinder's matching logic and applied it to sport: teams register, set preferences, get paired with opponents nearby. Beyond matchmaking: Clash of Clans-style team dashboards, league and knockout tournaments in a Champions League format, battle seasons with tier progression from Bronze to Champion, and court booking styled after Airbnb.",
+          "My first end-to-end system."
+        ],
+        "websiteUrl": null,
+        "stack": ["React.js", "Node.js", "Chart.js", "MongoDB"],
+        "githubLinks": [
+          {
+            "label": "Backend →",
+            "href": "https://github.com/sagarmsraozil/FutsalBooking-Backend_Node-"
+          },
+          {
+            "label": "Frontend →",
+            "href": "https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-"
+          }
+        ]
       }
     ]
   },
@@ -132,14 +173,14 @@
     "label": "THE PERSON",
     "headingLines": [
       "Originally from Nepal. Currently in Melbourne.",
-      "Building things with code for about six years."
+      "Six years of building things with code."
     ],
     "photoSrc": null,
     "body": [
-      "I got into software because I was interested in what happens when a well-designed system meets a problem that has been making life difficult for a long time. That interest has not changed.",
-      "Professionally, I have worked on a coding education platform used by hundreds of thousands of people, led a team through a complex reporting project, and — in my own time — built two systems end-to-end that came out of real operational problems I ran into personally. The work is on this page. The GitHub is linked in the header.",
-      "On how I approach a project: I tend not to move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising. I run whiteboard sessions not to perform the process but because the act of drawing the system on a wall tends to reveal the thing nobody had noticed yet. I write code after I understand what the code is supposed to do, and I push back on specifications that seem right on paper but feel wrong in practice.",
-      "I am not the engineer who ships in week one and apologises in week four. I am the one who is slower at the beginning and less painful at the end.",
+      "I got into software because I was curious about what happens when a well-designed system meets a problem that's been making life difficult for a long time. That hasn't changed.",
+      "Professionally, I've spent two years on a coding education platform used by hundreds of thousands of people, led a team through a reporting project, built a job distribution product from the ground up, and in my own time designed two systems end-to-end that came out of real operational problems I ran into. The work is on this page.",
+      "How I approach a project: I tend not to move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising. I run whiteboard sessions not to perform the process but because drawing the system on a wall tends to reveal the thing nobody had noticed. I write code after I understand what the code is supposed to do, and I push back on specs that seem right on paper but feel wrong in practice.",
+      "I'm not the engineer who ships in week one and apologizes in week four. I'm the one who's slower at the beginning and less painful at the end.",
       "Outside work: I read, I travel when I can, and I watch more anime than is probably respectable."
     ],
     "languages": [
@@ -251,14 +292,14 @@
         "linkedinUrl": "https://www.linkedin.com/in/sshikhrakar/"
       }
     ],
-    "closing": "Five names from a longer story. Every sprint had people who caught what I missed, pushed back on the wrong calls, and made hard weeks worthwhile. The work is always collective — these five just agreed to be named."
+    "closing": "Five names from a longer story. Every sprint had people who caught what I missed, pushed back on the wrong calls, and made hard weeks worthwhile. The work is always collective. These five just agreed to be named."
   },
   "cta": {
     "label": "WHAT'S NEXT",
-    "heading": "If any of this is relevant to something you are working on, the conversation is worth having.",
+    "heading": "If any of this is relevant to something you're working on, the conversation is worth having.",
     "body": [
-      "I am open to full-time engineering roles, contract work, and serious collaboration on interesting problems. I am based in Melbourne and available for remote work globally.",
-      "I respond to every message. I do not send templated replies."
+      "I'm open to full-time engineering roles, contract work, and serious collaboration on interesting problems. Based in Melbourne, available for remote work globally.",
+      "I respond to every message. I don't send templated replies."
     ],
     "email": "sagarcrcoc@gmail.com",
     "links": [

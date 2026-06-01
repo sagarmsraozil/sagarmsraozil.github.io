@@ -75,6 +75,26 @@ export interface AboutData {
   languages: Language[]
 }
 
+export interface ExperienceEntry {
+  id: string
+  company: string
+  product: string
+  role: string
+  period: string
+  location: string
+  tags: string[]
+  body: string[]
+  websiteUrl: string | null
+  stack?: string[]
+  githubLinks?: GithubLink[]
+}
+
+export interface ExperienceData {
+  label: string
+  heading: string
+  entries: ExperienceEntry[]
+}
+
 export interface EducationEntry {
   institution: string
   location: string
@@ -140,6 +160,7 @@ export interface PortfolioData {
   hero: HeroData
   problem: ProblemData
   work: WorkData
+  experience: ExperienceData
   about: AboutData
   education: EducationData
   skills: SkillsData

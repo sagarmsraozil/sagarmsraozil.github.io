@@ -1,131 +1,79 @@
-# Frontend Knowledge Pack — Index
+# Sagar Mishra's Personal Website — Wisdom Files
 
-> A web-structured knowledge base for working on React/Next.js frontends. Optimised for LLM context: each file is a self-contained decision-rule reference card. Cross-links create the web — no file is read in isolation.
+> 10 self-contained reference files capturing everything about this codebase, its design decisions, content strategy, and engineering patterns. Read the relevant file instead of exploring the codebase from scratch.
 
-## The pack
+## The Wisdom Files
 
-| File | Topic | Version pin | Read when |
-| --- | --- | --- | --- |
-| [01-react-fundamentals.md](./01-react-fundamentals.md) | React core mental model, hooks, Effects, Suspense, R19 features | React 19.2 | Starting any React work |
-| [02-nextjs-app-router.md](./02-nextjs-app-router.md) | App Router, RSC, Server Actions, caching, Next 16 changes | Next.js 16 | Designing routes / pages |
-| [03-tanstack-query.md](./03-tanstack-query.md) | Server-state cache, queries, mutations, keys, SSR | Query v5 | Any remote data |
-| [04-tkdodo-patterns.md](./04-tkdodo-patterns.md) | Distilled best practices (Query + Zustand + React) | Library-agnostic | Always — read after each tool |
-| [05-zustand-atomic.md](./05-zustand-atomic.md) | Zustand v5, atomic selectors, Context-scoped stores | Zustand v5 | Client state needed |
-| [06-zod-validation.md](./06-zod-validation.md) | Schema validation at boundaries | Zod v4 | Any untrusted input |
-| [07-tanstack-form.md](./07-tanstack-form.md) | Form library, validators, async, mutations | Form v1 | Form-heavy surfaces |
-| [08-sass-modern-starter.md](./08-sass-modern-starter.md) | Modern SMACSS + Flex/Grid + Sass modules | Dart Sass 1.77+ | Sass-based styling |
-| [09-frontend-system-design.md](./09-frontend-system-design.md) | Meta — how to think about frontend systems | – | Before any non-trivial feature |
-| `airbnb-homepage-system-design.pdf` | Worked system-design article | – | Reference example |
+| # | File | Topic | Read when |
+|---|---|---|---|
+| 01 | [01-project-architecture.md](./01-project-architecture.md) | Tech stack, file tree, build/deploy, config, key architectural decisions | Starting any work; need to understand the project structure |
+| 02 | [02-component-map.md](./02-component-map.md) | All components, props, hierarchy, client vs server boundaries, how to add sections | Adding/modifying components; debugging render issues |
+| 03 | [03-data-schema.md](./03-data-schema.md) | portfolio.json structure, TypeScript interfaces, common edit tasks | Editing content; adding new data fields or sections |
+| 04 | [04-design-system.md](./04-design-system.md) | Colors, typography, spacing, CSS variables, responsive rules, visual philosophy | Changing visual design; adding new styled components |
+| 05 | [05-content-strategy.md](./05-content-strategy.md) | Persuasion architecture, section mechanics, copywriting voice, page order rationale | Editing copy; reordering sections; adding new content |
+| 06 | [06-seo-metadata.md](./06-seo-metadata.md) | JSON-LD schemas, Open Graph, meta tags, sitemap, SEO decisions | Updating metadata; improving search visibility |
+| 07 | [07-react-nextjs-patterns.md](./07-react-nextjs-patterns.md) | React 19 + Next.js 15 patterns, state placement, server/client boundary rules | Adding interactivity; new pages; changing rendering model |
+| 08 | [08-sass-styling-guide.md](./08-sass-styling-guide.md) | CSS Modules with SCSS, design tokens, responsive patterns, modern Sass practices | Writing new component styles; modifying visual system |
+| 09 | [09-engineering-thinking.md](./09-engineering-thinking.md) | Chess-player problem solving, frontend system design axes, TKDodo patterns | Before any non-trivial feature or architectural decision |
+| 10 | [10-owner-profile.md](./10-owner-profile.md) | Sagar's career history, skills, education, references, contact info | Updating portfolio content; ensuring personal info accuracy |
 
-## The web — how concepts connect
-
-```
-                            [09 System Design]
-                                    │
-                  ┌─────────────────┼─────────────────┐
-                  ▼                 ▼                 ▼
-        [01 React]         [02 Next.js]       Performance/Resilience
-            │                   │
-            │           Server/Client boundary
-            │                   │
-            ▼                   ▼
-       ┌────────────────────────────────────┐
-       │  Where does state live?            │
-       └────────────────────────────────────┘
-            │                   │                   │
-            ▼                   ▼                   ▼
-     [03 TanStack Query]  [05 Zustand]      URL / local useState
-     (server state)       (client state)    (always default first)
-            │                   │
-            └────┬──────────────┘
-                 ▼
-        [04 TKDodo Patterns]
-        (integration-level wisdom)
-                 │
-                 ▼
-     ┌───────────────────────┐
-     │  At every boundary    │
-     └───────────────────────┘
-            │
-            ▼
-       [06 Zod]
-       (validation)
-            │
-            ▼
-       [07 TanStack Form]    [08 Sass Modern]
-       (form surfaces)        (styling layer)
-```
-
-## The decision tree (start here for any feature)
+## How the files connect
 
 ```
-Step 1 — Where does the data live?
-    Server (DB)             → use [02] App Router, [03] Query
-    URL                     → use Next/TanStack router search params
-    Local UI                → useState in component
-    Cross-tree client       → [05] Zustand
-    Form input              → [07] TanStack Form
-
-Step 2 — Where does it cross trust boundaries?
-    HTTP request            → [06] Zod safeParse before use
-    URL params              → [06] Zod with z.coerce
-    Form submission         → [06] Zod via [07] form validator
-    External API response   → [06] Zod at the fetch wrapper
-
-Step 3 — How does the user see it?
-    First view, no JS needed → Server Component [02]
-    Interactive              → 'use client' leaf [01]
-    Loading / errors         → loading.tsx / error.tsx [02]
-    Optimistic mutation      → useOptimistic [01] or Query optimistic [03]
-
-Step 4 — How does it stay correct over time?
-    Mutations invalidate     → revalidateTag [02] or queryClient.invalidateQueries [03]
-    Server pushes            → polling [03] or WebSocket + setQueryData [03]
-    User comes back later    → staleTime / refetch policies [03]
+[01 Architecture]  +  [02 Components]  +  [03 Data]
+        |                    |                 |
+        +-------- code structure layer --------+
+                             |
+        [04 Design System]  +  [08 Sass Guide]
+                   |                 |
+                   +- visual layer --+
+                             |
+        [05 Content Strategy]  +  [06 SEO]  +  [10 Owner Profile]
+                   |                 |               |
+                   +------- content layer -----------+
+                             |
+        [07 React/Next.js]  +  [09 Engineering Thinking]
+                   |                 |
+                   +-- patterns & methodology layer -+
 ```
 
-## The five rules of thumb (memorise)
+## Quick-start for common tasks
 
-1. **Server state ≠ client state.** TanStack Query for the first, Zustand only for the second.
-2. **URL state is best state.** Anything that should be shareable, back-button-able, or bookmarkable goes in the URL.
-3. **Hooks over Effects.** If you can compute it during render or in an event handler, don't `useEffect`.
+### "Change the content of a section"
+Read: [03-data-schema.md](./03-data-schema.md) -> edit `src/data/portfolio.json`
+
+### "Add a new section to the page"
+Read: [02-component-map.md](./02-component-map.md) (how to add a section) + [03-data-schema.md](./03-data-schema.md) (data interface) + [08-sass-styling-guide.md](./08-sass-styling-guide.md) (styling patterns)
+
+### "Change the visual design"
+Read: [04-design-system.md](./04-design-system.md) (tokens & philosophy) + [08-sass-styling-guide.md](./08-sass-styling-guide.md) (implementation)
+
+### "Update personal info or career details"
+Read: [10-owner-profile.md](./10-owner-profile.md) (source of truth) -> update [03-data-schema.md](./03-data-schema.md) fields in `portfolio.json`
+
+### "Improve SEO or metadata"
+Read: [06-seo-metadata.md](./06-seo-metadata.md) -> edit `src/app/layout.tsx`
+
+### "Add interactivity or a new feature"
+Read: [07-react-nextjs-patterns.md](./07-react-nextjs-patterns.md) + [09-engineering-thinking.md](./09-engineering-thinking.md) (methodology)
+
+### "Understand the build/deploy pipeline"
+Read: [01-project-architecture.md](./01-project-architecture.md)
+
+## Project versions (actual, not knowledge-pack reference)
+
+| Dependency | Version |
+|---|---|
+| Next.js | 15.3.2 |
+| React | 19.0.0 |
+| TypeScript | 5.x |
+| Sass | 1.77.0 |
+| Node (CI) | 20 |
+
+## Five rules of thumb
+
+1. **Server state != client state.** TanStack Query for the first, Zustand only for the second.
+2. **URL state is best state.** Anything shareable or bookmarkable goes in the URL.
+3. **Hooks over Effects.** If you can compute it during render or in a handler, don't `useEffect`.
 4. **Atomic selectors.** Subscribing to "the store" instead of "the field" is the most common Zustand bug.
 5. **Validate at boundaries, trust within.** Zod once at the edge; pure typed code in the middle.
-
-## Versions verified at pack creation
-
-| Library | Version |
-| --- | --- |
-| React | 19.2 (Oct 2025, patches through 19.2.1 Dec 2025) |
-| Next.js | 16 (Oct 2025; uses React Canary including 19.2 features) |
-| TanStack Query | 5.84+ (v5 line) |
-| Zustand | 5.0.13 (May 2026) |
-| Zod | v4 stable (≥ 4.0.6 for clean TanStack interop) |
-| TanStack Form | v1 stable (mid-2025) |
-| Dart Sass | 1.77+ (modern API) |
-
-If your project pins older versions, re-read these files with a grain of salt and verify the deltas — the conceptual frame still holds even when specific APIs differ.
-
-## How to use this pack with Claude
-
-When starting a new project, feed Claude:
-1. **This index file** (`00-index.md`) — gives the map.
-2. **Whichever files match the task** — typically [09], [01], [02], plus one of {[03], [05], [07]}.
-
-When working on a specific feature:
-1. Reference the **decision tree** above.
-2. Open the **specific file** for the API you're touching.
-3. The **TKDodo patterns** [04] file is the integration glue — read alongside anything else.
-
-When debugging:
-1. Open the relevant tool file and check the **anti-patterns table** at the bottom.
-2. If the symptom matches an entry, the fix is usually one line.
-
-## Maintenance
-
-When library versions change, update only:
-- The version pin at the top of the affected file.
-- Any API signature in that file that has changed.
-- The version table in this index.
-
-Conceptual frames (mental models, decision trees, anti-patterns) usually outlive multiple major versions. Patch the surface, keep the foundation.
