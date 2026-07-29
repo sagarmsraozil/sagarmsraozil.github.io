@@ -6,18 +6,20 @@
 
 ```
 portfolio.json
-├── meta              — site title, description, social links
-├── navigation        — header name + nav links array
-├── hero              — headline (normal + bold), subheadline, 2 CTAs
-├── problem           — label, heading, body paragraphs[]
-├── work              — label, heading, intro, caseStudies[], additionalProjects[]
-├── experience        — label, heading, entries[]
-├── about             — label, headingLines[], photoSrc, body[], languages[]
-├── education         — label, entries[]
+├── meta              — title, description, phone, location, workRights, social{linkedin,github,x}
+├── navigation        — header name + nav links array (anchors + CV download)
+├── header            — name, title, titleStack, photoSrc, photoAlt, workRights, contact{}, 2 CTAs
+├── summary           — label, heading, body[], languages[]
 ├── skills            — label, categories[]
+├── experience        — label, heading, entries[] (bulleted)
+├── projects          — label, heading, entries[] + earlierLabel, earlier[]
+├── aiEngineering     — label, heading, body[]
+├── education         — label, entries[]
 ├── references        — label, heading, people[], closing
-└── cta               — label, heading, body[], email, links[]
+└── cta               — label, heading, body[], email, cvHref, links[], copyright
 ```
+
+Section render order (mirrors amitj.me/cv): Intro → Summary → Skills → Experience → Projects → AI-Assisted Engineering → Education → References → Contact.
 
 ## TypeScript Interfaces (from `src/types/portfolio.ts`)
 
@@ -27,35 +29,37 @@ NavLink:    { label, href, newTab?, download? }
 NavData:    { name, links: NavLink[] }
 ```
 
-### Hero
+### Header (Intro block)
 ```ts
-HeroCTA:    { label, href }
-HeroData:   { headlineNormal, headlineBold, subheadline, ctaPrimary: HeroCTA, ctaSecondary: HeroCTA }
+ContactLink:   { label, href }
+HeaderCTA:     { label, href }
+HeaderContact: { location, phone, phoneHref, email, links: ContactLink[] }
+HeaderData:    { name, title, titleStack, photoSrc, photoAlt, workRights, contact: HeaderContact, ctaPrimary: HeaderCTA, ctaSecondary: HeaderCTA }
 ```
 
-### Problem
+### Summary
 ```ts
-ProblemData: { label, heading, body: string[] }
-```
-
-### Work
-```ts
-CaseStudy:          { id, tags[], title, body[], stack[], github: string | null }
-GithubLink:         { label, href }
-AdditionalProject:  { id, name, period, tags[], summary, stack[], githubLinks: GithubLink[] }
-WorkData:           { label, heading, intro, caseStudies[], additionalLabel, additionalProjects[] }
+Language:    { name, level }
+SummaryData: { label, heading, body: string[], languages: Language[] }
 ```
 
 ### Experience
 ```ts
-ExperienceEntry: { id, company, product, role, period, location, tags[], body[], websiteUrl: string | null }
+ExperienceEntry: { id, company, companyUrl: string | null, product, role, period, location, tags[], bullets: string[], stack? }
 ExperienceData:  { label, heading, entries: ExperienceEntry[] }
 ```
 
-### About
+### Projects
 ```ts
-Language:  { name, level }
-AboutData: { label, headingLines[], photoSrc: string | null, body[], languages: Language[] }
+GithubLink:    { label, href }
+ProjectEntry:  { id, name, description, period, tags[], bullets: string[], stack[], websiteUrl: string | null, githubLinks: GithubLink[] }
+EarlierProject:{ id, name, period, tags[], summary, stack[], githubLinks: GithubLink[] }
+ProjectsData:  { label, heading, entries: ProjectEntry[], earlierLabel, earlier: EarlierProject[] }
+```
+
+### AI-Assisted Engineering
+```ts
+AiEngineeringData: { label, heading, body: string[] }
 ```
 
 ### Education
@@ -79,38 +83,39 @@ ReferencesData:  { label, heading, people: ReferencePerson[], closing }
 ### CTA
 ```ts
 CTALink: { label, href }
-CTAData: { label, heading, body[], email, links: CTALink[] }
+CTAData: { label, heading, body[], email, cvHref, links: CTALink[], copyright }
 ```
 
 ### Root
 ```ts
-MetaData: { title, description, social: { linkedin, github } }
-PortfolioData: { meta, navigation, hero, problem, work, experience, about, education, skills, references, cta }
+MetaData: { title, description, phone, location, workRights, social: { linkedin, github, x } }
+PortfolioData: { meta, navigation, header, summary, skills, experience, projects, aiEngineering, education, references, cta }
 ```
 
 ## Current Content Summary
 
 | Section | Key Data Points |
 |---|---|
-| Hero | "Most engineers build what you ask for..." / "The interesting ones ask..." |
-| Problem | "A working product is not the same as a solved problem." — 5 paragraphs |
-| Work | 3 case studies (Programiz Pro, Nexus, Aroma) + 2 earlier (Futsal Finder, Hospital E-Ticketing) |
-| Experience | 1 entry: ApplyKart / Jobss AI, Intern — Team Lead, Feb–May 2026, Melbourne |
-| About | Nepal origin, Melbourne based, ~6 years coding, 3 languages (English, Nepali, Hindi) |
+| Intro (header) | Name, "Full-Stack Engineer" + stack line, photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights/visa (subclass 485) |
+| Summary | "I work out what to build before I build it." — 4 narrative paragraphs + 3 spoken languages (English, Nepali, Hindi) |
+| Skills | 6 categories: Languages, Frameworks & Libraries, Data, Architecture, Cloud & DevOps, Tools |
+| Experience | 2 entries: Jobs.ai (Intern/Team Lead, Feb–May 2026, Melbourne), ParewaLabs/Programiz (SWE, Oct 2021–Nov 2023, Kathmandu) — bulleted |
+| Projects | Detailed: Nexus, Aroma. Earlier: Hospital E-Ticketing, Futsal Finder |
+| AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 2 paragraphs |
 | Education | VIT Melbourne (Master's, Feb 2024–Jul 2026), Softwarica Kathmandu (BSc, Nov 2018–Oct 2021) |
-| Skills | 6 categories: Languages, Frameworks, Databases, Tools, Architecture |
 | References | 5 people from Programiz (Sanjeev, Ranjit, Raman, Abidit, Shirish) |
-| CTA | Email: sagarcrcoc@gmail.com, Links: LinkedIn, GitHub, X |
+| CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_CV.pdf`), Links: LinkedIn, GitHub, X, copyright |
 
 ## Common Edit Tasks
 
-### Add a new case study
-1. Add entry to `portfolio.json` → `work.caseStudies[]`
-2. Required fields: `id` (kebab-case), `tags[]`, `title`, `body[]`, `stack[]`, `github` (string or null)
-
 ### Add a new experience entry
 1. Add entry to `portfolio.json` → `experience.entries[]`
-2. Required fields: `id`, `company`, `product`, `role`, `period`, `location`, `tags[]`, `body[]`, `websiteUrl` (string or null)
+2. Required fields: `id`, `company`, `companyUrl` (string or null), `product`, `role`, `period`, `location`, `tags[]`, `bullets[]`; optional `stack[]`
+3. Bullets render as a `<ul>`; the company name links out when `companyUrl` is set
+
+### Add a new project
+1. Detailed project → `projects.entries[]` (`ProjectEntry`: `id`, `name`, `description`, `period`, `tags[]`, `bullets[]`, `stack[]`, `websiteUrl`, `githubLinks[]`)
+2. Compact "earlier" project → `projects.earlier[]` (`EarlierProject`: `id`, `name`, `period`, `tags[]`, `summary`, `stack[]`, `githubLinks[]`)
 
 ### Add a new skill category
 1. Add entry to `portfolio.json` → `skills.categories[]`
@@ -119,9 +124,14 @@ PortfolioData: { meta, navigation, hero, problem, work, experience, about, educa
 ### Add a navigation link
 1. Add entry to `portfolio.json` → `navigation.links[]`
 2. Required fields: `label`, `href`; optional: `newTab`, `download`
-3. Links with `download: true` trigger CV modal instead of navigation
+3. Links with `download: true` trigger the CV modal instead of navigation
+4. Anchor links (`href: "#skills"`) must match a section `id`
 
 ### Update personal photo
 1. Add image file to `public/`
-2. Set `about.photoSrc` in `portfolio.json` to the filename (e.g. `"/photo.jpg"`)
-3. The AboutSection renders an `<img>` when `photoSrc` is not null, falls back to initials "SM" otherwise
+2. Set `header.photoSrc` in `portfolio.json` to the path (e.g. `"/sagar.jpeg"`) and `header.photoAlt`
+3. Also update the Person JSON-LD `image` in `src/app/layout.tsx` and OG/Twitter image paths
+
+### Update the CV PDF
+1. Replace `public/Sagar_Mishra_CV.pdf` (keep the filename, or update every reference)
+2. The path appears in `navigation.links[]` (CV), `header.ctaSecondary.href`, and `cta.cvHref`

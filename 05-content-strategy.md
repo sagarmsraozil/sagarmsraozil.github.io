@@ -18,59 +18,58 @@ Reaches the CTA already having mentally said yes
 
 Every design and copy decision serves this arc. Nothing on the page is decorative.
 
+> **Format note (2026 rebuild):** the site was restructured into a CV-style single page whose information architecture mirrors amitj.me/cv (sticky section nav → header block → factual, reverse-chronological sections). The tone is **hybrid**: narrative voice is preserved in the Summary; Experience, Projects, and Skills are factual and bulleted. The elegant monochrome/serif design is unchanged.
+
 ## Section-by-Section Mechanics
 
-### Section 01 — Hero (Desire Reframe)
+### Section 01 — Intro / Profile Header (Identity + Scannability)
 
-**Mechanic:** Most developer portfolios answer "who are you?" — this hero answers "what changes when the right engineer shows up?"
+**Mechanic:** A recruiter's first five seconds. Everything needed to place and contact the candidate, above the fold.
 
-- Lead with tension, not identity. No photo in hero. No "Hi, I'm Sagar."
-- Headline has two lines: first in normal weight, second in bold. The contrast is where the eye lands.
-- Subheadline sits below a thin rule, deliberately placed late so the headline lands first.
-- Dual CTAs: primary ("See the work") and secondary ("Get in touch").
+- Name (large serif), title, and a monospace stack line (`React · Next.js · …`).
+- Round profile photo to the side — the CV-format equivalent of a résumé header.
+- Contact line with `·` separators: location · phone · email · LinkedIn · GitHub. Work-rights/visa stated plainly (important for AU roles).
+- Two CTAs: "See the work" (anchor) and "Download CV" (the PDF).
 
-### Section 02 — Problem Reframe (Knowledge Gap)
+### Section 02 — Summary (Voice + Positioning)
 
-**Mechanic:** Opens a gap between what the visitor thinks they need and what they actually need. Does NOT fill the gap yet — that creates forward momentum.
+**Mechanic:** The one section that keeps the narrative voice. Factual credentials first, then how this person actually works.
 
-- Framed as "here is something true about software" — not "here is my philosophy."
-- Just text. No images, icons, or callout boxes. Readable serif at comfortable line height.
-- Do not bold anything inside the body text. Let paragraph rhythm do the work.
+- Opens with the CV summary (Programiz scale, Jobs.ai lead role, two shipped systems), then a short paragraph on approach ("slower at the beginning and less painful at the end").
+- Readable serif heading, comfortable line height. No bolding inside body — paragraph rhythm does the work.
+- Spoken languages listed simply at the end — no flags, no bars.
 
-### Section 03 — Work (Social Proof Through Specificity)
+### Section 03 — Skills (ATS + Human Scanner)
 
-**Mechanic:** Specific details convert. "Here is a platform, here is its scale, here is the specific problem and how it was handled."
+**Mechanic:** Complete and easy to scan. A hiring manager finds a specific technology in under 5 seconds. Placed early, like the reference site.
 
-- Structure per case study: **context -> the real problem -> what was built -> why it mattered**
-- Three case studies, each answering: "yes, but have you actually done this before?"
-- The title of each case study is the most important line — large, serif, unhurried.
-- Stack tags are data, not decoration. Small monospaced pills.
-- GitHub links small, below stack tags — for people who want to verify.
+- No skill bars, radar charts, or proficiency indicators.
+- Six categories (incl. Cloud & DevOps), items as inline text separated by dots.
 
-### Section 04 — About (Controlled Vulnerability)
+### Section 04 — Experience (Social Proof Through Specificity)
 
-**Mechanic:** Work comes before person. By the time the reader sees the human, they've already decided this person is worth listening to.
+**Mechanic:** Bulleted achievements, reverse-chronological. Each bullet is a concrete thing built and why it mattered.
 
-- Introduces norms and ethics as *descriptions of how decisions get made*, not a values statement.
-- Small circular photo (currently initials fallback). Warmth enters through contrast with formal tone.
-- Languages listed simply — no flags, no percentage bars.
+- Company name links out; period + location as right-aligned meta.
+- Bullets, not prose — factual CV register.
+- Stack tags are data, not decoration.
 
-### Section 05 — Skills (ATS + Human Scanner)
+### Section 05 — Projects (Evidence of Range)
 
-**Mechanic:** Complete and easy to scan. A hiring manager finds a specific technology in under 5 seconds.
+**Mechanic:** Systems built end to end, separated from paid work as on the CV.
 
-- No skill bars. No radar charts. No percentage proficiency indicators.
-- Categories in bold, items as inline text separated by dots.
-- Narrow, centred column — dense but readable.
+- Nexus and Aroma detailed (bulleted, with stack). Hospital E-Ticketing and Futsal Finder kept as a compact "Earlier projects" group with GitHub links.
 
-### Section 06 — CTA (Closing the Loop)
+### Section 06 — AI-Assisted Engineering (Modern Signal)
 
-**Mechanic:** The previous five sections did the selling. CTA makes the next step feel obvious and low-friction.
+**Mechanic:** Addresses head-on how the candidate uses agentic tooling — delegate, then verify. Short, in the narrative voice.
 
-- Dark background signals conclusion.
-- No contact form. An email link is direct and personal.
+### Section 07 — CTA (Closing the Loop)
+
+**Mechanic:** The sections above did the selling. CTA makes the next step obvious and low-friction.
+
+- Dark background signals conclusion. No contact form — a direct email link, a Download-CV button, socials, and a copyright line.
 - "I respond to every message" makes it feel safe to send something imperfect.
-- The heading reframes action as the reader's decision, not a request.
 
 ## Voice and Tone
 
@@ -87,33 +86,35 @@ Every section begins with a small-caps label above the heading:
 
 | Section | Label |
 |---|---|
-| Problem | ON BUILDING SOFTWARE |
-| Work | THE WORK |
-| Experience | EXPERIENCE |
-| About | THE PERSON |
-| Education | EDUCATION |
+| Summary | SUMMARY |
 | Skills | TECHNICAL SKILLS |
+| Experience | EXPERIENCE |
+| Projects | PROJECTS |
+| AI-Assisted Engineering | AI-ASSISTED ENGINEERING |
+| Education | EDUCATION |
 | References | REFERENCES |
 | CTA | WHAT'S NEXT |
 
+(The Intro/profile header has no small-caps label — it leads with the name.)
+
 ## The Page Order (and Why)
 
-1. **Hero** — reframe the visit
-2. **Problem** — open the knowledge gap
-3. **Work** — prove competence with specifics
-4. **Experience** — show team context
-5. **About** — introduce the person (after credibility is established)
-6. **Education** — academic credentials
-7. **Skills** — scannable technology list
+1. **Intro** — name, title, contact, visa; everything a recruiter needs up top
+2. **Summary** — positioning in the candidate's own voice
+3. **Skills** — scannable technology list, placed early like the reference site
+4. **Experience** — bulleted proof, reverse-chronological
+5. **Projects** — systems built end to end
+6. **AI-Assisted Engineering** — how modern tooling is used responsibly
+7. **Education** — academic credentials
 8. **References** — named vouchers
-9. **CTA** — close the loop
+9. **CTA** — close the loop (email + Download CV)
 
-This order is deliberate. Moving About before Work weakens the persuasion arc.
+This mirrors amitj.me/cv while keeping the candidate's distinctive summary voice.
 
 ## What This Page Is Not
 
 - No animations on scroll — fade-in is filler
 - No project screenshots — they invite doubt when not in production
-- No "download CV" in the hero — anchors first impression in "I need a job"
+- No skill bars or radar charts — text-only, scannable
 - No tech stack logos in a row — identical on every developer site
-- No testimonials section — without well-known names, reads as self-promotion
+- No contact form — a direct email link and a Download-CV button instead

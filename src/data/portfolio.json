@@ -1,192 +1,208 @@
 {
   "meta": {
-    "title": "Sagar Mishra — Full-stack Engineer",
-    "description": "Full-stack engineer. Two years shipping product at Programiz Pro, recent team lead at ApplyKart. Based in Melbourne. Open to engineering roles and serious collaboration.",
+    "title": "Sagar Mishra — Full-Stack Engineer",
+    "description": "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, PostgreSQL. Full working rights in Australia.",
+    "phone": "0424 308 228",
+    "location": "Melbourne, VIC",
+    "workRights": "Full working rights in Australia. Temporary Graduate visa (subclass 485).",
     "social": {
       "linkedin": "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
-      "github": "https://github.com/sagarmsraozil"
+      "github": "https://github.com/sagarmsraozil",
+      "x": "https://x.com/SagarMi31569172"
     }
   },
   "navigation": {
     "name": "Sagar Mishra",
     "links": [
+      { "label": "Summary", "href": "#summary" },
+      { "label": "Skills", "href": "#skills" },
       { "label": "Experience", "href": "#experience" },
-      { "label": "About", "href": "#about" },
-      { "label": "Contact", "href": "#contact" },
-      { "label": "CV", "href": "/Sagar-Mishra-CV.pdf", "download": true }
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Education", "href": "#education" },
+      { "label": "References", "href": "#references" },
+      { "label": "CV", "href": "/Sagar_Mishra_CV.pdf", "download": true }
     ]
   },
-  "hero": {
-    "headlineNormal": "Most engineers build what you ask for.",
-    "headlineBold": "The interesting ones ask what you're actually trying to solve.",
-    "subheadline": "Sagar Mishra. Full-stack engineer, six years writing code that ships. Two of those at Programiz Pro, building the surface 100,000+ paid learners use every day. Based in Melbourne, wrapping up a Master's in Software Engineering.",
+  "header": {
+    "name": "Sagar Mishra",
+    "title": "Full-Stack Engineer",
+    "titleStack": "React · Next.js · Node.js · TypeScript · PostgreSQL",
+    "photoSrc": "/sagar.jpeg",
+    "photoAlt": "Sagar Mishra",
+    "workRights": "Full working rights in Australia. Temporary Graduate visa (subclass 485).",
+    "contact": {
+      "location": "Melbourne, VIC",
+      "phone": "0424 308 228",
+      "phoneHref": "tel:+61424308228",
+      "email": "sagarcrcoc@gmail.com",
+      "links": [
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sagar-mishra-a3455121b/" },
+        { "label": "GitHub", "href": "https://github.com/sagarmsraozil" }
+      ]
+    },
     "ctaPrimary": { "label": "See the work →", "href": "#experience" },
-    "ctaSecondary": { "label": "Get in touch", "href": "#contact" }
+    "ctaSecondary": { "label": "Download CV", "href": "/Sagar_Mishra_CV.pdf" }
   },
-  "problem": {
-    "label": "ON BUILDING SOFTWARE",
-    "heading": "A working product is not the same as a solved problem.",
+  "summary": {
+    "label": "SUMMARY",
+    "heading": "I work out what to build before I build it.",
     "body": [
-      "Most software projects fail quietly.",
-      "The code ships. The feature goes live. Metrics look fine for a couple of weeks. Then something bends — a workflow nobody uses, a system that handles ninety percent of cases and breaks on the rest.",
-      "The build was never the problem. The diagnosis was.",
-      "I've watched teams skip the 'why are we building this' conversation and go straight to the 'how.' The code comes out fine. The product doesn't. The engineers I've worked alongside who are actually useful in a room are the ones who ask enough questions before writing anything that the thing they build ends up being the right thing. Who push back during planning, not the post-mortem. Who know a system isn't done when it compiles — it's done when the person using it stops having to think about it.",
-      "That's the work. The code is just how it gets expressed."
+      "Full-stack engineer with two years shipping production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow and learner dashboard every paid learner works through, and the engine that issues their completion certificates. Most recently I led four engineers at Jobs.ai, where I owned authentication and the employer workspace and built the marketplace search both sides query.",
+      "On my own time I've designed and shipped two systems from data model to production: a warehouse platform with lot-level inventory and state-machine fulfilment, and a multi-tenant storefront that runs on top of it. I work in React, Next.js, Node.js, TypeScript and PostgreSQL.",
+      "How I approach a project: I don't move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising, and I write code once I understand what it's supposed to do. I'm not the engineer who ships in week one and apologises in week four — I'm the one who's slower at the beginning and less painful at the end.",
+      "Originally from Nepal, now in Melbourne wrapping up a Master's in Software Engineering. Outside work I read, travel when I can, and watch more anime than is probably respectable."
+    ],
+    "languages": [
+      { "name": "English", "level": "fluent" },
+      { "name": "Nepali", "level": "native" },
+      { "name": "Hindi", "level": "fluent" }
     ]
   },
-  "work": {
-    "label": "THE WORK",
-    "heading": "",
-    "intro": "",
-    "caseStudies": [],
-    "additionalLabel": "",
-    "additionalProjects": []
+  "skills": {
+    "label": "TECHNICAL SKILLS",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": ["TypeScript", "JavaScript", "Python", "Java", "C#", "Kotlin"]
+      },
+      {
+        "name": "Frameworks & Libraries",
+        "items": ["React", "Next.js", "Node.js", "Express", "React Query", "Zustand", "Drizzle", "Mongoose", "Sequelize"]
+      },
+      {
+        "name": "Data",
+        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+      },
+      {
+        "name": "Architecture",
+        "items": ["REST APIs", "Multi-tenancy", "State machines", "Microservices", "Monoliths", "Sharding"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "items": ["AWS (EC2, RDS, S3, Lambda)", "Docker", "Containerisation"]
+      },
+      {
+        "name": "Tools",
+        "items": ["Git", "Jira", "Asana", "Directus", "Mixpanel", "Microsoft Clarity"]
+      }
+    ]
   },
   "experience": {
     "label": "EXPERIENCE",
     "heading": "The work so far.",
     "entries": [
       {
-        "id": "applykart",
-        "company": "ApplyKart",
-        "product": "Jobss AI",
-        "role": "Intern — Team Lead",
+        "id": "jobs-ai",
+        "company": "Jobs.ai",
+        "companyUrl": "https://jobss.ai/",
+        "product": "Job and task distribution platform.",
+        "role": "Software Engineering Intern (Team Lead)",
         "period": "Feb 2026 – May 2026",
-        "location": "Flinders Street, Melbourne",
-        "tags": ["Startup", "Job Distribution", "Team Leadership"],
-        "body": [
-          "ApplyKart is building a job distribution platform in Melbourne — somewhere between Airtasker and LinkedIn. Not just listings, but a system that connects employers with people looking for work in a way that's structured, searchable, and fair.",
-          "I came in as an intern and ended up leading a four-person team through the core product build. Role-based auth separating employers and receivers. A dashboard for posting jobs and tasks. A recruitment pipeline — shortlist, hire, reject. Marketing pages organized by job category so each listing type had its own surface.",
-          "On the systems side: paginated and cursor-based APIs that surface active listings within their valid date range. A two-way search system funneling keyword queries into a dedicated search page across both jobs and tasks. An algorithm for distributing employee slots across listings — stock allocation logic, applied to headcount.",
-          "The biggest thing I took away was learning to use AI tooling as a development accelerator — boilerplates, feature scaffolding — without letting it replace the thinking that makes architecture hold together."
+        "location": "Melbourne, Australia",
+        "tags": ["Team Leadership", "Marketplace", "Auth"],
+        "bullets": [
+          "Led four engineers — set the technical direction and reviewed code before it merged.",
+          "Owned authentication and the role model that separates employers from job seekers, which every permission check in the rest of the platform reads from.",
+          "Designed the employer workspace end to end, so an employer posts a job or task and then moves applicants through review, shortlist and rejection without leaving it.",
+          "Built the marketplace search on a single index that serves both sides, so employers looking for people and seekers looking for work query the same system from opposite directions.",
+          "Chose cursor-based pagination over offset for the job and task feeds — read cost stays flat as the dataset grows rather than degrading with page depth, and the feed stays scoped to active dates.",
+          "Designed the allocation logic that spreads available workers across open jobs and tasks by demand, so no job sits unstaffed while another is oversubscribed."
         ],
-        "websiteUrl": "https://jobss.ai/"
+        "stack": ["React", "Next.js", "Node.js", "PostgreSQL"]
       },
       {
-        "id": "nexus",
-        "company": "Nexus",
-        "product": "Warehouse Management System",
+        "id": "programiz",
+        "company": "ParewaLabs (Programiz)",
+        "companyUrl": "https://www.programiz.com/",
+        "product": "Coding-education platform — programiz.com and programiz.pro. Over 100,000 paid learners.",
         "role": "Software Engineer",
-        "period": "Jan 2025 – Feb 2026",
-        "location": "Melbourne, Australia",
-        "tags": ["Systems Design", "Inventory", "Personal Project"],
-        "body": [
-          "This one didn't start with a spec. It started with a side business selling anime apparel that was running on spreadsheets and goodwill.",
-          "Stock was disappearing. Orders were getting fulfilled without knowing which lot the item came from. Suppliers had no formal onboarding. Returns were handled manually with no data trail. The problem wasn't carelessness — there just wasn't a system that matched the actual complexity of the operation.",
-          "Nexus is that system. Hierarchical, labelled inventory. A state-machine workflow for product drops: supplier registration, lot intake, pricing strategy, market pipeline. A replenishment engine with lot-level tracking. An addon system for managing sales and discounts on specific products. A return-to-order path that resolves refunds and exchanges back to the correct inventory state. An order marshalling pipeline that batches retail orders and tracks each through fulfilment.",
-          "The project lives on localhost — it hasn't launched. But the entire system exists, handles the full complexity of the domain, and shows what happens when you model the real problem before writing the first line of code."
+        "period": "Oct 2021 – Nov 2023",
+        "location": "Kathmandu, Nepal",
+        "tags": ["EdTech", "Product Engineering", "Team Leadership"],
+        "bullets": [
+          "Led Programiz Reports with a team of six — owned the scope, ran the planning, and carried it from proposal to release.",
+          "Built the course flow and learner dashboard on programiz.pro, the surface all 100,000+ paid learners move through to finish a course.",
+          "Built the certificate engine that issues a verified completion certificate to every learner who finishes a course.",
+          "Worked on the in-browser Python and JavaScript compilers on programiz.com, where visitors run code without installing anything.",
+          "Integrated sensAI, the in-product tutor, so learners get help at the point in an exercise where they're stuck rather than after they give up.",
+          "Instrumented landing pages with Mixpanel and Microsoft Clarity, then rewrote the pages against what the behaviour data showed."
         ],
-        "websiteUrl": null,
+        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel"]
+      }
+    ]
+  },
+  "projects": {
+    "label": "PROJECTS",
+    "heading": "Systems I built end to end.",
+    "entries": [
+      {
+        "id": "nexus",
+        "name": "Nexus — Warehouse Management Platform",
+        "description": "Personal project. Built after running an anime-apparel side business where stock went missing and fulfilment was manual.",
+        "period": "Feb 2025 – Jan 2026",
+        "tags": ["Systems Design", "Inventory", "State Machines"],
+        "bullets": [
+          "Modelled the warehouse as a labelled tree — any item resolves to a location in seconds, which is the missing-stock problem the project was built to end.",
+          "Modelled product drops as a state machine covering supplier onboarding, lot negotiation, intake and lot-level pricing. Nothing advances out of order.",
+          "Built lot-aware replenishment with a return-to-order path, so a refund or exchange resolves back to the correct inventory state instead of drifting.",
+          "Wrote the fulfilment pipeline that batches retail orders on a timer and tracks each one to completion as its own state machine."
+        ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
+        "websiteUrl": null,
         "githubLinks": []
       },
       {
         "id": "aroma",
-        "company": "Aroma",
-        "product": "Clothing Marketplace",
-        "role": "Software Engineer",
+        "name": "Aroma — Multi-tenant Clothing E-commerce",
+        "description": "Personal project. A storefront layer that sits on Nexus, so sellers run their own shop on shared infrastructure.",
         "period": "Mar 2024 – Jan 2026",
-        "location": "Melbourne, Australia",
-        "tags": ["Multi-tenant", "E-commerce", "Personal Project"],
-        "body": [
-          "The clothing businesses this was designed for aren't small. They move real volume. But they run entirely through social media — pricing is inconsistent, inventory is invisible, and a customer who's already paid has no way to find out where their order is.",
-          "Aroma is the alternative. Each seller runs an isolated storefront on shared backend infrastructure — multi-tenant architecture where data boundaries are hard, the catalog is always current, and the buyer gets order status as a matter of course.",
-          "Full buyer journey: search, catalog, product detail, cart, reservation, checkout, order history, order status. Built on top of Nexus's inventory layer so the storefront and the warehouse stay in sync.",
-          "Also pre-launch. Designed for a real market, built to production standards, waiting for the right moment."
+        "tags": ["Multi-tenant", "E-commerce", "SSR / SSG"],
+        "bullets": [
+          "Designed the tenancy model so each seller runs an isolated storefront on one shared backend, drawing the line between what's shared and what a tenant controls.",
+          "Built the buyer path front to back: search and product pages through cart, reservation, checkout and order history.",
+          "Split rendering by page — server rendering and static generation for catalogue pages that have to be indexed and paint fast, client fetching for anything per-user, with React Query holding the cache and Zustand holding cart state.",
+          "Measured the result in Lighthouse rather than assuming it — every page renders in under two seconds.",
+          "Added a post-purchase order-status view. Sellers who trade only through social media can't offer that visibility, and the trust gap costs them sales."
         ],
+        "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "React Query", "Zustand"],
         "websiteUrl": null,
-        "stack": ["React", "Next.js", "Node.js", "PostgreSQL"],
         "githubLinks": []
-      },
-      {
-        "id": "programiz-pro",
-        "company": "Programiz",
-        "product": "Programiz Pro",
-        "role": "Software Engineer",
-        "period": "Oct 2021 – Dec 2023",
-        "location": "Kathmandu, Nepal",
-        "tags": ["Product Engineering", "EdTech", "Team Leadership"],
-        "body": [
-          "Programiz.com is one of the most visited programming education sites in the world. Programiz Pro is the paid product on top of it — a structured, course-based learning experience for people who want to go from reading about code to actually writing it.",
-          "The real problem was never 'build a course platform.' Every LMS does that. The problem was: how do you design a progression system that keeps a beginner moving forward without making them feel like they're failing every time they get stuck?",
-          "The interactive course flow, the learner dashboard, the certificate engine, the learning paths — all downstream of that question. The code followed the diagnosis. Alongside those: embedded Python and JavaScript compilers, the first version of an AI assistant called sensAI, conversion-focused landing pages, and analytics through Mixpanel and Microsoft Clarity.",
-          "I also led the Programiz Reports project — a team of six across engineering and management. That project ran through whiteboard sessions, a groomed backlog, and weekly delivery cycles. I sat in on board-level conversations about product direction, which was unusual access for someone two years into their career. Leading a cross-functional team that early teaches you things about communication that no course covers."
-        ],
-        "websiteUrl": "https://www.programiz.com/",
-        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel", "Microsoft Clarity"],
-        "githubLinks": []
-      },
+      }
+    ],
+    "earlierLabel": "Earlier projects",
+    "earlier": [
       {
         "id": "hospital-eticket",
-        "company": "Hospital E-Ticketing",
-        "product": "Appointment Booking Platform",
-        "role": "Software Engineer",
+        "name": "Hospital E-Ticketing",
         "period": "Aug 2021 – Oct 2021",
-        "location": "Kathmandu, Nepal",
-        "tags": ["Healthcare", "University Project", "Full-stack"],
-        "body": [
-          "A university group project, but one addressing a real problem. In Nepal, booking a doctor's appointment means physically going to the hospital and queuing for hours — often without knowing which doctor is available or when you'll be seen.",
-          "We built a platform where hospitals and doctors register digitally, open appointment slots for the week, and patients book online. An inversion test algorithm prevents double-bookings. Three roles — Doctor, Patient, Hospital Admin — each with their own view, and a notification system that sends reminders before appointments."
-        ],
-        "websiteUrl": null,
-        "stack": ["React.js", "Node.js", "Chart.js"],
+        "tags": ["Healthcare", "Full-stack"],
+        "summary": "A platform where hospitals and doctors register digitally, open weekly appointment slots, and patients book online — with an inversion-test algorithm that prevents double-bookings across Doctor, Patient and Hospital Admin roles.",
+        "stack": ["React", "Node.js", "Chart.js"],
         "githubLinks": [
-          {
-            "label": "Backend →",
-            "href": "https://github.com/sagarmsraozil/ETicketing-Backend"
-          },
-          {
-            "label": "Frontend →",
-            "href": "https://github.com/Abishek180181/E-ticketing-Frontend"
-          }
+          { "label": "Backend →", "href": "https://github.com/sagarmsraozil/ETicketing-Backend" },
+          { "label": "Frontend →", "href": "https://github.com/Abishek180181/E-ticketing-Frontend" }
         ]
       },
       {
         "id": "futsal-finder",
-        "company": "Futsal Finder",
-        "product": "Team Matchmaking Platform",
-        "role": "Software Engineer",
+        "name": "Futsal Finder",
         "period": "Oct 2020 – Jul 2021",
-        "location": "Kathmandu, Nepal",
-        "tags": ["Matchmaking", "Sports Tech", "Full-stack"],
-        "body": [
-          "Competitive futsal teams in Nepal play the same opponents week after week. There's no system for connecting them with anyone outside their circle.",
-          "The platform borrowed Tinder's matching logic and applied it to sport: teams register, set preferences, get paired with opponents nearby. Beyond matchmaking: Clash of Clans-style team dashboards, league and knockout tournaments in a Champions League format, battle seasons with tier progression from Bronze to Champion, and court booking styled after Airbnb.",
-          "My first end-to-end system."
-        ],
-        "websiteUrl": null,
-        "stack": ["React.js", "Node.js", "Chart.js", "MongoDB"],
+        "tags": ["Matchmaking", "Full-stack"],
+        "summary": "Tinder-style matchmaking for competitive futsal teams — teams set preferences and get paired with nearby opponents, with league and knockout tournaments, tiered battle seasons, and Airbnb-style court booking. My first end-to-end system.",
+        "stack": ["React", "Node.js", "MongoDB", "Chart.js"],
         "githubLinks": [
-          {
-            "label": "Backend →",
-            "href": "https://github.com/sagarmsraozil/FutsalBooking-Backend_Node-"
-          },
-          {
-            "label": "Frontend →",
-            "href": "https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-"
-          }
+          { "label": "Backend →", "href": "https://github.com/sagarmsraozil/FutsalBooking-Backend_Node-" },
+          { "label": "Frontend →", "href": "https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-" }
         ]
       }
     ]
   },
-  "about": {
-    "label": "THE PERSON",
-    "headingLines": [
-      "Originally from Nepal. Currently in Melbourne.",
-      "Six years of building things with code."
-    ],
-    "photoSrc": null,
+  "aiEngineering": {
+    "label": "AI-ASSISTED ENGINEERING",
+    "heading": "The tools speed up the work. The judgment stays mine.",
     "body": [
-      "I got into software because I was curious about what happens when a well-designed system meets a problem that's been making life difficult for a long time. That hasn't changed.",
-      "Professionally, I've spent two years on a coding education platform used by hundreds of thousands of people, led a team through a reporting project, built a job distribution product from the ground up, and in my own time designed two systems end-to-end that came out of real operational problems I ran into. The work is on this page.",
-      "How I approach a project: I tend not to move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising. I run whiteboard sessions not to perform the process but because drawing the system on a wall tends to reveal the thing nobody had noticed. I write code after I understand what the code is supposed to do, and I push back on specs that seem right on paper but feel wrong in practice.",
-      "I'm not the engineer who ships in week one and apologizes in week four. I'm the one who's slower at the beginning and less painful at the end.",
-      "Outside work: I read, I travel when I can, and I watch more anime than is probably respectable."
-    ],
-    "languages": [
-      { "name": "English", "level": "fluent" },
-      { "name": "Nepali", "level": "native" },
-      { "name": "Hindi", "level": "fluent" }
+      "I use agentic coding tools to delegate work and then check it — a light model to explore, a stronger one to plan and design, a mid one to implement.",
+      "I read and test every change before it goes in, and if I don't understand a piece of code it doesn't merge. The tools speed up boilerplate and exploration. The design calls and the quality stay mine."
     ]
   },
   "education": {
@@ -205,55 +221,6 @@
         "period": "Nov 2018 – Oct 2021",
         "degree": "BSc (Hons) Software Engineering",
         "url": "https://softwarica.edu.np/courses/bsc-hons-software-engineering"
-      }
-    ]
-  },
-  "skills": {
-    "label": "TECHNICAL SKILLS",
-    "categories": [
-      {
-        "name": "Languages",
-        "items": ["JavaScript", "TypeScript", "Python", "Java", "C#", "Kotlin"]
-      },
-      {
-        "name": "Frameworks and Libraries",
-        "items": [
-          "React",
-          "Next.js",
-          "Node.js",
-          "Express",
-          "React Query",
-          "Drizzle",
-          "Mongoose",
-          "Sequelize",
-          "Axios"
-        ]
-      },
-      {
-        "name": "Databases",
-        "items": ["PostgreSQL", "MySQL", "SQL Server", "MongoDB", "Redis"]
-      },
-      {
-        "name": "Tools and Platforms",
-        "items": [
-          "Git",
-          "Jira",
-          "Trello",
-          "Asana",
-          "Directus",
-          "Mixpanel",
-          "Microsoft Clarity",
-          "Locust"
-        ]
-      },
-      {
-        "name": "Architecture",
-        "items": [
-          "Microservices",
-          "Monolithic architecture",
-          "Horizontal sharding",
-          "Vertical sharding"
-        ]
       }
     ]
   },
@@ -302,13 +269,12 @@
       "I respond to every message. I don't send templated replies."
     ],
     "email": "sagarcrcoc@gmail.com",
+    "cvHref": "/Sagar_Mishra_CV.pdf",
     "links": [
-      {
-        "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/sagar-mishra-a3455121b/"
-      },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sagar-mishra-a3455121b/" },
       { "label": "GitHub", "href": "https://github.com/sagarmsraozil" },
       { "label": "X", "href": "https://x.com/SagarMi31569172" }
-    ]
+    ],
+    "copyright": "© 2026 Sagar Mishra. Built with Next.js."
   }
 }

@@ -1,9 +1,9 @@
-import type { AdditionalProject } from '@/types/portfolio'
+import type { EarlierProject } from '@/types/portfolio'
 import { StackTag } from '@/components/ui/StackTag'
 import styles from './AdditionalProjectCard.module.scss'
 
 interface AdditionalProjectCardProps {
-  project: AdditionalProject
+  project: EarlierProject
 }
 
 export function AdditionalProjectCard({ project }: Readonly<AdditionalProjectCardProps>) {

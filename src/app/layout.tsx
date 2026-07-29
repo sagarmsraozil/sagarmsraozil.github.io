@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Lato, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Lato, Cinzel, JetBrains_Mono } from "next/font/google";
 import "./globals.scss";
 
 const SITE_URL = "https://sagarmsraozil.github.io";
@@ -11,10 +11,10 @@ const lato = Lato({
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
+const cinzel = Cinzel({
   weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-cinzel",
   display: "swap",
 });
 
@@ -25,10 +25,12 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const SITE_DESCRIPTION =
+  "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, PostgreSQL. Full working rights in Australia.";
+
 export const metadata: Metadata = {
-  title: "Sagar Mishra — Full-stack Engineer",
-  description:
-    "Full-stack engineer based in Melbourne. Two years of product experience at Programiz Pro (100,000+ learners). React, Next.js, Node.js. Open to engineering roles and serious collaboration.",
+  title: "Sagar Mishra — Full-Stack Engineer",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Sagar Mishra",
     "full-stack engineer Melbourne",
@@ -43,31 +45,42 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Sagar Mishra — Full-stack Engineer",
-    description:
-      "Full-stack engineer based in Melbourne. Two years of product experience at Programiz Pro (100,000+ learners). React, Next.js, Node.js. Open to engineering roles and serious collaboration.",
+    title: "Sagar Mishra — Full-Stack Engineer",
+    description: SITE_DESCRIPTION,
     type: "website",
     url: SITE_URL,
     siteName: "Sagar Mishra",
     locale: "en_AU",
+    images: [
+      {
+        url: `${SITE_URL}/sagar.jpeg`,
+        alt: "Sagar Mishra",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Sagar Mishra — Full-stack Engineer",
-    description:
-      "Full-stack engineer based in Melbourne. React, Next.js, Node.js. Open to engineering roles and serious collaboration.",
+    card: "summary_large_image",
+    title: "Sagar Mishra — Full-Stack Engineer",
+    description: SITE_DESCRIPTION,
     creator: "@SagarMi31569172",
+    images: [`${SITE_URL}/sagar.jpeg`],
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#0f1624",
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Sagar Mishra",
-  jobTitle: "Full-stack Engineer",
+  jobTitle: "Full-Stack Engineer",
   email: "sagarcrcoc@gmail.com",
+  telephone: "+61424308228",
   url: SITE_URL,
-  image: `${SITE_URL}/photo.jpg`,
+  image: `${SITE_URL}/sagar.jpeg`,
   sameAs: [
     "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
     "https://github.com/sagarmsraozil",
@@ -118,7 +131,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${lato.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable}`}
+      className={`${lato.variable} ${cinzel.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script

@@ -6,11 +6,13 @@
 
 ### Meta Tags
 
+The description is a single `SITE_DESCRIPTION` constant reused across meta, OG, and Twitter.
+
 ```
-Title:       "Sagar Mishra -- Full-stack Engineer"
-Description: "Full-stack engineer based in Melbourne. Two years of product experience
-              at Programiz Pro (100,000+ learners). React, Next.js, Node.js.
-              Open to engineering roles and serious collaboration."
+Title:       "Sagar Mishra -- Full-Stack Engineer"
+Description: "Full-stack engineer in Melbourne. Two years shipping production code at
+              Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai.
+              React, Next.js, Node.js, TypeScript, PostgreSQL. Full working rights in Australia."
 Keywords:    Sagar Mishra, full-stack engineer Melbourne, software engineer Melbourne,
              React developer Melbourne, Next.js developer, Node.js engineer,
              hire software engineer Melbourne, Programiz Pro engineer
@@ -19,21 +21,23 @@ Keywords:    Sagar Mishra, full-stack engineer Melbourne, software engineer Melb
 ### Open Graph
 
 ```
-og:title       "Sagar Mishra -- Full-stack Engineer"
-og:description "Full-stack engineer based in Melbourne..."
+og:title       "Sagar Mishra -- Full-Stack Engineer"
+og:description  <SITE_DESCRIPTION>
 og:type        website
 og:url         https://sagarmsraozil.github.io
 og:siteName    "Sagar Mishra"
 og:locale      en_AU
+og:image       https://sagarmsraozil.github.io/sagar.jpeg
 ```
 
 ### Twitter Card
 
 ```
-twitter:card        summary
-twitter:title       "Sagar Mishra -- Full-stack Engineer"
-twitter:description "Full-stack engineer based in Melbourne..."
+twitter:card        summary_large_image
+twitter:title       "Sagar Mishra -- Full-Stack Engineer"
+twitter:description  <SITE_DESCRIPTION>
 twitter:creator     @SagarMi31569172
+twitter:image       https://sagarmsraozil.github.io/sagar.jpeg
 ```
 
 ## JSON-LD Structured Data (in `layout.tsx <head>`)
@@ -45,10 +49,11 @@ twitter:creator     @SagarMi31569172
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Sagar Mishra",
-  "jobTitle": "Full-stack Engineer",
+  "jobTitle": "Full-Stack Engineer",
   "email": "sagarcrcoc@gmail.com",
+  "telephone": "+61424308228",
   "url": "https://sagarmsraozil.github.io",
-  "image": "https://sagarmsraozil.github.io/photo.jpg",
+  "image": "https://sagarmsraozil.github.io/sagar.jpeg",
   "sameAs": [
     "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
     "https://github.com/sagarmsraozil",
@@ -107,7 +112,8 @@ Defined as `SITE_URL` constant in `layout.tsx`. Update there if domain changes.
 - **New social profile** — add to `personSchema.sameAs[]` and `portfolio.json` → `cta.links[]`
 - **New skill or technology** — add to `personSchema.knowsAbout[]` and `metadata.keywords[]`
 - **Custom domain** — update `SITE_URL` in `layout.tsx`, `sitemap.xml`, and `robots.txt`
-- **Added a photo** — update `personSchema.image` to match the actual file path
+- **Added a photo** — update `personSchema.image`, `openGraph.images`, and `twitter.images` to match the actual file path (currently `/sagar.jpeg`)
+- **Changed the description** — edit the single `SITE_DESCRIPTION` constant in `layout.tsx` (feeds meta, OG, and Twitter)
 
 ## SEO Thinking Framework (Distilled)
 

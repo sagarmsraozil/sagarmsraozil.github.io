@@ -10,32 +10,46 @@ export interface NavData {
   links: NavLink[]
 }
 
-export interface HeroCTA {
+export interface ContactLink {
   label: string
   href: string
 }
 
-export interface HeroData {
-  headlineNormal: string
-  headlineBold: string
-  subheadline: string
-  ctaPrimary: HeroCTA
-  ctaSecondary: HeroCTA
+export interface HeaderCTA {
+  label: string
+  href: string
 }
 
-export interface ProblemData {
+export interface HeaderContact {
+  location: string
+  phone: string
+  phoneHref: string
+  email: string
+  links: ContactLink[]
+}
+
+export interface HeaderData {
+  name: string
+  title: string
+  titleStack: string
+  photoSrc: string
+  photoAlt: string
+  workRights: string
+  contact: HeaderContact
+  ctaPrimary: HeaderCTA
+  ctaSecondary: HeaderCTA
+}
+
+export interface Language {
+  name: string
+  level: string
+}
+
+export interface SummaryData {
   label: string
   heading: string
   body: string[]
-}
-
-export interface CaseStudy {
-  id: string
-  tags: string[]
-  title: string
-  body: string[]
-  stack: string[]
-  github: string | null
+  languages: Language[]
 }
 
 export interface GithubLink {
@@ -43,7 +57,38 @@ export interface GithubLink {
   href: string
 }
 
-export interface AdditionalProject {
+export interface ExperienceEntry {
+  id: string
+  company: string
+  companyUrl: string | null
+  product: string
+  role: string
+  period: string
+  location: string
+  tags: string[]
+  bullets: string[]
+  stack?: string[]
+}
+
+export interface ExperienceData {
+  label: string
+  heading: string
+  entries: ExperienceEntry[]
+}
+
+export interface ProjectEntry {
+  id: string
+  name: string
+  description: string
+  period: string
+  tags: string[]
+  bullets: string[]
+  stack: string[]
+  websiteUrl: string | null
+  githubLinks: GithubLink[]
+}
+
+export interface EarlierProject {
   id: string
   name: string
   period: string
@@ -53,46 +98,18 @@ export interface AdditionalProject {
   githubLinks: GithubLink[]
 }
 
-export interface WorkData {
+export interface ProjectsData {
   label: string
   heading: string
-  intro: string
-  caseStudies: CaseStudy[]
-  additionalLabel: string
-  additionalProjects: AdditionalProject[]
+  entries: ProjectEntry[]
+  earlierLabel: string
+  earlier: EarlierProject[]
 }
 
-export interface Language {
-  name: string
-  level: string
-}
-
-export interface AboutData {
-  label: string
-  headingLines: string[]
-  photoSrc: string | null
-  body: string[]
-  languages: Language[]
-}
-
-export interface ExperienceEntry {
-  id: string
-  company: string
-  product: string
-  role: string
-  period: string
-  location: string
-  tags: string[]
-  body: string[]
-  websiteUrl: string | null
-  stack?: string[]
-  githubLinks?: GithubLink[]
-}
-
-export interface ExperienceData {
+export interface AiEngineeringData {
   label: string
   heading: string
-  entries: ExperienceEntry[]
+  body: string[]
 }
 
 export interface EducationEntry {
@@ -118,19 +135,6 @@ export interface SkillsData {
   categories: SkillCategory[]
 }
 
-export interface CTALink {
-  label: string
-  href: string
-}
-
-export interface CTAData {
-  label: string
-  heading: string
-  body: string[]
-  email: string
-  links: CTALink[]
-}
-
 export interface ReferencePerson {
   name: string
   role: string
@@ -145,25 +149,44 @@ export interface ReferencesData {
   closing: string
 }
 
+export interface CTALink {
+  label: string
+  href: string
+}
+
+export interface CTAData {
+  label: string
+  heading: string
+  body: string[]
+  email: string
+  cvHref: string
+  links: CTALink[]
+  copyright: string
+}
+
 export interface MetaData {
   title: string
   description: string
+  phone: string
+  location: string
+  workRights: string
   social: {
     linkedin: string
     github: string
+    x: string
   }
 }
 
 export interface PortfolioData {
   meta: MetaData
   navigation: NavData
-  hero: HeroData
-  problem: ProblemData
-  work: WorkData
-  experience: ExperienceData
-  about: AboutData
-  education: EducationData
+  header: HeaderData
+  summary: SummaryData
   skills: SkillsData
+  experience: ExperienceData
+  projects: ProjectsData
+  aiEngineering: AiEngineeringData
+  education: EducationData
   references: ReferencesData
   cta: CTAData
 }

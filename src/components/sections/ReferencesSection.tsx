@@ -15,7 +15,7 @@ function getInitials(name: string): string {
 
 export function ReferencesSection({ data }: Readonly<ReferencesSectionProps>) {
   return (
-    <section className={styles.references} aria-label="References">
+    <section id="references" className={styles.references} aria-label="References">
       <div className={styles.referencesInner}>
         <SectionLabel text={data.label} as="h2" />
         <p className={styles.referencesHeading}>{data.heading}</p>

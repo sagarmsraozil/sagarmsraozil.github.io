@@ -8,7 +8,7 @@ interface SkillsSectionProps {
 
 export function SkillsSection({ data }: Readonly<SkillsSectionProps>) {
   return (
-    <section className={styles.skills} aria-label="Skills">
+    <section id="skills" className={styles.skills} aria-label="Skills">
       <div className={styles.skillsInner}>
         <SectionLabel text={data.label} as="h2" />
         <div className={styles.skillsList}>

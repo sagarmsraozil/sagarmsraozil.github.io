@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .cardHeaderMain {
@@ -29,15 +29,24 @@
   margin-bottom: 4px;
 }
 
-.cardProduct {
+.cardCompanyLink {
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--accent-gold);
+  }
+}
+
+.cardRole {
   font-family: var(--font-body);
   font-size: 16px;
+  font-weight: 700;
   color: var(--color-text-secondary);
   line-height: 1.4;
   margin-bottom: 2px;
 }
 
-.cardRole {
+.cardProduct {
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--color-text-muted);
@@ -72,7 +81,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .cardTag {
@@ -84,47 +93,37 @@
   color: var(--color-text-muted);
 }
 
-.cardBody {
-  p {
-    font-family: var(--font-body);
-    font-size: 17px;
-    color: var(--color-text-secondary);
-    line-height: 1.8;
-  }
-
-  p + p {
-    margin-top: 1em;
-  }
-}
-
-.cardFooter {
-  margin-top: 28px;
+.cardBullets {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+}
+
+.cardBullet {
+  position: relative;
+  padding-left: 22px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    width: 6px;
+    height: 1px;
+    background-color: var(--accent-gold-deep);
+  }
 }
 
 .cardStack {
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-}
-
-.cardLinks {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cardLink {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--color-text-muted);
-  transition: color 0.15s ease;
-
-  &:hover {
-    color: var(--color-text-primary);
-  }
 }
 
 @media (max-width: 640px) {

@@ -4,32 +4,34 @@
 
 ## Component Hierarchy
 
+The site is a CV-style single page whose section order mirrors amitj.me/cv.
+
 ```
 RootLayout (server)                    — layout.tsx
 └── HomePage (server)                  — page.tsx
     ├── Header (client)                — 'use client', scroll + menu + CV modal state
     │   └── CVModal (client)           — 'use client', modal with PDF iframe
-    ├── HeroSection (server)
-    ├── ProblemSection (server)
-    ├── WorkSection (server)
-    │   ├── SectionLabel
-    │   ├── CaseStudyCard[]
-    │   │   └── StackTag[]
-    │   └── AdditionalProjectCard[]
-    │       └── StackTag[]
+    ├── IntroSection (server)          — profile header block: name/title/photo/contact/visa/CTAs
+    ├── SummarySection (server)        — SectionLabel + narrative summary + spoken languages
+    ├── SkillsSection (server)
+    │   └── SectionLabel
     ├── ExperienceSection (server)
     │   ├── SectionLabel
-    │   └── ExperienceCard[]
+    │   └── ExperienceCard[]           — bulleted achievements
     │       └── StackTag[]
-    ├── AboutSection (server)
+    ├── ProjectsSection (server)
+    │   ├── SectionLabel
+    │   ├── ProjectCard[]              — detailed projects (Nexus, Aroma), bulleted
+    │   │   └── StackTag[]
+    │   └── AdditionalProjectCard[]    — "Earlier projects" (Hospital, Futsal)
+    │       └── StackTag[]
+    ├── AiEngineeringSection (server)
     │   └── SectionLabel
     ├── EducationSection (server)
     │   └── SectionLabel
-    ├── SkillsSection (server)
-    │   └── SectionLabel
     ├── ReferencesSection (server)
     │   └── SectionLabel
-    └── CTASection (server)
+    └── CTASection (server)            — email, Download-CV button, socials, copyright
         └── SectionLabel
 ```
 
@@ -44,23 +46,23 @@ All section components follow the same pattern:
 
 | Component | File | Data Prop | Section ID | Notes |
 |---|---|---|---|---|
-| HeroSection | `sections/HeroSection.tsx` | `HeroData` | — | Two-weight headline, dual CTAs, thin divider |
-| ProblemSection | `sections/ProblemSection.tsx` | `ProblemData` | — | Italic intro, body paragraphs |
-| WorkSection | `sections/WorkSection.tsx` | `WorkData` | `#work` | 3 case studies + 2 earlier projects |
-| ExperienceSection | `sections/ExperienceSection.tsx` | `ExperienceData` | `#experience` | Experience entries with ExperienceCard |
-| AboutSection | `sections/AboutSection.tsx` | `AboutData` | `#about` | Photo placeholder (initials "SM"), languages list |
-| EducationSection | `sections/EducationSection.tsx` | `EducationData` | — | 2 institutions, clickable links |
-| SkillsSection | `sections/SkillsSection.tsx` | `SkillsData` | — | 5 categories, inline text with dots |
-| ReferencesSection | `sections/ReferencesSection.tsx` | `ReferencesData` | — | 5 people with initials avatars, LinkedIn links |
-| CTASection | `sections/CTASection.tsx` | `CTAData` | `#contact` | Dark bg (#111111), email link, social links |
+| IntroSection | `sections/IntroSection.tsx` | `HeaderData` | — | Profile header: name, title + stack line, round photo, contact line (`·` separated), work-rights/visa, CTAs (See work / Download CV) |
+| SummarySection | `sections/SummarySection.tsx` | `SummaryData` | `#summary` | Serif heading + narrative summary + spoken languages block |
+| SkillsSection | `sections/SkillsSection.tsx` | `SkillsData` | `#skills` | 6 categories, inline text with dots |
+| ExperienceSection | `sections/ExperienceSection.tsx` | `ExperienceData` | `#experience` | Entries via ExperienceCard (bulleted) |
+| ProjectsSection | `sections/ProjectsSection.tsx` | `ProjectsData` | `#projects` | Detailed ProjectCard[] + "Earlier projects" AdditionalProjectCard[] |
+| AiEngineeringSection | `sections/AiEngineeringSection.tsx` | `AiEngineeringData` | `#ai-engineering` | Serif heading + short prose |
+| EducationSection | `sections/EducationSection.tsx` | `EducationData` | `#education` | 2 institutions, clickable links |
+| ReferencesSection | `sections/ReferencesSection.tsx` | `ReferencesData` | `#references` | 5 people with initials avatars, LinkedIn links |
+| CTASection | `sections/CTASection.tsx` | `CTAData` | `#contact` | Dark bg (#111111), email link, Download-CV button, social links, copyright |
 
 ## Sub-Components (within sections/)
 
 | Component | Props | Used By |
 |---|---|---|
-| CaseStudyCard | `study: CaseStudy` | WorkSection |
-| AdditionalProjectCard | `project: AdditionalProject` | WorkSection |
-| ExperienceCard | `entry: ExperienceEntry` | ExperienceSection |
+| ExperienceCard | `entry: ExperienceEntry` | ExperienceSection — bulleted `<ul>`, linked company name, optional stack |
+| ProjectCard | `project: ProjectEntry` | ProjectsSection — name/description, bulleted `<ul>`, stack, website/GitHub links |
+| AdditionalProjectCard | `project: EarlierProject` | ProjectsSection — compact card for earlier projects |
 
 ## UI Primitives (components/ui/)
 

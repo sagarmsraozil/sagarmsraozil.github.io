@@ -1,15 +1,41 @@
 :root {
-  --color-bg: #fafaf8;
-  --color-surface: #f2f1ee;
-  --color-text-primary: #111111;
-  --color-text-secondary: #555555;
-  --color-text-muted: #888888;
-  --color-rule: #dddddd;
-  --color-cta-bg: #111111;
-  --color-cta-text: #fafaf8;
+  color-scheme: dark;
+
+  /* mika night-raid palette — backgrounds (stacked navies for subtle banding) */
+  --bg-base: #0f1624;
+  --bg-deep: #0a0f19;
+  --bg-deepest: #0a0f18;
+  --surface-raised: #151e30;
+  --surface-tab: #394a65;
+
+  /* legacy token names mapped to mika values (components read these) */
+  --color-bg: var(--bg-base);
+  --color-surface: var(--surface-raised);
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #b3c0d5;
+  --color-text-muted: #7989a3;
+  --color-text-info: #d0e4ff;
+  --color-rule: #27334a;
+  --color-rule-strong: #506380;
+  --color-cta-bg: var(--bg-deepest);
+  --color-cta-text: #f1f1f1;
+
+  /* accents — used only where they carry meaning */
+  --accent-gold: #ffc857;
+  --accent-gold-hover: #ffd479;
+  --accent-gold-deep: #c7a740;
+  --accent-orange: #f46b29;
+  --link: #5cbbff;
+  --link-hover: #7cc8ff;
+
+  /* radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 28px;
 
   --font-body: var(--font-lato), -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-cinzel), 'Copperplate Gothic Bold', Georgia, serif;
   --font-mono: var(--font-jetbrains), 'Courier New', monospace;
 
   --section-padding: 96px;

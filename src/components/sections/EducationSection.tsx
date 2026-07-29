@@ -8,7 +8,7 @@ interface EducationSectionProps {
 
 export function EducationSection({ data }: Readonly<EducationSectionProps>) {
   return (
-    <section className={styles.education} aria-label="Education">
+    <section id="education" className={styles.education} aria-label="Education">
       <div className={styles.educationInner}>
         <SectionLabel text={data.label} as="h2" />
         <div className={styles.educationList}>

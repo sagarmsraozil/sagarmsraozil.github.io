@@ -1,10 +1,11 @@
 .stackTag {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   background-color: var(--color-surface);
+  border: 1px solid var(--color-rule);
   padding: 2px 8px;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   display: inline-block;
   line-height: 1.6;
 }
