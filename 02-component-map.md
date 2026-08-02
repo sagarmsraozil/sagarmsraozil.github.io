@@ -48,7 +48,7 @@ All section components follow the same pattern:
 |---|---|---|---|---|
 | IntroSection | `sections/IntroSection.tsx` | `HeaderData` | — | Profile header: name, title + stack line, round photo, contact line (`·` separated), work-rights/visa, CTAs (See work / Download CV) |
 | SummarySection | `sections/SummarySection.tsx` | `SummaryData` | `#summary` | Serif heading + narrative summary + spoken languages block |
-| SkillsSection | `sections/SkillsSection.tsx` | `SkillsData` | `#skills` | 6 categories, inline text with dots |
+| SkillsSection | `sections/SkillsSection.tsx` | `SkillsData` | `#skills` | 7 categories, inline text with dots |
 | ExperienceSection | `sections/ExperienceSection.tsx` | `ExperienceData` | `#experience` | Entries via ExperienceCard (bulleted) |
 | ProjectsSection | `sections/ProjectsSection.tsx` | `ProjectsData` | `#projects` | Detailed ProjectCard[] + "Earlier projects" AdditionalProjectCard[] |
 | AiEngineeringSection | `sections/AiEngineeringSection.tsx` | `AiEngineeringData` | `#ai-engineering` | Serif heading + short prose |

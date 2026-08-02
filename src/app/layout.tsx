@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_DESCRIPTION =
-  "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, PostgreSQL. Full working rights in Australia.";
+  "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, Django, PostgreSQL. Full working rights in Australia.";
 
 export const metadata: Metadata = {
   title: "Sagar Mishra — Full-Stack Engineer",
@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     "React developer Melbourne",
     "Next.js developer",
     "Node.js engineer",
+    "Django developer",
     "hire software engineer Melbourne",
     "Programiz Pro engineer",
   ],
@@ -91,6 +92,7 @@ const personSchema = {
     "Next.js",
     "Node.js",
     "TypeScript",
+    "Django",
     "PostgreSQL",
     "Full-stack Engineering",
     "Software Architecture",

@@ -96,9 +96,9 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 
 | Section | Key Data Points |
 |---|---|
-| Intro (header) | Name, "Full-Stack Engineer" + stack line, photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights/visa (subclass 485) |
+| Intro (header) | Name, "Full-Stack Engineer" + stack line (incl. Django), photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights ("Full working rights in Australia.") |
 | Summary | "I work out what to build before I build it." — 4 narrative paragraphs + 3 spoken languages (English, Nepali, Hindi) |
-| Skills | 6 categories: Languages, Frameworks & Libraries, Data, Architecture, Cloud & DevOps, Tools |
+| Skills | 7 categories: Languages, Frameworks & Libraries, Data, Architecture, Cloud & DevOps, Practices, Tools |
 | Experience | 2 entries: Jobs.ai (Intern/Team Lead, Feb–May 2026, Melbourne), ParewaLabs/Programiz (SWE, Oct 2021–Nov 2023, Kathmandu) — bulleted |
 | Projects | Detailed: Nexus, Aroma. Earlier: Hospital E-Ticketing, Futsal Finder |
 | AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 2 paragraphs |

@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Sagar Mishra — Full-Stack Engineer",
-    "description": "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, PostgreSQL. Full working rights in Australia.",
+    "description": "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, Django, PostgreSQL. Full working rights in Australia.",
     "phone": "0424 308 228",
     "location": "Melbourne, VIC",
-    "workRights": "Full working rights in Australia. Temporary Graduate visa (subclass 485).",
+    "workRights": "Full working rights in Australia.",
     "social": {
       "linkedin": "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
       "github": "https://github.com/sagarmsraozil",
@@ -26,10 +26,10 @@
   "header": {
     "name": "Sagar Mishra",
     "title": "Full-Stack Engineer",
-    "titleStack": "React · Next.js · Node.js · TypeScript · PostgreSQL",
+    "titleStack": "React · Next.js · Node.js · TypeScript · Django · PostgreSQL",
     "photoSrc": "/sagar.jpeg",
     "photoAlt": "Sagar Mishra",
-    "workRights": "Full working rights in Australia. Temporary Graduate visa (subclass 485).",
+    "workRights": "Full working rights in Australia.",
     "contact": {
       "location": "Melbourne, VIC",
       "phone": "0424 308 228",
@@ -63,23 +63,27 @@
     "categories": [
       {
         "name": "Languages",
-        "items": ["TypeScript", "JavaScript", "Python", "Java", "C#", "Kotlin"]
+        "items": ["TypeScript", "JavaScript", "Python", "Java", "C#", "Kotlin", "SQL", "HTML", "CSS"]
       },
       {
         "name": "Frameworks & Libraries",
-        "items": ["React", "Next.js", "Node.js", "Express", "React Query", "Zustand", "Drizzle", "Mongoose", "Sequelize"]
+        "items": ["React", "Next.js", "Node.js", "Express", "Django", "React Query", "Zustand", "Drizzle", "Mongoose", "Sequelize"]
       },
       {
         "name": "Data",
-        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Relational schema design", "Data modelling"]
       },
       {
         "name": "Architecture",
-        "items": ["REST APIs", "Multi-tenancy", "State machines", "Microservices", "Monoliths", "Sharding"]
+        "items": ["REST APIs", "Multi-tenancy", "State machines", "Microservices", "Monoliths", "Sharding", "Server-side rendering", "Static generation", "Role-based access control", "Caching"]
       },
       {
         "name": "Cloud & DevOps",
         "items": ["AWS (EC2, RDS, S3, Lambda)", "Docker", "Containerisation"]
+      },
+      {
+        "name": "Practices",
+        "items": ["Agile delivery (Scrum)", "Sprint planning", "Code review", "Requirements gathering", "Product analytics & instrumentation"]
       },
       {
         "name": "Tools",
@@ -120,7 +124,7 @@
         "location": "Kathmandu, Nepal",
         "tags": ["EdTech", "Product Engineering", "Team Leadership"],
         "bullets": [
-          "Led Programiz Reports with a team of six — owned the scope, ran the planning, and carried it from proposal to release.",
+          "Led Programiz Reports with a team of six on a Scrum cycle — gathered the requirements, owned the scope, ran sprint planning, and carried it from proposal to release.",
           "Built the course flow and learner dashboard on programiz.pro, the surface all 100,000+ paid learners move through to finish a course.",
           "Built the certificate engine that issues a verified completion certificate to every learner who finishes a course.",
           "Worked on the in-browser Python and JavaScript compilers on programiz.com, where visitors run code without installing anything.",
@@ -275,6 +279,6 @@
       { "label": "GitHub", "href": "https://github.com/sagarmsraozil" },
       { "label": "X", "href": "https://x.com/SagarMi31569172" }
     ],
-    "copyright": "© 2026 Sagar Mishra. Built with Next.js."
+    "copyright": "© 2026 Sagar Mishra."
   }
 }

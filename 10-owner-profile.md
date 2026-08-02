@@ -107,15 +107,17 @@ University group project — online doctor appointment booking for Nepal.
 
 ## Technical Skills
 
-**Languages:** JavaScript, TypeScript, Python, Java, C#, Kotlin
-**Frameworks:** React.js, Next.js, Node.js, Express.js, React Query, Drizzle, Mongoose, Sequelize, Axios
-**Databases:** PostgreSQL, MySQL, SQL Server, MongoDB, Redis
-**Tools:** Git, Jira, Trello, Asana, Directus, Mixpanel, Microsoft Clarity, Locust
-**Architecture:** Microservices, Monolithic, Horizontal sharding, Vertical sharding
+**Languages:** TypeScript, JavaScript, Python, Java, C#, Kotlin, SQL, HTML, CSS
+**Frameworks & Libraries:** React, Next.js, Node.js, Express, Django, React Query, Zustand, Drizzle, Mongoose, Sequelize
+**Data:** PostgreSQL, MySQL, MongoDB, Redis, relational schema design, data modelling
+**Architecture:** REST APIs, multi-tenancy, state machines, microservices, monoliths, sharding, server-side rendering, static generation, role-based access control, caching
+**Cloud & DevOps:** AWS (EC2, RDS, S3, Lambda), Docker, containerisation
+**Practices:** Agile delivery (Scrum), sprint planning, code review, requirements gathering, product analytics & instrumentation
+**Tools:** Git, Jira, Asana, Directus, Mixpanel, Microsoft Clarity
 
 ## Soft Skills
 
-- **Leadership:** Led cross-functional team of 6 at Programiz; led 4-person team at ApplyKart
+- **Leadership:** Led cross-functional team of 6 at Programiz; led 4-person team at Jobs.ai
 - **Whiteboard sessions:** Facilitated brainstorming for complex problems
 - **Strategic thinking:** Board-level product direction discussions at ParewaLabs
 - **Communication:** Understands professional vs day-to-day communication nuance
