@@ -1,5 +1,6 @@
 import type { ExperienceEntry } from '@/types/portfolio'
 import { StackTag } from '@/components/ui/StackTag'
+import { CaseFile } from '@/components/game/CaseFile'
 import styles from './ExperienceCard.module.scss'
 
 interface ExperienceCardProps {
@@ -43,6 +44,8 @@ export function ExperienceCard({ entry }: Readonly<ExperienceCardProps>) {
           </span>
         ))}
       </div>
+
+      {entry.case && <CaseFile caseId={entry.id} data={entry.case} />}
 
       <ul className={styles.cardBullets}>
         {entry.bullets.map((bullet) => (

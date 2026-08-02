@@ -20,6 +20,18 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 > **Format note (2026 rebuild):** the site was restructured into a CV-style single page whose information architecture mirrors amitj.me/cv (sticky section nav → header block → factual, reverse-chronological sections). The tone is **hybrid**: narrative voice is preserved in the Summary; Experience, Projects, and Skills are factual and bulleted. The elegant monochrome/serif design is unchanged.
 
+> **The Diagnosis Layer (2026 gamification pass):** the site's core claim — *"A working product is not the same as a solved problem. The build was never the problem. The diagnosis was."* — used to be only asserted in prose. Four entries (Jobs.ai, Programiz, Nexus, Aroma) now let a visitor experience it instead: read a symptom, commit to what they think the real problem was, then see Sagar's actual diagnosis. See "The Diagnosis Mechanic" below and [02-component-map.md](./02-component-map.md) for the `components/game/` implementation.
+
+## The Diagnosis Mechanic
+
+**Nobody loses.** Each case offers exactly 3 options; all 3 return a substantive, specific response — never "Incorrect." One option is marked `correct` for styling only. A "wrong" pick reads like *"That's where most people start — and it's why the first fix is usually a rule nobody follows…"*, not a buzzer. The visitor is never tested; they're shown how Sagar thinks. **Get this tone wrong and the mechanic reads as condescending — write every response as if the visitor made a reasonable guess, because they did.**
+
+**Layered, nothing hidden.** The symptom, the prompt, and the diagnosis are always present in the static HTML (a native `<details>`/`<summary>` fallback, readable and crawlable with zero JavaScript). The three-option picker is additive: it replaces the plain "click to reveal" affordance only after the page hydrates. A recruiter skimming in 60 seconds loses nothing by ignoring it; a curious visitor gets 5–10 minutes of genuine engagement.
+
+**Four cases only** (Jobs.ai, Programiz, Nexus, Aroma) — enough to establish the pattern without becoming a chore. Not every Experience/Project entry needs one; `case` is optional data.
+
+**The win state is a conversation, not a score.** Once all four cases are attempted (not necessarily "solved" — there's no such thing here), the CTA section reveals a short outreach-draft composer referencing the specific cases the visitor engaged with. The plain email address and CV download stay visible and unconditional throughout — contact is never gated behind the game.
+
 ## Section-by-Section Mechanics
 
 ### Section 01 — Intro / Profile Header (Identity + Scannability)

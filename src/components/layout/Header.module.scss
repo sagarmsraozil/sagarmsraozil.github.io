@@ -25,6 +25,13 @@
   justify-content: space-between;
 }
 
+.headerBrandGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 .headerBrand {
   font-family: var(--font-body);
   font-weight: 700;

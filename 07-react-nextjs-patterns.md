@@ -4,15 +4,17 @@
 
 ## This Project's React Model
 
-This is a **static portfolio site**. Almost everything is a Server Component that renders once at build time. The only client-side React runs in Header (scroll/menu state) and CVModal (modal behavior).
+This is a **static portfolio site**. Almost everything is a Server Component that renders once at build time. Client-side React is limited to Header/CVModal (existing) and the opt-in "Diagnosis Layer" game components (`components/game/`) added in 2026.
 
 ```
-Server Components (default): HeroSection, ProblemSection, WorkSection, ExperienceSection,
-                              AboutSection, EducationSection, SkillsSection, ReferencesSection,
-                              CTASection, SectionLabel, StackTag, CaseStudyCard,
-                              AdditionalProjectCard, ExperienceCard
-Client Components ('use client'): Header, CVModal
+Server Components (default): IntroSection, SummarySection, SkillsSection, ExperienceSection,
+                              ProjectsSection, AiEngineeringSection, EducationSection,
+                              ReferencesSection, CTASection, SectionLabel, StackTag,
+                              ExperienceCard, ProjectCard, AdditionalProjectCard
+Client Components ('use client'): Header, CVModal, CaseFile, CaseProgress, BriefComposer
 ```
+
+`'use client'` components still render to static HTML at build time (this is a Next.js static export, not a browser-only app) — they just also ship JS to hydrate. This matters for the game components: their build-time HTML output is real, crawlable content, not empty divs waiting for JS.
 
 ## React Core Mental Model
 
@@ -153,6 +155,46 @@ export function InteractivePart({ items }) {
 2. Add metadata export
 3. Use `Link` from `next/link` for navigation
 4. Ensure `generateStaticParams` if dynamic
+
+## localStorage State via `useSyncExternalStore` (no Zustand)
+
+CLAUDE.md's rule of thumb is "Zustand for client state," but Zustand isn't a project dependency, and the one piece of client state this site has — case-diagnosis answers, persisted to `localStorage` — is small enough (~80 lines total) that `useSyncExternalStore` (a React 19 built-in) covers it without adding a package. The *spirit* of the rule (atomic selectors, no whole-store subscriptions) is kept:
+
+```ts
+// src/lib/caseStore.ts — module-level singleton store, not a hook
+let snapshot: CaseAnswers = readFromStorage()      // eager read on the client only
+export function subscribe(listener) { /* Set<listener>, plus a `storage` event bridge */ }
+export function getSnapshot() { return snapshot }           // client value
+export function getServerSnapshot() { return EMPTY }        // SSR / pre-hydration value
+export function recordAnswer(id, optionId, correct) { /* replace snapshot, persist, notify */ }
+```
+
+```ts
+// src/hooks/useCaseProgress.ts — atomic selectors over the store
+export function useCaseAnswer(caseId: string) {
+  const getSelected = useCallback(() => getSnapshot()[caseId], [caseId])
+  const getSelectedServer = useCallback(() => getServerSnapshot()[caseId], [caseId])
+  return useSyncExternalStore(subscribe, getSelected, getSelectedServer)
+}
+```
+
+Each hook slices the snapshot down to exactly what one component needs (`useCaseAnswer(id)`, `useSolvedCount(total)`), so answering one case only re-renders that case's `CaseFile` — not every case on the page. If client state ever grows past a handful of small stores, that's the signal to bring in Zustand for real; don't reach for it preemptively.
+
+**If you need this pattern again:** reuse `caseStore.ts`'s shape (module-scope snapshot + `Set<listener>` + a `storage` event bridge for cross-tab sync) rather than inventing a new one — it's the whole pattern in ~50 lines, and it's already wrapped in the try/catch needed for Safari private-mode `localStorage` throwing on write.
+
+## Progressive Enhancement: Detecting Hydration Without `useEffect`
+
+When a component must render different markup before vs. after hydration (e.g. a no-JS `<details>` fallback that upgrades to an interactive picker), don't use `useEffect(() => setMounted(true), [])` — that's an extra render pass and violates "hooks over Effects." Use `useSyncExternalStore` with a no-op subscribe:
+
+```ts
+// src/hooks/useHydrated.ts
+function subscribe() { return () => {} }
+export function useHydrated(): boolean {
+  return useSyncExternalStore(subscribe, () => true, () => false)
+}
+```
+
+Server and the first client (hydration) render both resolve to `false` — output matches, no hydration-mismatch warning. Immediately after mount, React detects `getSnapshot()` (`true`) differs from what was rendered and forces a resync render, flipping the value to `true` — no manual state, no Effect. Used by `CaseFile` to swap its `<details>` fallback for the interactive option-picker only once the client has taken over.
 
 ## Anti-Patterns to Avoid
 

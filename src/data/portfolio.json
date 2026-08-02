@@ -49,7 +49,7 @@
     "body": [
       "Full-stack engineer with two years shipping production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow and learner dashboard every paid learner works through, and the engine that issues their completion certificates. Most recently I led four engineers at Jobs.ai, where I owned authentication and the employer workspace and built the marketplace search both sides query.",
       "On my own time I've designed and shipped two systems from data model to production: a warehouse platform with lot-level inventory and state-machine fulfilment, and a multi-tenant storefront that runs on top of it. I work in React, Next.js, Node.js, TypeScript and PostgreSQL.",
-      "How I approach a project: I don't move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising, and I write code once I understand what it's supposed to do. I'm not the engineer who ships in week one and apologises in week four — I'm the one who's slower at the beginning and less painful at the end.",
+      "How I approach a project: I don't move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising, and I write code once I understand what it's supposed to do. I'm not the engineer who ships in week one and apologises in week four — I'm the one who's slower at the beginning and less painful at the end. A few of the entries below are set up as cases — the symptom first, my actual diagnosis one click away.",
       "Originally from Nepal, now in Melbourne wrapping up a Master's in Software Engineering. Outside work I read, travel when I can, and watch more anime than is probably respectable."
     ],
     "languages": [
@@ -112,7 +112,32 @@
           "Chose cursor-based pagination over offset for the job and task feeds — read cost stays flat as the dataset grows rather than degrading with page depth, and the feed stays scoped to active dates.",
           "Designed the allocation logic that spreads available workers across open jobs and tasks by demand, so no job sits unstaffed while another is oversubscribed."
         ],
-        "stack": ["React", "Next.js", "Node.js", "PostgreSQL"]
+        "stack": ["React", "Next.js", "Node.js", "PostgreSQL"],
+        "case": {
+          "symptom": "Employers post jobs continuously, seekers scroll for open ones, and the table only grows. A page-number feed looked like the obvious way to build it.",
+          "prompt": "What's the real risk in a standard offset-paginated feed here?",
+          "options": [
+            {
+              "id": "database",
+              "label": "It's slow — throw a faster database at it",
+              "correct": false,
+              "response": "The database was never the bottleneck. A bigger box buys time, not correctness — the feed would still drift under it, just more expensively."
+            },
+            {
+              "id": "correctness",
+              "label": "New jobs shift everyone's page numbers while they're mid-scroll",
+              "correct": true,
+              "response": "That's the one. Offset counts rows from zero on every request — insert a job while someone's on page 3 and their page 4 shifts under them, so listings repeat or vanish. Cursor-based pagination anchors to a stable position instead of a row count, so the feed stays correct while it's being read, and the read cost doesn't climb as the table grows."
+            },
+            {
+              "id": "filters",
+              "label": "It needed better filters so people find jobs faster",
+              "correct": false,
+              "response": "Filters help people find things. This wasn't a findability problem — it was a correctness problem. Get the underlying feed wrong and better filters just help people miss things faster."
+            }
+          ],
+          "diagnosis": "The real problem wasn't page speed — it was correctness under a live, growing table. I built the job and task feeds on cursor-based pagination so read cost stays flat as the dataset grows and nobody's feed shifts under them mid-scroll."
+        }
       },
       {
         "id": "programiz",
@@ -131,7 +156,32 @@
           "Integrated sensAI, the in-product tutor, so learners get help at the point in an exercise where they're stuck rather than after they give up.",
           "Instrumented landing pages with Mixpanel and Microsoft Clarity, then rewrote the pages against what the behaviour data showed."
         ],
-        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel"]
+        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel"],
+        "case": {
+          "symptom": "Learners were getting stuck mid-exercise and quietly closing the tab. The obvious fix: bolt on an AI assistant.",
+          "prompt": "What actually needed to change?",
+          "options": [
+            {
+              "id": "visibility",
+              "label": "Learners didn't know an assistant existed — promote it harder",
+              "correct": false,
+              "response": "Visibility wasn't the gap. Someone staring at a failing test isn't browsing the nav bar for tools — they're deciding whether to keep going."
+            },
+            {
+              "id": "docs",
+              "label": "They needed better documentation to read first",
+              "correct": false,
+              "response": "Docs assume someone's willing to go looking. By the time they're searching, some of them have already decided it's not worth it."
+            },
+            {
+              "id": "timing",
+              "label": "Help had to land inside the window between getting stuck and giving up",
+              "correct": true,
+              "response": "That's it. It was never about whether help existed — it was about when it showed up. sensAI sits inside the exercise itself, so a learner gets pulled back in at the moment they're stuck, not after they've already closed the tab."
+            }
+          ],
+          "diagnosis": "The problem wasn't 'add an AI tutor' — it was catching people in the narrow window between getting stuck and giving up. I integrated sensAI directly into the exercise flow so help arrives at that moment, not after."
+        }
       }
     ]
   },
@@ -153,7 +203,32 @@
         ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
         "websiteUrl": null,
-        "githubLinks": []
+        "githubLinks": [],
+        "case": {
+          "symptom": "Stock was disappearing. Orders shipped without anyone knowing which lot the item came from, and returns left no data trail.",
+          "prompt": "What was actually going wrong?",
+          "options": [
+            {
+              "id": "carelessness",
+              "label": "The team was careless with stock counts",
+              "correct": false,
+              "response": "That's where most people start — and it's why the first fix is usually a new rule nobody follows. The stock wasn't walking off. Nothing recorded where it went in the first place."
+            },
+            {
+              "id": "spreadsheet",
+              "label": "They just needed a better spreadsheet",
+              "correct": false,
+              "response": "A faster version of the wrong model. The spreadsheet wasn't slow — it was structurally unable to express a lot, a location, or a state."
+            },
+            {
+              "id": "model",
+              "label": "Nothing modelled the real shape of the operation",
+              "correct": true,
+              "response": "That's it. The problem wasn't carelessness — there just wasn't a system built for the actual complexity of the business: hierarchical inventory, lot tracking, a return path back to the correct state."
+            }
+          ],
+          "diagnosis": "The problem wasn't carelessness — there was no system that matched the real complexity of the operation. So before writing fulfilment logic, I modelled the warehouse as a labelled tree and product drops as a state machine, so every item resolves to a location and a lot, every time."
+        }
       },
       {
         "id": "aroma",
@@ -170,7 +245,32 @@
         ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "React Query", "Zustand"],
         "websiteUrl": null,
-        "githubLinks": []
+        "githubLinks": [],
+        "case": {
+          "symptom": "These sellers move real volume, but they run entirely through social media DMs — no shared storefront, no shared trust.",
+          "prompt": "What's the right way to give each seller their own shop without giving each one their own infrastructure?",
+          "options": [
+            {
+              "id": "separate-apps",
+              "label": "Spin up a separate app and database per seller",
+              "correct": false,
+              "response": "That scales sellers, not the business — every seller becomes its own deploy and its own migration to keep alive. Fine for three sellers, not for the model."
+            },
+            {
+              "id": "filter",
+              "label": "One shared app, filter every query by seller ID",
+              "correct": false,
+              "response": "Works until someone forgets a filter clause. A tenancy boundary enforced by developer discipline breaks the first time a developer doesn't remember it."
+            },
+            {
+              "id": "boundary",
+              "label": "Draw the line in the data model — shared infrastructure, isolated tenant data",
+              "correct": true,
+              "response": "That's the shape. One backend, one catalogue engine — but the boundary between what's shared and what belongs to a seller is structural, not a WHERE clause someone has to remember."
+            }
+          ],
+          "diagnosis": "The question wasn't 'how do we give each seller a shop' — it was where to draw the line between shared and owned. Aroma runs each seller as an isolated storefront on shared backend infrastructure, so the boundary is architectural, not a filter someone could forget."
+        }
       }
     ],
     "earlierLabel": "Earlier projects",

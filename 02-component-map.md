@@ -18,10 +18,12 @@ RootLayout (server)                    — layout.tsx
     ├── ExperienceSection (server)
     │   ├── SectionLabel
     │   └── ExperienceCard[]           — bulleted achievements
+    │       ├── CaseFile (client)      — optional, only when entry.case is set
     │       └── StackTag[]
     ├── ProjectsSection (server)
     │   ├── SectionLabel
     │   ├── ProjectCard[]              — detailed projects (Nexus, Aroma), bulleted
+    │   │   ├── CaseFile (client)      — optional, only when project.case is set
     │   │   └── StackTag[]
     │   └── AdditionalProjectCard[]    — "Earlier projects" (Hospital, Futsal)
     │       └── StackTag[]
@@ -32,8 +34,25 @@ RootLayout (server)                    — layout.tsx
     ├── ReferencesSection (server)
     │   └── SectionLabel
     └── CTASection (server)            — email, Download-CV button, socials, copyright
-        └── SectionLabel
+        ├── SectionLabel
+        └── BriefComposer (client)     — renders null until all 4 cases are attempted
 ```
+
+### The Diagnosis Layer (`components/game/`)
+
+An opt-in interactive layer on top of Experience and Projects — see [05-content-strategy.md](./05-content-strategy.md) for the mechanic and [07-react-nextjs-patterns.md](./07-react-nextjs-patterns.md) for the `useSyncExternalStore` state pattern.
+
+| Component | Role | Mounted by |
+|---|---|---|
+| CaseFile | The core mechanic: `<details>` fallback pre-hydration, three-option picker post-hydration | ExperienceCard, ProjectCard (only when `entry.case`/`project.case` is present) |
+| CaseProgress | "Cases N/4" chip; returns `null` until the first case is attempted | Header |
+| BriefComposer | Post-completion outreach draft (reason picker + pre-filled `mailto:`); returns `null` until all 4 cases are attempted | CTASection |
+
+Supporting, non-component modules:
+- `src/lib/caseStore.ts` — localStorage-backed external store (answers keyed by case id)
+- `src/lib/cases.ts` — `CASE_REGISTRY` (the 4 case ids + labels) and `TOTAL_CASES`
+- `src/hooks/useHydrated.ts` — hydration-safe "is client" signal
+- `src/hooks/useCaseProgress.ts` — atomic selectors (`useCaseAnswer`, `useAllAnswers`, `useSolvedCount`) over the store
 
 ## Section Components
 
@@ -60,8 +79,8 @@ All section components follow the same pattern:
 
 | Component | Props | Used By |
 |---|---|---|
-| ExperienceCard | `entry: ExperienceEntry` | ExperienceSection — bulleted `<ul>`, linked company name, optional stack |
-| ProjectCard | `project: ProjectEntry` | ProjectsSection — name/description, bulleted `<ul>`, stack, website/GitHub links |
+| ExperienceCard | `entry: ExperienceEntry` | ExperienceSection — bulleted `<ul>`, linked company name, optional stack, optional CaseFile |
+| ProjectCard | `project: ProjectEntry` | ProjectsSection — name/description, bulleted `<ul>`, stack, website/GitHub links, optional CaseFile |
 | AdditionalProjectCard | `project: EarlierProject` | ProjectsSection — compact card for earlier projects |
 
 ## UI Primitives (components/ui/)
@@ -72,12 +91,15 @@ All section components follow the same pattern:
 | StackTag | `label: string` | Monospace pill badge — grey bg, 12px JetBrains Mono |
 | CVModal | `isOpen: boolean`, `onClose: () => void`, `pdfHref: string` | Modal with PDF iframe, blur overlay, Escape to close |
 
-## Client Components (only 2)
+## Client Components
 
 | Component | Why Client | State Used |
 |---|---|---|
 | Header | Scroll listener, hamburger toggle, CV modal trigger | `scrolled`, `menuOpen`, `cvOpen` |
 | CVModal | Modal behavior, keyboard handling, focus management | Uses `useEffect` + `useRef` |
+| CaseFile | Reads/writes case answers, detects hydration to swap fallback → picker | `useHydrated`, `useCaseAnswer` (both `useSyncExternalStore`) |
+| CaseProgress | Reads solved-case count | `useSolvedCount` (`useSyncExternalStore`) |
+| BriefComposer | Reads all answers, local reason/copy UI state | `useAllAnswers`, `useSolvedCount` + local `useState` |
 
 ## Data Flow
 
@@ -108,3 +130,6 @@ Static HTML output in /out
 - `role="list"` on reference items
 - Keyboard: Escape closes CVModal
 - Focus management: CVModal receives focus on open via `ref.focus()`
+- Global `:focus-visible` outline (gold) in `globals.scss` — applies site-wide, not just to new components
+- Global `@media (prefers-reduced-motion: reduce)` collapses all transitions/animations to near-zero
+- CaseFile: options are real `<button>`s in a `role="group"`; the response renders into an `aria-live="polite"` region; no-JS fallback is a native `<details>`/`<summary>` (keyboard- and screen-reader-operable with zero extra markup)

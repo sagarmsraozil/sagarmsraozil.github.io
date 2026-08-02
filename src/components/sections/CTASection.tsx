@@ -1,5 +1,6 @@
 import type { CTAData } from '@/types/portfolio'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { BriefComposer } from '@/components/game/BriefComposer'
 import styles from './CTASection.module.scss'
 
 interface CTASectionProps {
@@ -47,6 +48,8 @@ export function CTASection({ data }: Readonly<CTASectionProps>) {
             </nav>
           </div>
         </address>
+
+        <BriefComposer email={data.email} />
 
         <p className={styles.ctaCopyright}>{data.copyright}</p>
       </div>

@@ -57,6 +57,20 @@ export interface GithubLink {
   href: string
 }
 
+export interface CaseOption {
+  id: string
+  label: string
+  correct: boolean
+  response: string
+}
+
+export interface CaseData {
+  symptom: string
+  prompt: string
+  options: CaseOption[]
+  diagnosis: string
+}
+
 export interface ExperienceEntry {
   id: string
   company: string
@@ -68,6 +82,7 @@ export interface ExperienceEntry {
   tags: string[]
   bullets: string[]
   stack?: string[]
+  case?: CaseData
 }
 
 export interface ExperienceData {
@@ -86,6 +101,7 @@ export interface ProjectEntry {
   stack: string[]
   websiteUrl: string | null
   githubLinks: GithubLink[]
+  case?: CaseData
 }
 
 export interface EarlierProject {
