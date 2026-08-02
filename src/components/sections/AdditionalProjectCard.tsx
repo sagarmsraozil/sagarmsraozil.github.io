@@ -1,5 +1,6 @@
 import type { EarlierProject } from '@/types/portfolio'
 import { StackTag } from '@/components/ui/StackTag'
+import { ResourceLinks } from '@/components/ui/ResourceLinks'
 import styles from './AdditionalProjectCard.module.scss'
 
 interface AdditionalProjectCardProps {
@@ -31,20 +32,8 @@ export function AdditionalProjectCard({ project }: Readonly<AdditionalProjectCar
           ))}
         </div>
 
-        {project.githubLinks.length > 0 && (
-          <div className={styles.projectCardLinks}>
-            {project.githubLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={styles.projectCardLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        {project.links && project.links.length > 0 && (
+          <ResourceLinks links={project.links} />
         )}
       </footer>
     </article>

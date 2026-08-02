@@ -98,20 +98,22 @@
   gap: 6px;
 }
 
-.cardLinks {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+.cardCodeNote {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
-.cardLink {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--color-text-muted);
+.cardCodeNoteLink {
+  font-style: normal;
+  color: var(--accent-gold);
+  white-space: nowrap;
   transition: color 0.15s ease;
 
   &:hover {
-    color: var(--link);
+    color: var(--accent-gold-hover);
   }
 }
 

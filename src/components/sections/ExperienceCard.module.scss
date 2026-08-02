@@ -29,14 +29,6 @@
   margin-bottom: 4px;
 }
 
-.cardCompanyLink {
-  transition: color 0.15s ease;
-
-  &:hover {
-    color: var(--accent-gold);
-  }
-}
-
 .cardRole {
   font-family: var(--font-body);
   font-size: 16px;
@@ -119,8 +111,14 @@
   }
 }
 
-.cardStack {
+.cardFooter {
   margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardStack {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;

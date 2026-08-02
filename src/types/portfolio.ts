@@ -52,9 +52,17 @@ export interface SummaryData {
   languages: Language[]
 }
 
-export interface GithubLink {
+export interface ResourceLinkData {
   label: string
   href: string
+  note?: string
+  kind?: 'site' | 'repo'
+}
+
+export interface CodeNote {
+  text: string
+  linkLabel?: string
+  linkHref?: string
 }
 
 export interface CaseOption {
@@ -74,7 +82,6 @@ export interface CaseData {
 export interface ExperienceEntry {
   id: string
   company: string
-  companyUrl: string | null
   product: string
   role: string
   period: string
@@ -82,6 +89,7 @@ export interface ExperienceEntry {
   tags: string[]
   bullets: string[]
   stack?: string[]
+  links?: ResourceLinkData[]
   case?: CaseData
 }
 
@@ -99,8 +107,8 @@ export interface ProjectEntry {
   tags: string[]
   bullets: string[]
   stack: string[]
-  websiteUrl: string | null
-  githubLinks: GithubLink[]
+  links?: ResourceLinkData[]
+  codeNote?: CodeNote
   case?: CaseData
 }
 
@@ -111,7 +119,7 @@ export interface EarlierProject {
   tags: string[]
   summary: string
   stack: string[]
-  githubLinks: GithubLink[]
+  links?: ResourceLinkData[]
 }
 
 export interface ProjectsData {

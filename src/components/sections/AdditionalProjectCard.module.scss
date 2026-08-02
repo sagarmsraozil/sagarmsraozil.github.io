@@ -58,30 +58,13 @@
 .projectCardFooter {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
 }
 
 .projectCardStack {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-}
-
-.projectCardLinks {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.projectCardLink {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--color-text-muted);
-  transition: color 0.15s ease;
-
-  &:hover {
-    color: var(--link);
-  }
 }
 
 @media (max-width: 640px) {

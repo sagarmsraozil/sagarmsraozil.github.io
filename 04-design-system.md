@@ -1,115 +1,118 @@
 # Design System
 
-> Typography, colors, spacing, responsive rules, and styling conventions. Consult when changing visual design, adding components, or adjusting responsive behavior.
+> Typography, colors, spacing, iconography, responsive rules, and styling conventions. Consult when changing visual design, adding components, or adjusting responsive behavior.
+>
+> **Updated 2026** for the mika re-skin. This file previously documented a warm-white/Playfair light theme that no longer exists — if you find guidance elsewhere in the repo referring to `#fafaf8`, Playfair Display, or "monochrome only", it is stale and this file wins.
 
 ## Design Philosophy
 
-- **Monochromatic restraint** — no color accents. Confidence in simplicity.
-- **Typography-first** — serif headlines (Playfair), readable body (Lato), monospace for data (JetBrains Mono).
-- **Whitespace** — generous margins and breathing room between sections.
-- **Hierarchy via typography and layout**, not color.
-- **No decorative elements** — no scroll animations, particle effects, skill bars, or project screenshots.
+- **Dark, cinematic ground.** Deep navies stacked for subtle banding; warm gold reads as lamplight against cool blue-grey text.
+- **Accents carry meaning, never decoration.** Gold = primary action / "this is mine". Blue = informational link. Nothing is coloured just to look colourful.
+- **Typography-first** — engraved display face (Cinzel) for headings, readable body (Lato), monospace (JetBrains Mono) for data.
+- **Whitespace** — generous vertical rhythm between sections.
+- **Restrained motion** — 150ms micro, 240ms reveal. No confetti, no bounce, no scroll animation.
 
 ## Color Palette (CSS Custom Properties in `globals.scss`)
 
+### Backgrounds
 | Variable | Value | Usage |
 |---|---|---|
-| `--color-bg` | `#fafaf8` | Warm white page background |
-| `--color-surface` | `#f2f1ee` | Card/surface background, tag pills |
-| `--color-text-primary` | `#111111` | Headings, primary text |
-| `--color-text-secondary` | `#555555` | Body text, subheadings |
-| `--color-text-muted` | `#888888` | Labels, tags, tertiary info |
-| `--color-rule` | `#dddddd` | Thin dividers, borders |
-| `--color-cta-bg` | `#111111` | CTA section dark background |
-| `--color-cta-text` | `#fafaf8` | Light text on CTA background |
+| `--bg-base` / `--color-bg` | `#0f1624` | Page background |
+| `--bg-deep` | `#0a0f19` | Recessed surfaces — link chips, case options |
+| `--bg-deepest` / `--color-cta-bg` | `#0a0f18` | Contact section, text on gold buttons |
+| `--surface-raised` / `--color-surface` | `#151e30` | Raised panels — case files, stack tags |
+| `--surface-tab` | `#394a65` | Reserved (tab-active from the source system) |
+
+### Text
+| Variable | Value | Usage |
+|---|---|---|
+| `--color-text-primary` | `#f1f1f1` | Headings, emphasis |
+| `--color-text-secondary` | `#b3c0d5` | Body copy, bullets |
+| `--color-text-muted` | `#7989a3` | Labels, meta, notes. **5.14:1 on `--bg-base`** — passes AA, but it is the weakest token: never use it alone to signal interactivity |
+| `--color-text-info` | `#d0e4ff` | Reserved |
+
+### Rules & accents
+| Variable | Value | Usage |
+|---|---|---|
+| `--color-rule` | `#27334a` | Hairline dividers, default borders |
+| `--color-rule-strong` | `#506380` | Emphasised/selected borders |
+| `--accent-gold` | `#ffc857` | Primary CTA fill, focus ring, "the product I built" |
+| `--accent-gold-hover` | `#ffd479` | Gold hover |
+| `--accent-gold-deep` | `#c7a740` | Bullet markers, avatar rings, chip hover borders |
+| `--accent-orange` | `#f46b29` | Reserved (logo accent in the source system) |
+| `--link` / `--link-hover` | `#5cbbff` / `#7cc8ff` | Informational/utility link hovers |
 
 ## Typography
 
-### Font Families (loaded via `next/font` in `layout.tsx`)
-
 | Variable | Font | Weights | Usage |
 |---|---|---|---|
-| `--font-lato` → `--font-body` | Lato | 300, 400, 700 | Body text, navigation |
-| `--font-playfair` → `--font-display` | Playfair Display | 400, 700 | Hero headline, section headings, case study titles |
-| `--font-jetbrains` → `--font-mono` | JetBrains Mono | 400 | Stack tags, skill items, monospace elements |
+| `--font-lato` → `--font-body` | Lato | 300, 400, 700 | Body, nav, chips, buttons |
+| `--font-cinzel` → `--font-display` | Cinzel | 400, 700 | Headings, gold button labels (engraved substitute for Copperplate Gothic) |
+| `--font-jetbrains` → `--font-mono` | JetBrains Mono | 400 | Stack tags, dates, progress chip |
 
-### Type Scale (fluid, using `clamp()`)
-
+### Type Scale
 | Element | Size | Font |
 |---|---|---|
-| Hero headline | `clamp(36px, 5.5vw, 60px)` | Playfair Display |
-| Section headings | `clamp(24px, 3.5vw, 38px)` | Playfair Display |
-| Case study titles | `clamp(20px, 2.8vw, 28px)` | Playfair Display |
-| Body text | 17px fixed | Lato |
-| Section labels | 11-12px, small caps, letter-spacing +100 | Lato |
-| Stack/skill tags | 12px | JetBrains Mono |
-| Navigation | 14-15px | Lato |
+| Name (intro) | `clamp(40px, 6vw, 64px)` | Cinzel |
+| Section headings | `clamp(24px, 3.5vw, 38px)` | Cinzel |
+| Card titles | `clamp(20px, 2.8vw, 28px)` | Cinzel |
+| Body | 17px | Lato |
+| Bullets / chips | 14–16px | Lato |
+| Section & group labels | 11px, uppercase, letter-spacing `0.12em` | Lato |
+| Stack tags, dates | 12px | JetBrains Mono |
 
-### Line Heights
-- Body: 1.75
-- Headings: ~1.3
-- Paragraph spacing: 1em between paragraphs
+Line heights: body 1.75, bullets 1.7, headings ~1.3.
 
-## Spacing
+## Iconography
 
-| Variable | Value | Mobile |
-|---|---|---|
-| `--section-padding` | 96px | 64px (`--section-padding-mobile`) |
-| `--max-width-reading` | 720px | — |
-| `--max-width-hero` | 900px | — |
-| `--header-height` | 72px | — |
-| Base unit | 8px | — |
+The site was text-only until 2026; icons now exist but the bar is high — **an icon must add meaning a label can't**, e.g. "this link is source code."
 
-## Responsive Design
+- **Line icons only** — Lucide geometry, `strokeWidth 1.75`, rounded joins, `stroke="currentColor"` so they inherit hover states.
+- **Inline SVG, never a dependency or CDN.** This is a static export with no external asset requests; see `src/components/ui/icons.tsx`.
+- Always `aria-hidden="true"` + `focusable="false"` — the adjacent text label carries all meaning.
+- Current set: `ExternalIcon` (arrow-up-right), `GithubIcon`.
+- **Still avoided:** tech-stack logo grids, decorative flourishes, emoji as UI.
 
-- **Single breakpoint**: 640px (mobile/tablet split)
-- **Desktop**: 2-column layouts, full spacing, side-by-side elements
-- **Mobile**: Single-column, reduced padding (24px horizontal instead of 32px), `flex-direction: column`
-- **Fluid type**: `clamp()` scales smoothly between breakpoints
+## Spacing & Radii
+
+| Variable | Value |
+|---|---|
+| `--section-padding` / mobile | 96px / 64px |
+| `--max-width-reading` | 720px |
+| `--max-width-hero` | 900px |
+| `--header-height` | 72px |
+| `--radius-xs` / `-sm` / `-md` / `-pill` | 2 / 4 / 8 / 28px |
+
+Base unit 8px. Nothing is heavily rounded.
+
+## Interaction & Accessibility
+
+- **Focus:** a global `:focus-visible` gold outline (2px, 2px offset) lives in `globals.scss` — component styles must not remove it.
+- **Motion:** a global `prefers-reduced-motion` block collapses all transitions/animations. New components need no extra handling.
+- **Tap targets:** interactive elements are ≥44px tall. Small muted text is not a tap target.
+- **Interactivity must be signalled by more than colour** — a border, an icon, or an underline. `--color-text-muted` text with only a hover colour change reads as metadata, which is exactly the bug `ResourceLinks` was built to fix.
 
 ## Styling Pattern: CSS Modules
 
-Every component has a paired `*.module.scss` file:
+Every component has a paired `*.module.scss`; camelCase class names; nested `&` selectors; media queries at the bottom of the file.
 
-```tsx
-import styles from './ComponentName.module.scss'
-// Usage: className={styles.className}
-```
+Shared typography (e.g. the 11px uppercase label) is intentionally **duplicated locally** rather than imported across modules — cross-module class overrides in CSS Modules depend on stylesheet import order and are fragile. This matches the existing per-card duplication of `.cardTag`.
 
-### Naming Convention
-- camelCase class names: `.heroSection`, `.heroHeadline`, `.heroInner`
-- Nested selectors via SCSS `&` syntax
-- Media queries at bottom of each module file
+## Responsive Design
 
-## Special Visual Components
+- **Single breakpoint: 640px** (plus 480px for hiding the case-progress chip).
+- Desktop: side-by-side header/meta, wrapping chip rows.
+- Mobile: single column, 24px horizontal padding, stacked card headers.
+- Fluid type via `clamp()`.
+
+## Signature Components
 
 | Element | Style |
 |---|---|
-| Header (scrolled) | Fixed position, `backdrop-filter: blur(8px)`, 1px bottom border |
-| CVModal | Overlay with `backdrop-filter: blur(4px)`, centered iframe |
-| Section labels | Small caps, muted color, letter-spacing +100, above headings |
-| Stack tags | Light grey pill (`--color-surface` bg), monospace, 12px |
-| About avatar | 120px circle, initials "SM" when no photo |
-| Reference avatars | 44px circle, computed initials from names |
-| CTA section | Dark background (`#111111`), light text, email as text link with arrow |
-
-## What This Design Intentionally Avoids
-
-- No color accents — monochrome only
-- No animations on scroll — everything visible on load
-- No project screenshots — writing does the work
-- No skill bars/radar charts — text-only skills section
-- No tech stack logo grid — text with dot separators
-- No testimonials section — references listed simply
-- No contact form — direct email link
-- No "download CV" in hero — positioned as a nav item instead
-
-## Global Reset (in `globals.scss`)
-
-```scss
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background-color: var(--color-bg); font-family: var(--font-body); font-size: 17px; line-height: 1.75; }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
-```
+| Header (scrolled) | Fixed, `rgba(10,15,25,0.9)` + `blur(10px)`, 1px bottom rule |
+| Primary CTA | Solid gold, Cinzel uppercase label, dark text, `--radius-md`, inset white bloom |
+| Link chip (`ResourceLinks`) | Bordered, icon + label + optional note, 44px min-height, gold border on hover |
+| Case file (`CaseFile`) | `--surface-raised` panel, gold kicker, option buttons on `--bg-deep` |
+| Stack tag | `--surface-raised` pill, 1px rule, 12px mono |
+| Bullets | Custom 6px gold-deep dash marker, not a disc |
+| Avatars | Circular, 2px `--accent-gold-deep` ring |

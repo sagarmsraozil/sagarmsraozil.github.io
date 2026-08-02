@@ -53,17 +53,33 @@ styling purposes only — all three responses are written to be substantive, nev
 `symptom`, `prompt`, and `diagnosis` are the only case text guaranteed to render in the static
 (no-JS/crawler) HTML, via a native `<details>` fallback — see [07-react-nextjs-patterns.md](./07-react-nextjs-patterns.md).
 
+### Outbound links (shared by Experience, Projects, Earlier projects)
+```ts
+ResourceLinkData: { label, href, note?, kind?: 'site' | 'repo' }
+CodeNote:         { text, linkLabel?, linkHref? }
+```
+`kind` picks the icon (`repo` → GitHub mark, otherwise → external arrow) and drives the group
+label ("SOURCE" when every link is a repo, else "VISIT"). `note` is the small second line inside
+a chip — used to mark `programiz.pro` as *"the product I built"* vs `programiz.com` as *"parent
+site"*, and to flag the one E-Ticketing repo that lives under a teammate's account.
+
+`CodeNote` is for projects with **no** public code: it states the repo is private and offers a
+walkthrough, with `linkHref` a `mailto:`. Prefer this over silence — an unexplained absence of
+links on your strongest projects reads worse than a stated reason.
+
+> **Superseded (2026):** `GithubLink`, `ExperienceEntry.companyUrl`, `ProjectEntry.websiteUrl`,
+> and `githubLinks[]` were all replaced by `links[]`. Don't reintroduce per-card link fields.
+
 ### Experience
 ```ts
-ExperienceEntry: { id, company, companyUrl: string | null, product, role, period, location, tags[], bullets: string[], stack?, case?: CaseData }
+ExperienceEntry: { id, company, product, role, period, location, tags[], bullets: string[], stack?, links?: ResourceLinkData[], case?: CaseData }
 ExperienceData:  { label, heading, entries: ExperienceEntry[] }
 ```
 
 ### Projects
 ```ts
-GithubLink:    { label, href }
-ProjectEntry:  { id, name, description, period, tags[], bullets: string[], stack[], websiteUrl: string | null, githubLinks: GithubLink[], case?: CaseData }
-EarlierProject:{ id, name, period, tags[], summary, stack[], githubLinks: GithubLink[] }
+ProjectEntry:  { id, name, description, period, tags[], bullets: string[], stack[], links?: ResourceLinkData[], codeNote?: CodeNote, case?: CaseData }
+EarlierProject:{ id, name, period, tags[], summary, stack[], links?: ResourceLinkData[] }
 ProjectsData:  { label, heading, entries: ProjectEntry[], earlierLabel, earlier: EarlierProject[] }
 ```
 
@@ -124,8 +140,14 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 3. Bullets render as a `<ul>`; the company name links out when `companyUrl` is set
 
 ### Add a new project
-1. Detailed project → `projects.entries[]` (`ProjectEntry`: `id`, `name`, `description`, `period`, `tags[]`, `bullets[]`, `stack[]`, `websiteUrl`, `githubLinks[]`)
-2. Compact "earlier" project → `projects.earlier[]` (`EarlierProject`: `id`, `name`, `period`, `tags[]`, `summary`, `stack[]`, `githubLinks[]`)
+1. Detailed project → `projects.entries[]` (`ProjectEntry`: `id`, `name`, `description`, `period`, `tags[]`, `bullets[]`, `stack[]`, optional `links[]` / `codeNote` / `case`)
+2. Compact "earlier" project → `projects.earlier[]` (`EarlierProject`: `id`, `name`, `period`, `tags[]`, `summary`, `stack[]`, optional `links[]`)
+
+### Add or change an outbound link (site or repo)
+1. Add a `ResourceLinkData` entry to the item's `links[]` — that's the only step; `ExperienceCard`, `ProjectCard`, and `AdditionalProjectCard` all render `ResourceLinks` automatically
+2. Set `kind: 'repo'` for source code, `kind: 'site'` (or omit) for websites — this picks the icon and the group label
+3. Use `note` when the destination needs a word of explanation ("the product I built", "teammate's repo")
+4. Never hand-roll an `<a>` in a card — see [02-component-map.md](./02-component-map.md) for why the primitive exists
 
 ### Add a diagnostic case to an Experience or Project entry
 1. Add a `case: CaseData` object to the entry in `portfolio.json` (see the "Diagnosis case" interface above) — exactly 3 `options`, one `correct: true`

@@ -98,8 +98,10 @@
       {
         "id": "jobs-ai",
         "company": "Jobs.ai",
-        "companyUrl": "https://jobss.ai/",
         "product": "Job and task distribution platform.",
+        "links": [
+          { "label": "jobss.ai", "href": "https://jobss.ai/", "kind": "site" }
+        ],
         "role": "Software Engineering Intern (Team Lead)",
         "period": "Feb 2026 – May 2026",
         "location": "Melbourne, Australia",
@@ -142,8 +144,21 @@
       {
         "id": "programiz",
         "company": "ParewaLabs (Programiz)",
-        "companyUrl": "https://www.programiz.com/",
         "product": "Coding-education platform — programiz.com and programiz.pro. Over 100,000 paid learners.",
+        "links": [
+          {
+            "label": "programiz.pro",
+            "href": "https://programiz.pro/",
+            "note": "the product I built",
+            "kind": "site"
+          },
+          {
+            "label": "programiz.com",
+            "href": "https://www.programiz.com/",
+            "note": "parent site",
+            "kind": "site"
+          }
+        ],
         "role": "Software Engineer",
         "period": "Oct 2021 – Nov 2023",
         "location": "Kathmandu, Nepal",
@@ -202,8 +217,11 @@
           "Wrote the fulfilment pipeline that batches retail orders on a timer and tracks each one to completion as its own state machine."
         ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
-        "websiteUrl": null,
-        "githubLinks": [],
+        "codeNote": {
+          "text": "Private repo — it runs a live side business, so the code isn't public. I'm happy to walk through the data model and the state machines.",
+          "linkLabel": "Ask for a walkthrough →",
+          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Nexus%20%E2%80%94%20architecture%20walkthrough"
+        },
         "case": {
           "symptom": "Stock was disappearing. Orders shipped without anyone knowing which lot the item came from, and returns left no data trail.",
           "prompt": "What was actually going wrong?",
@@ -244,8 +262,11 @@
           "Added a post-purchase order-status view. Sellers who trade only through social media can't offer that visibility, and the trust gap costs them sales."
         ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "React Query", "Zustand"],
-        "websiteUrl": null,
-        "githubLinks": [],
+        "codeNote": {
+          "text": "Private repo — pre-launch and built on Nexus, so the code isn't public. I'm happy to walk through the tenancy model and the rendering split.",
+          "linkLabel": "Ask for a walkthrough →",
+          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Aroma%20%E2%80%94%20architecture%20walkthrough"
+        },
         "case": {
           "symptom": "These sellers move real volume, but they run entirely through social media DMs — no shared storefront, no shared trust.",
           "prompt": "What's the right way to give each seller their own shop without giving each one their own infrastructure?",
@@ -282,9 +303,18 @@
         "tags": ["Healthcare", "Full-stack"],
         "summary": "A platform where hospitals and doctors register digitally, open weekly appointment slots, and patients book online — with an inversion-test algorithm that prevents double-bookings across Doctor, Patient and Hospital Admin roles.",
         "stack": ["React", "Node.js", "Chart.js"],
-        "githubLinks": [
-          { "label": "Backend →", "href": "https://github.com/sagarmsraozil/ETicketing-Backend" },
-          { "label": "Frontend →", "href": "https://github.com/Abishek180181/E-ticketing-Frontend" }
+        "links": [
+          {
+            "label": "Backend",
+            "href": "https://github.com/sagarmsraozil/ETicketing-Backend",
+            "kind": "repo"
+          },
+          {
+            "label": "Frontend",
+            "href": "https://github.com/Abishek180181/E-ticketing-Frontend",
+            "note": "teammate's repo",
+            "kind": "repo"
+          }
         ]
       },
       {
@@ -294,9 +324,17 @@
         "tags": ["Matchmaking", "Full-stack"],
         "summary": "Tinder-style matchmaking for competitive futsal teams — teams set preferences and get paired with nearby opponents, with league and knockout tournaments, tiered battle seasons, and Airbnb-style court booking. My first end-to-end system.",
         "stack": ["React", "Node.js", "MongoDB", "Chart.js"],
-        "githubLinks": [
-          { "label": "Backend →", "href": "https://github.com/sagarmsraozil/FutsalBooking-Backend_Node-" },
-          { "label": "Frontend →", "href": "https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-" }
+        "links": [
+          {
+            "label": "Backend",
+            "href": "https://github.com/sagarmsraozil/FutsalBooking-Backend_Node-",
+            "kind": "repo"
+          },
+          {
+            "label": "Frontend",
+            "href": "https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-",
+            "kind": "repo"
+          }
         ]
       }
     ]

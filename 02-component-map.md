@@ -88,8 +88,14 @@ All section components follow the same pattern:
 | Component | Props | Purpose |
 |---|---|---|
 | SectionLabel | `text: string`, `className?: string`, `as?: 'p' \| 'h2'` | Small caps label above section headings (default `<p>`) |
-| StackTag | `label: string` | Monospace pill badge — grey bg, 12px JetBrains Mono |
+| StackTag | `label: string` | Monospace pill badge — surface bg, 12px JetBrains Mono |
+| ResourceLinks | `links: ResourceLinkData[]`, `label?: string` | **The single outbound-link primitive.** Small-caps group label + row of bordered chips (icon · label · optional note), 44px min tap target. Server component — adds zero client JS. Group label derives from data: all `kind: 'repo'` → "Source", else "Visit" |
+| icons.tsx | `className?: string` | `ExternalIcon` (Lucide arrow-up-right) and `GithubIcon` (Lucide github, line style). Inline SVG, `aria-hidden`, no dependency and no CDN — the static export must not request external assets |
 | CVModal | `isOpen: boolean`, `onClose: () => void`, `pdfHref: string` | Modal with PDF iframe, blur overlay, Escape to close |
+
+**All outbound links go through `ResourceLinks`.** Before this primitive existed, each card styled its own `<a>` as 13px muted text with no underline, border, or icon — making links the least visible element on the card. Don't reintroduce ad-hoc link styling; add to `links[]` in the data instead.
+
+Note: `ExperienceCard`'s company name is deliberately **not** a link. Linking the heading *and* showing chips would mean two links to different URLs from one card, one of which (a 28px heading with only a hover colour change) had no affordance at all.
 
 ## Client Components
 

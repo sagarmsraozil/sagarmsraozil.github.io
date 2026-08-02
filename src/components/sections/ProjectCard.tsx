@@ -1,5 +1,6 @@
 import type { ProjectEntry } from '@/types/portfolio'
 import { StackTag } from '@/components/ui/StackTag'
+import { ResourceLinks } from '@/components/ui/ResourceLinks'
 import { CaseFile } from '@/components/game/CaseFile'
 import styles from './ProjectCard.module.scss'
 
@@ -8,7 +9,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: Readonly<ProjectCardProps>) {
-  const hasLinks = project.websiteUrl || project.githubLinks.length > 0
+  const hasLinks = project.links && project.links.length > 0
 
   return (
     <article className={styles.card}>
@@ -44,30 +45,20 @@ export function ProjectCard({ project }: Readonly<ProjectCardProps>) {
           ))}
         </div>
 
-        {hasLinks && (
-          <div className={styles.cardLinks}>
-            {project.websiteUrl && (
-              <a
-                href={project.websiteUrl}
-                className={styles.cardLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit website →
-              </a>
+        {hasLinks && <ResourceLinks links={project.links!} />}
+
+        {project.codeNote && (
+          <p className={styles.cardCodeNote}>
+            {project.codeNote.text}
+            {project.codeNote.linkHref && project.codeNote.linkLabel && (
+              <>
+                {' '}
+                <a href={project.codeNote.linkHref} className={styles.cardCodeNoteLink}>
+                  {project.codeNote.linkLabel}
+                </a>
+              </>
             )}
-            {project.githubLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={styles.cardLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+          </p>
         )}
       </footer>
     </article>
