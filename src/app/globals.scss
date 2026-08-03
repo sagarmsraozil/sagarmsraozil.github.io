@@ -27,6 +27,13 @@
   --accent-orange: #f46b29;
   --link: #5cbbff;
   --link-hover: #7cc8ff;
+  /* violet from the original mika palette (Discord/community accent) — reused,
+     not invented, as the midpoint of the ambient-background aurora ramp */
+  --accent-violet: #8088ff;
+  /* real aurora borealis is famously green (oxygen emission) — used only for
+     the fish twinkle on click, a momentary, meaningful signal, not a
+     persistent UI colour */
+  --accent-aurora-green: #43e8a0;
 
   /* radii */
   --radius-xs: 2px;
@@ -76,6 +83,16 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* LakeBackground sits fixed at z-index: 0. Without this, a positioned
+ * z-index:0 element paints AFTER non-positioned in-flow content in the
+ * standard stacking order (regardless of DOM order) — so main would need
+ * this regardless of where the canvas is mounted. Header already has its
+ * own z-index: 100 and needs no change. */
+main {
+  position: relative;
+  z-index: 1;
 }
 
 :focus-visible {

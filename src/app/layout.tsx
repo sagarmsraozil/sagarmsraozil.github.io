@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Lato, Cinzel, JetBrains_Mono } from "next/font/google";
+import { LakeBackground } from "@/components/ambient/LakeBackground";
 import "./globals.scss";
 
 const SITE_URL = "https://sagarmsraozil.github.io";
@@ -145,7 +146,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <LakeBackground />
+        {children}
+      </body>
     </html>
   );
 }

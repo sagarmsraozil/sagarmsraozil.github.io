@@ -1,6 +1,8 @@
 .cta {
   padding: var(--section-padding) 32px;
-  background-color: var(--color-cta-bg);
+  /* --bg-deepest at 88% opacity, not the solid token — lets the lake continue
+   * through, dimmed, instead of the section punching a flat hole in the water. */
+  background-color: rgba(10, 15, 24, 0.88);
   color: var(--color-cta-text);
 }
 

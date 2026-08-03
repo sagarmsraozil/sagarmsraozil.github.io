@@ -10,7 +10,8 @@
 - **Accents carry meaning, never decoration.** Gold = primary action / "this is mine". Blue = informational link. Nothing is coloured just to look colourful.
 - **Typography-first** — engraved display face (Cinzel) for headings, readable body (Lato), monospace (JetBrains Mono) for data.
 - **Whitespace** — generous vertical rhythm between sections.
-- **Restrained motion** — 150ms micro, 240ms reveal. No confetti, no bounce, no scroll animation.
+- **Restrained UI motion** — 150ms micro, 240ms reveal. No confetti, no bounce, no scroll-triggered animation on content.
+- **Ambient vs. UI motion (2026).** The background may breathe; the interface may not. Ambient motion (the lake) is slow — multi-second cycles, never signals state, never reacts to reading or scrolling. UI motion stays at the 150ms/240ms scale above. Ripples are the one deliberate exception: a direct, physical acknowledgement of touch, not a state signal. This is the line that keeps the ambient background from becoming a licence to animate everything — see [Ambient Background](#ambient-background) below.
 
 ## Color Palette (CSS Custom Properties in `globals.scss`)
 
@@ -41,6 +42,7 @@
 | `--accent-gold-deep` | `#c7a740` | Bullet markers, avatar rings, chip hover borders |
 | `--accent-orange` | `#f46b29` | Reserved (logo accent in the source system) |
 | `--link` / `--link-hover` | `#5cbbff` / `#7cc8ff` | Informational/utility link hovers |
+| `--accent-violet` | `#8088ff` | Ambient background only — the aurora ramp's midpoint. From the original mika palette (Discord/community accent), not invented |
 
 ## Typography
 
@@ -105,10 +107,23 @@ Shared typography (e.g. the 11px uppercase label) is intentionally **duplicated 
 - Mobile: single column, 24px horizontal padding, stacked card headers.
 - Fluid type via `clamp()`.
 
+## Ambient Background
+
+A single fixed WebGL layer (`LakeBackground`) sits behind the whole page — calm flowing "water," a handful of small fish drifting through it, and an aurora-coloured ripple wherever the visitor clicks or taps. Purely atmospheric: no particle systems, no geometric shapes, nothing that competes for attention with the content sitting on top of it.
+
+- **Intensity is "calm," not "immersive."** ~10% peak aurora opacity, slow drift (time coefficients in the 0.01–0.02 range inside the noise field — this specific range is what reads as calm rather than a lava lamp). Every tunable number lives in `LAKE_CONFIG` (`src/lib/lake/config.ts`) — dialling the whole feel down is a config edit, never a shader rewrite.
+- **Palette is the aurora ramp above** (`--bg-base → --link → --accent-violet → --accent-gold`), plus `--accent-aurora-green` reserved for one thing only: the fish flash below. No colours exist here that don't carry meaning.
+- **Fish (2026).** `LAKE_CONFIG.fishCount` (5) small silhouettes, each following its own slow Lissajous-style wander, computed per-frame in JS and uploaded as a compact uniform array — not per-pixel shader math, to keep the fragment cost down. They render as a dim shadow of the water at rest. **Any click or tap on the background — the water or a fish — flashes every fish bright `--accent-aurora-green` together**, decaying over ~2 seconds (`fishFlashDecaySec`). One shared trigger (`LakeRenderer.triggerFishFlash()`), fired from the exact same click handler and interactive-element guard as ripples — a click on a nav link or the CV button never triggers it, same as it never triggers a ripple.
+- **Auto-dim under the reading column.** The aurora — and the fish — are measurably darker behind `--max-width-reading` than in the margins, because the ambient effect must never threaten `--color-text-muted`'s already-thin 5.14:1 contrast margin. This is a hard, calculated luminance ceiling, not a visual judgement call — see the renderer's `readDesignTokens()`/`resize()` for the mask math.
+- **Ripples never fire on interactive elements** (`a`, `button`, `input`, `summary`, `details`, `[role="button"]`) — otherwise every nav click and CV download would ripple, turning a delight into noise competing with the UI.
+- **Reduced motion is a hard branch, not a slowdown.** `prefers-reduced-motion: reduce` renders one static frame; no ripples, no drift, no fish, live-watched via `useReducedMotion` in case the OS setting changes mid-session.
+- **Degrades to nothing broken.** No WebGL, a lost context, or a rolling average frame cost that's genuinely too slow all fall back to a static CSS gradient in the same palette — never a blank or broken-looking page. That average is measured from the draw call's own JS-side wall time (`performance.now()` around uniform uploads + `drawArrays`), *not* the gap between throttled frames — an earlier version measured the wrong thing and the fps cap itself guaranteed that gap would always look "too slow," causing the whole background to give up on a fixed ~4-second timer on every device, unconditionally. Fixed 2026; if you touch the render loop again, keep those two measurements separate.
+
 ## Signature Components
 
 | Element | Style |
 |---|---|
+| Ambient background (`LakeBackground`) | Fixed, `z-index: 0`, WebGL flow field + aurora ripples, CSS-gradient fallback beneath |
 | Header (scrolled) | Fixed, `rgba(10,15,25,0.9)` + `blur(10px)`, 1px bottom rule |
 | Primary CTA | Solid gold, Cinzel uppercase label, dark text, `--radius-md`, inset white bloom |
 | Link chip (`ResourceLinks`) | Bordered, icon + label + optional note, 44px min-height, gold border on hover |

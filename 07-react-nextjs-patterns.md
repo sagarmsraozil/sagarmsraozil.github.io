@@ -4,14 +4,15 @@
 
 ## This Project's React Model
 
-This is a **static portfolio site**. Almost everything is a Server Component that renders once at build time. Client-side React is limited to Header/CVModal (existing) and the opt-in "Diagnosis Layer" game components (`components/game/`) added in 2026.
+This is a **static portfolio site**. Almost everything is a Server Component that renders once at build time. Client-side React is limited to Header/CVModal (existing), the opt-in "Diagnosis Layer" game components (`components/game/`, 2026), and the ambient background (`components/ambient/`, 2026).
 
 ```
 Server Components (default): IntroSection, SummarySection, SkillsSection, ExperienceSection,
                               ProjectsSection, AiEngineeringSection, EducationSection,
                               ReferencesSection, CTASection, SectionLabel, StackTag,
                               ExperienceCard, ProjectCard, AdditionalProjectCard
-Client Components ('use client'): Header, CVModal, CaseFile, CaseProgress, BriefComposer
+Client Components ('use client'): Header, CVModal, CaseFile, CaseProgress, BriefComposer,
+                                   LakeBackground
 ```
 
 `'use client'` components still render to static HTML at build time (this is a Next.js static export, not a browser-only app) — they just also ship JS to hydrate. This matters for the game components: their build-time HTML output is real, crawlable content, not empty divs waiting for JS.
@@ -195,6 +196,38 @@ export function useHydrated(): boolean {
 ```
 
 Server and the first client (hydration) render both resolve to `false` — output matches, no hydration-mismatch warning. Immediately after mount, React detects `getSnapshot()` (`true`) differs from what was rendered and forces a resync render, flipping the value to `true` — no manual state, no Effect. Used by `CaseFile` to swap its `<details>` fallback for the interactive option-picker only once the client has taken over.
+
+## Imperative Browser API Ownership: the WebGL Lifecycle Pattern
+
+`LakeBackground` (`src/components/ambient/LakeBackground.tsx`) owns a WebGL context and a `requestAnimationFrame` loop — this is the canonical case doc's own Effects Discipline section already calls out ("Subscribing to browser APIs... do need an Effect"), not an exception to "hooks over Effects."
+
+The shape to reuse for any future component that owns an imperative resource (WebGL, a `<video>` element, a websocket, a third-party widget):
+
+```tsx
+'use client'
+useEffect(() => {
+  if (someGuardCondition) return           // e.g. reducedMotion — bail before creating anything
+
+  const resource = new ImperativeThing(ref.current)
+  if (!resource.init()) return             // failed setup leaves nothing to clean up
+  resource.start()
+
+  function onEvent() { resource.doSomething() }
+  window.addEventListener('event', onEvent)
+
+  return () => {                           // cleanup mirrors setup, in reverse
+    window.removeEventListener('event', onEvent)
+    resource.destroy()
+  }
+}, [someGuardCondition])
+```
+
+Rules this pattern enforces, taken from `LakeBackground`/`LakeRenderer`:
+- **All imperative state lives in a plain class (`LakeRenderer`), not in React state.** Frame time, ripple positions, and GL handles change up to 30x/second — routing that through `useState` would mean 30 re-renders/second for no reason. React only tracks the two things a render actually needs: whether reduced-motion is active, and whether the canvas is ready to fade in.
+- **The guard condition is checked before any resource is created**, not after — `if (reducedMotion) return` is the first line of the effect, so a reduced-motion visitor never even gets a WebGL context allocated.
+- **`init()` returns success/failure rather than throwing.** A synchronous exception inside an Effect on a static export has no error boundary to catch it gracefully; a boolean the caller checks does not.
+- **Cleanup is exhaustive and symmetric with setup** — every `addEventListener` in the effect has a matching `removeEventListener` in its cleanup, in the same order reversed. This is what makes React StrictMode's mount→unmount→mount dev-time double-invoke safe to develop against.
+- **Failure has a visual answer, not just a caught error.** `LakeBackground` always renders a CSS-gradient fallback `<div>` beneath the canvas; the effect's early returns and the renderer's `onFail` callback all funnel toward "the fallback stays visible," never toward a blank layer.
 
 ## Anti-Patterns to Avoid
 
