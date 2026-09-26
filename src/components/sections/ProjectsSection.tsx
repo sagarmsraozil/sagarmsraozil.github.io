@@ -23,7 +23,7 @@ export function ProjectsSection({ data }: Readonly<ProjectsSectionProps>) {
 
         {data.earlier.length > 0 && (
           <div className={styles.projectsEarlier}>
-            <SectionLabel text={data.earlierLabel} className={styles.projectsEarlierLabel} />
+            <SectionLabel text={data.earlierLabel} />
             <div className={styles.projectsEarlierList}>
               {data.earlier.map((project) => (
                 <AdditionalProjectCard key={project.id} project={project} />

@@ -1,6 +1,8 @@
 # Owner Profile
 
 > Sagar Mishra's professional details, career history, education, skills, and contact info. Consult when updating portfolio content or ensuring accuracy of personal information.
+>
+> **Source of truth is `public/Sagar_Mishra_CV.pdf`** (updated Sept 2026). Where this file and the CV disagree, the CV wins; this file was re-synced to it in Sept 2026.
 
 ## Identity
 
@@ -11,6 +13,7 @@
 | Email | sagarcrcoc@gmail.com |
 | Phone | 0424308228 |
 | Location | Melbourne, Australia |
+| Work rights | Full working rights in Australia (subclass 485) |
 | Origin | Nepal |
 | LinkedIn | https://www.linkedin.com/in/sagar-mishra-a3455121b/ |
 | GitHub | https://github.com/sagarmsraozil |
@@ -25,19 +28,20 @@ Organization: ParewaLabs. EdTech platform — "Make learning to code easy and be
 **Contributions:**
 1. Designed and developed interactive course learning flow
 2. Progressive learning dashboard for students
-3. Certificate generation algorithm on course completion
+3. Certificate generation algorithm on course completion — has issued over 100,000 verified completion certificates
 4. Interactive learning paths for courses
 5. Online compilers (Python, JavaScript)
 6. AI assistant setup (sensAI)
 7. Conversion-focused landing pages
 8. Analytics (Mixpanel, Microsoft Clarity)
+9. End-to-end tests in Playwright and Cypress, run in a GitHub Actions CI workflow
 
 **Leadership:**
-- Led "Programiz Reports" project — team of 6 (developers + managers)
+- Led "Programiz Reports" (a feature for beginners learning to program) — team of 6 (developers + managers)
 - Whiteboard sessions, groomed backlogs, weekly delivery cycles
 - Sat in on board-level product direction conversations
 
-**Tools:** React.js, Next.js, Node.js, C#, Directus, Jira, Agile (Scrum/Kanban), Python
+**Tools:** React.js, Next.js, Node.js, C#, Directus, Jira, Agile (Scrum/Kanban), Python, Playwright, Cypress, GitHub Actions
 
 **Links:**
 - Platform: https://programiz.pro/
@@ -47,15 +51,17 @@ Organization: ParewaLabs. EdTech platform — "Make learning to code easy and be
 
 Melbourne startup. Job/task distribution platform between employers and task-seekers.
 
-**Role:** Intern -- Team Lead (4-person team)
+**Role:** Software Engineering Intern — technical lead of a 4-person team. Set technical direction and ran code review; nothing merged unread.
+
+**Stack (per CV):** Laravel, PHP, Blade views built from Figma designs. *Not* React/Next.js — the site previously listed that stack for this role and was corrected in Sept 2026.
 
 **Contributions:**
-- Role-based auth flow (employers vs receivers)
+- Authentication and role-based access model (employers vs job seekers) — every permission check reads from it
 - Job/task posting dashboard
 - Recruitment pipeline (shortlist, hire, reject)
 - Category-based marketing pages
 - Paginated and cursor-based APIs
-- Two-way search system across jobs and tasks
+- Marketplace search on one index, queried by employers and seekers from opposite directions
 - Employee slot distribution algorithm
 
 **Website:** https://jobss.ai/
@@ -70,15 +76,17 @@ Digital warehouse management system. Born from real problems running an anime ap
 
 **Built:** Hierarchical digital warehouse with labels, state-machine workflow for product drops, replenishment system, lot-level tracking, addon system for sales/discounts, return-to-order flow, order marshalling pipeline.
 
+**Also (per CV):** stock movements recorded in a PostgreSQL ledger with `SELECT FOR UPDATE` row locks, so two buyers cannot claim one unit. Trades stock and order state with Aroma. Built during the Master's with spec-driven development (Sagar writes the spike, reference implementation and spec; AI models plan and implement against the frozen spec; every change is read before merge).
+
 **Stack:** React, Next.js, Node.js, PostgreSQL, Redis
 
 ### Aroma — Multi-tenant Ecommerce (Mar 2024 -- Jan 2026)
 
-Clothing marketplace for sellers currently relying on social media DMs.
+Clothing marketplace for sellers currently relying on social media DMs. Built with spec-driven development, same as Nexus.
 
-**Built:** Search/catalog, product detail, cart, reservation, checkout, order history, order status. Multi-tenant architecture with isolated storefronts on shared infrastructure. Built on top of Nexus's inventory layer.
+**Built:** Search/catalog, product detail, cart, reservation, checkout, order history, order status. Multi-tenant architecture with isolated storefronts on shared infrastructure. Trades stock with Nexus (the CV's wording — two connected systems, not a layer on top). Lighthouse: product details page LCP under 2 seconds.
 
-**Stack:** React, Next.js, Node.js, PostgreSQL
+**Stack:** React, Next.js, Node.js, PostgreSQL, Directus
 
 ### Futsal Opponent Finder (Oct 2020 -- Jul 2021)
 
@@ -107,17 +115,22 @@ University group project — online doctor appointment booking for Nepal.
 
 ## Technical Skills
 
-**Languages:** TypeScript, JavaScript, Python, Java, C#, Kotlin, SQL, HTML, CSS
-**Frameworks & Libraries:** React, Next.js, Node.js, Express, Django, React Query, Zustand, Drizzle, Mongoose, Sequelize
-**Data:** PostgreSQL, MySQL, MongoDB, Redis, relational schema design, data modelling
-**Architecture:** REST APIs, multi-tenancy, state machines, microservices, monoliths, sharding, server-side rendering, static generation, role-based access control, caching
-**Cloud & DevOps:** AWS (EC2, RDS, S3, Lambda), Docker, containerisation
-**Practices:** Agile delivery (Scrum), sprint planning, code review, requirements gathering, product analytics & instrumentation
-**Tools:** Git, Jira, Asana, Directus, Mixpanel, Microsoft Clarity
+As listed on the CV (Sept 2026):
+
+**Languages:** TypeScript, JavaScript, PHP, Python, SQL, HTML, CSS
+**Frontend:** React, Next.js, React Query, Zustand, Tailwind CSS, server-side rendering, static generation, technical SEO
+**Backend:** Node.js, Express, Laravel, Django, REST APIs, authentication, role-based access control, multi-tenancy, state machines
+**Data:** PostgreSQL, MySQL, MongoDB, Redis, Drizzle, Sequelize, schema design, concurrency control, row-level locking, caching
+**Testing & CI:** Playwright, Cypress, end-to-end testing, GitHub Actions
+**Practices:** Agile, Scrum, Kanban, spec-driven development, code review, sprint planning, requirements gathering
+**Tools:** Git, Jira, Trello, Asana, Directus, Mixpanel, Microsoft Clarity, Lighthouse
+**Currently learning:** Docker, AWS (EC2, RDS, S3)
+
+Kept on the website though the new CV omits them (they don't contradict it): Java, C#, Kotlin, Mongoose, data modelling, microservices, monoliths, sharding, product analytics & instrumentation.
 
 ## Soft Skills
 
-- **Leadership:** Led cross-functional team of 6 at Programiz; led 4-person team at Jobs.ai
+- **Leadership:** Led cross-functional team of 6 at Programiz; technical lead of a 4-person team at Jobss.ai
 - **Whiteboard sessions:** Facilitated brainstorming for complex problems
 - **Strategic thinking:** Board-level product direction discussions at ParewaLabs
 - **Communication:** Understands professional vs day-to-day communication nuance

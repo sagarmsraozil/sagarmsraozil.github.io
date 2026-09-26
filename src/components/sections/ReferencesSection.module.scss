@@ -1,6 +1,7 @@
+@use '../../styles/mixins' as *;
+
 .references {
-  padding: var(--section-padding) 32px;
-  border-top: 1px solid var(--color-rule);
+  @include section;
 }
 
 .referencesInner {
@@ -9,47 +10,42 @@
 }
 
 .referencesHeading {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3.5vw, 38px);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin-bottom: 48px;
+  @include section-heading;
+  margin-bottom: 28px;
 }
 
 .referencesList {
+  @include card;
   list-style: none;
-  padding: 0;
-  margin: 0 0 48px;
+  padding: 4px 32px;
+  margin: 0 0 32px;
 }
 
 .referencesItem {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 24px 0;
-  border-top: 1px solid var(--color-rule);
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
 
   &:last-child {
-    border-bottom: 1px solid var(--color-rule);
+    border-bottom: none;
   }
 }
 
 .referencesAvatar {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: var(--color-surface);
-  border: 2px solid var(--accent-gold-deep);
+  background-color: var(--green-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--accent-gold);
-  letter-spacing: 0.05em;
+  color: var(--green-house);
+  letter-spacing: 0.02em;
 }
 
 .referencesInfo {
@@ -57,21 +53,19 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .referencesName {
-  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: var(--text);
   line-height: 1.3;
 }
 
 .referencesRole {
-  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: var(--text-soft);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -79,46 +73,33 @@
 }
 
 .referencesDot {
-  color: var(--color-rule);
-  font-size: 16px;
   line-height: 1;
 }
 
 .referencesLink {
+  @include pill(small);
+  @include pill-outlined;
   flex-shrink: 0;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--color-text-muted);
-  transition: color 0.15s ease;
-  white-space: nowrap;
-
-  &:hover {
-    color: var(--link);
-  }
 }
 
 .referencesClosing {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--color-text-muted);
-  line-height: 1.8;
-  font-style: italic;
-  max-width: 560px;
+  font-size: 16px;
+  color: var(--text-soft);
+  line-height: 1.75;
+  max-width: 600px;
 }
 
 @media (max-width: 640px) {
-  .references {
-    padding: var(--section-padding-mobile) 24px;
+  .referencesList {
+    padding: 4px 20px;
   }
 
   .referencesItem {
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
   .referencesLink {
-    margin-left: 58px;
+    margin-left: 60px;
   }
 }

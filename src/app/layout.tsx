@@ -1,33 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Lato, Cinzel, JetBrains_Mono } from "next/font/google";
-import { LakeBackground } from "@/components/ambient/LakeBackground";
+import { Manrope } from "next/font/google";
+import { ConstellationBackground } from "@/components/ambient/ConstellationBackground";
 import "./globals.scss";
 
 const SITE_URL = "https://sagarmsraozil.github.io";
 
-const lato = Lato({
-  weight: ["300", "400", "700"],
+// Open-source stand-in for Starbucks' proprietary SoDoSans (see DESIGN.md).
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-lato",
-  display: "swap",
-});
-
-const cinzel = Cinzel({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-cinzel",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
+  variable: "--font-manrope",
   display: "swap",
 });
 
 const SITE_DESCRIPTION =
-  "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, Django, PostgreSQL. Full working rights in Australia.";
+  "Full-stack engineer in Melbourne. Two years of production work at Programiz (100,000+ paid learners), recent technical lead at Jobss.ai. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia.";
 
 export const metadata: Metadata = {
   title: "Sagar Mishra — Full-Stack Engineer",
@@ -39,6 +25,7 @@ export const metadata: Metadata = {
     "React developer Melbourne",
     "Next.js developer",
     "Node.js engineer",
+    "Laravel developer",
     "Django developer",
     "hire software engineer Melbourne",
     "Programiz Pro engineer",
@@ -70,8 +57,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark",
-  themeColor: "#0f1624",
+  colorScheme: "light",
+  themeColor: "#f2f0eb",
 };
 
 const personSchema = {
@@ -93,8 +80,9 @@ const personSchema = {
     "Next.js",
     "Node.js",
     "TypeScript",
-    "Django",
     "PostgreSQL",
+    "Laravel",
+    "Django",
     "Full-stack Engineering",
     "Software Architecture",
   ],
@@ -134,7 +122,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${lato.variable} ${cinzel.variable} ${jetbrainsMono.variable}`}
+      className={manrope.variable}
     >
       <head>
         <script
@@ -147,7 +135,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <LakeBackground />
+        <ConstellationBackground />
         {children}
       </body>
     </html>

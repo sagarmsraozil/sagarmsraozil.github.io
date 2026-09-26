@@ -10,7 +10,7 @@
 | UI | React | 19.0.0 |
 | Language | TypeScript (strict mode) | 5.x |
 | Styling | Sass (CSS Modules, `*.module.scss`) | 1.77.0 |
-| Fonts | Google Fonts via `next/font` (Lato, Playfair Display, JetBrains Mono) | — |
+| Fonts | Google Fonts via `next/font` (Manrope — SoDoSans substitute, see `DESIGN.md`) | — |
 | Linting | ESLint + `eslint-config-next` | 9.x |
 | Deploy | GitHub Pages via GitHub Actions | — |
 | Node | 20 (CI) | — |
@@ -18,39 +18,42 @@
 ## File Tree
 
 ```
-PersonalWebsite/
+sagarmsraozil.github.io/
 ├── .github/workflows/deploy.yml    # CI/CD — builds and deploys to GitHub Pages
+├── DESIGN.md                       # Upstream Starbucks design reference (getdesign); adapted in 04-design-system.md
 ├── public/
-│   ├── Sagar-Mishra-CV.pdf         # Resume (served statically, opened in CVModal)
+│   ├── Sagar_Mishra_CV.pdf         # Resume — source of truth for content (served statically, opened in CVModal)
+│   ├── sagar.jpeg                  # Profile photo
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   └── .nojekyll
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx              # Root layout: fonts, metadata, JSON-LD schemas
+│   │   ├── layout.tsx              # Root layout: font, metadata, JSON-LD, ConstellationBackground
 │   │   ├── page.tsx                # Home page: imports all sections, passes data
 │   │   └── globals.scss            # CSS reset + custom properties (design tokens)
+│   ├── styles/
+│   │   └── _mixins.scss            # Shared Sass mixins: pill, card, eyebrow, section, house-band
 │   ├── components/
+│   │   ├── ambient/
+│   │   │   └── ConstellationBackground.tsx + .module.scss   # 'use client' — fixed canvas layer
 │   │   ├── layout/
-│   │   │   ├── Header.tsx          # 'use client' — scroll detection, hamburger, CV modal trigger
-│   │   │   └── Header.module.scss
-│   │   ├── sections/               # 9 section components + 3 sub-components
-│   │   │   ├── HeroSection.tsx + .module.scss
-│   │   │   ├── ProblemSection.tsx + .module.scss
-│   │   │   ├── WorkSection.tsx + .module.scss
-│   │   │   ├── CaseStudyCard.tsx + .module.scss
-│   │   │   ├── AdditionalProjectCard.tsx + .module.scss
-│   │   │   ├── ExperienceSection.tsx + .module.scss
-│   │   │   ├── ExperienceCard.tsx + .module.scss
-│   │   │   ├── AboutSection.tsx + .module.scss
-│   │   │   ├── EducationSection.tsx + .module.scss
-│   │   │   ├── SkillsSection.tsx + .module.scss
-│   │   │   ├── ReferencesSection.tsx + .module.scss
-│   │   │   └── CTASection.tsx + .module.scss
+│   │   │   └── Header.tsx + .module.scss     # 'use client' — scroll detection, hamburger, CV modal trigger
+│   │   ├── sections/               # 9 section components + 3 card sub-components
+│   │   │   ├── IntroSection, SummarySection, SkillsSection
+│   │   │   ├── ExperienceSection, ExperienceCard
+│   │   │   ├── ProjectsSection, ProjectCard, AdditionalProjectCard
+│   │   │   ├── AiEngineeringSection, EducationSection, ReferencesSection
+│   │   │   └── CTASection          # (each .tsx + .module.scss)
 │   │   └── ui/
-│   │       ├── CVModal.tsx + .module.scss
-│   │       ├── SectionLabel.tsx + .module.scss
-│   │       └── StackTag.tsx + .module.scss
+│   │       ├── CVModal, SectionLabel, StackTag, ResourceLinks   # (.tsx + .module.scss)
+│   │       └── icons.tsx
+│   ├── hooks/
+│   │   └── useReducedMotion.ts     # live prefers-reduced-motion via useSyncExternalStore
+│   ├── lib/
+│   │   └── constellation/
+│   │       ├── config.ts           # CONSTELLATION_CONFIG — every tunable number
+│   │       └── renderer.ts         # ConstellationRenderer — physics + 2D canvas draw loop
 │   ├── data/
 │   │   └── portfolio.json          # Single source of truth for all content
 │   └── types/

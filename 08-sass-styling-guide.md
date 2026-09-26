@@ -5,8 +5,9 @@
 ## Styling Architecture
 
 ```
-globals.scss         — CSS custom properties (design tokens), reset, base styles
-*.module.scss        — Per-component scoped styles (CSS Modules)
+globals.scss            — CSS custom properties (design tokens), reset, base styles
+src/styles/_mixins.scss — shared component primitives as Sass mixins (pill, card, eyebrow, section, …)
+*.module.scss           — Per-component scoped styles (CSS Modules)
 ```
 
 - **CSS custom properties** for anything that changes at runtime or is shared across components
@@ -26,14 +27,15 @@ export function MyComponent() {
 
 ```scss
 // MyComponent.module.scss
+@use '../../styles/mixins' as *;
+
 .myComponent {
+  @include section;       // section padding + gutters, mobile included
+}
+
+.myComponentInner {
   max-width: var(--max-width-reading);
   margin: 0 auto;
-  padding: var(--section-padding) 32px;
-
-  @media (max-width: 640px) {
-    padding: var(--section-padding-mobile) 24px;
-  }
 }
 ```
 
@@ -44,33 +46,57 @@ export function MyComponent() {
 
 ## Design Tokens (from `globals.scss`)
 
-### Colors
+The full table, with what each token is *for*, lives in [04-design-system.md](./04-design-system.md). The groups:
+
 ```scss
---color-bg:              #fafaf8     // Warm white background
---color-surface:         #f2f1ee     // Cards, tag pills
---color-text-primary:    #111111     // Headings, primary
---color-text-secondary:  #555555     // Body text
---color-text-muted:      #888888     // Labels, tertiary
---color-rule:            #dddddd     // Dividers, borders
---color-cta-bg:          #111111     // CTA section background
---color-cta-text:        #fafaf8     // CTA section text
+// surfaces
+--canvas, --canvas-ceramic, --surface, --surface-cool
+// the four greens (one job each) + gold
+--green-starbucks, --green-accent, --green-house, --green-uplift, --green-light
+--gold, --gold-light, --gold-lightest
+// text & rules
+--text, --text-soft, --text-on-dark, --text-on-dark-soft
+--rule, --rule-strong, --rule-on-dark
+// radii, elevation, motion
+--radius-input (4px), --radius-card (12px), --radius-pill (50px)
+--shadow-card, --shadow-nav, --shadow-float
+--press-scale (0.95), --duration-button (0.2s)
+// type & layout
+--font-body (Manrope), --tracking (-0.01em), --tracking-caps, --tracking-caps-loose
+--section-padding, --section-padding-mobile, --gutter, --gutter-mobile
+--max-width-reading, --max-width-hero, --header-height
+// ambient background (read at runtime by the canvas renderer)
+--constellation-ink, --constellation-warm
 ```
 
-### Typography
+Never re-type a token's hex in a module. For a tinted variant, mix the token:
+`color-mix(in srgb, var(--green-accent) 6%, transparent)`.
+
+## Shared Mixins (`src/styles/_mixins.scss`)
+
+Pulled out once a pattern hit its third copy (WET-then-DRY). Mixins rather than global classes, so each module still owns its selector and CSS Modules scoping/stylesheet order stay irrelevant.
+
+| Mixin | Emits |
+|---|---|
+| `pill($size: default \| small)` | Full-pill shape, 44px (36px small) min height, 600 label, `scale(var(--press-scale))` on `:active` |
+| `pill-filled` / `pill-outlined` | Green Accent fill / Green Accent outline — for light surfaces |
+| `pill-inverted` / `pill-outlined-on-dark` | White fill + green label / white outline — for House Green bands |
+| `card` | White surface, 12px radius, `--shadow-card` |
+| `eyebrow` | 13px/700 uppercase, `0.15em`, Starbucks Green |
+| `section` | Section padding + gutters, with the 640px mobile override built in |
+| `section-heading` | `clamp(28px, 3.6vw, 40px)` / 700 section headline |
+| `house-band` | House Green background, white text, white focus ring |
+
+Always pair `pill` with one colour mixin:
+
 ```scss
---font-body:     var(--font-lato), -apple-system, BlinkMacSystemFont, sans-serif
---font-display:  var(--font-playfair), Georgia, 'Times New Roman', serif
---font-mono:     var(--font-jetbrains), 'Courier New', monospace
+.introActionPrimary {
+  @include pill;
+  @include pill-filled;
+}
 ```
 
-### Spacing
-```scss
---section-padding:        96px       // Desktop section vertical padding
---section-padding-mobile: 64px       // Mobile section vertical padding
---max-width-reading:      720px      // Reading column max width
---max-width-hero:         900px      // Hero section max width
---header-height:          72px       // Fixed header height
-```
+**Overriding a shared component's colour from a parent** (e.g. `SectionLabel` on a dark band): use a two-class selector in the parent module (`.ai .aiLabel { color: … }`). A single-class override would depend on stylesheet import order.
 
 ## Responsive Pattern
 
@@ -84,7 +110,6 @@ export function MyComponent() {
   @media (max-width: 640px) {
     flex-direction: column;
     gap: 16px;
-    padding: var(--section-padding-mobile) 24px;
   }
 }
 ```
@@ -93,8 +118,8 @@ export function MyComponent() {
 
 ```scss
 .heading {
-  font-size: clamp(24px, 3.5vw, 38px);
-  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 26px);
+  font-weight: 700;
 }
 ```
 
@@ -103,47 +128,40 @@ export function MyComponent() {
 ### Section Container
 ```scss
 .section {
+  @include section;
+}
+
+.sectionInner {
   max-width: var(--max-width-reading);
   margin: 0 auto;
-  padding: var(--section-padding) 32px;
-
-  @media (max-width: 640px) {
-    padding: var(--section-padding-mobile) 24px;
-  }
 }
 ```
 
 ### Section Label (SectionLabel component)
 ```scss
-.label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+.sectionLabel {
+  @include eyebrow;
+  margin-bottom: 12px;
 }
 ```
 
 ### Stack Tag (StackTag component)
 ```scss
-.tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-text-muted);
-  background: var(--color-surface);
-  padding: 2px 8px;
-  border-radius: 4px;
+.stackTag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-house);
+  background-color: var(--green-light);
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
 }
 ```
 
 ### Card Layout
 ```scss
 .card {
-  border-top: 1px solid var(--color-rule);
-  padding-top: 32px;
-  margin-top: 32px;
+  @include card;
+  padding: 32px;          // 24px 20px below 640px
 }
 ```
 
@@ -208,5 +226,6 @@ padding-inline: 24px;
 - [ ] Add responsive styles at `@media (max-width: 640px)`
 - [ ] Use `clamp()` for fluid typography
 - [ ] Use `var(--max-width-reading)` for content width
-- [ ] Use `var(--section-padding)` for section spacing
+- [ ] Use `@include section` for section spacing and `@include card` / `pill` for containers and buttons
+- [ ] Never re-type a token's hex; `color-mix()` the token for tints
 - [ ] Keep class names camelCase

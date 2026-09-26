@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Sagar Mishra — Full-Stack Engineer",
-    "description": "Full-stack engineer in Melbourne. Two years shipping production code at Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai. React, Next.js, Node.js, TypeScript, Django, PostgreSQL. Full working rights in Australia.",
+    "description": "Full-stack engineer in Melbourne. Two years of production work at Programiz (100,000+ paid learners), recent technical lead at Jobss.ai. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia.",
     "phone": "0424 308 228",
     "location": "Melbourne, VIC",
-    "workRights": "Full working rights in Australia.",
+    "workRights": "Full working rights in Australia (subclass 485).",
     "social": {
       "linkedin": "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
       "github": "https://github.com/sagarmsraozil",
@@ -26,10 +26,10 @@
   "header": {
     "name": "Sagar Mishra",
     "title": "Full-Stack Engineer",
-    "titleStack": "React · Next.js · Node.js · TypeScript · Django · PostgreSQL",
+    "titleStack": "React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel",
     "photoSrc": "/sagar.jpeg",
     "photoAlt": "Sagar Mishra",
-    "workRights": "Full working rights in Australia.",
+    "workRights": "Full working rights in Australia (subclass 485).",
     "contact": {
       "location": "Melbourne, VIC",
       "phone": "0424 308 228",
@@ -47,9 +47,9 @@
     "label": "SUMMARY",
     "heading": "I work out what to build before I build it.",
     "body": [
-      "Full-stack engineer with two years shipping production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow and learner dashboard every paid learner works through, and the engine that issues their completion certificates. Most recently I led four engineers at Jobs.ai, where I owned authentication and the employer workspace and built the marketplace search both sides query.",
-      "On my own time I've designed and shipped two systems from data model to production: a warehouse platform with lot-level inventory and state-machine fulfilment, and a multi-tenant storefront that runs on top of it. I work in React, Next.js, Node.js, TypeScript and PostgreSQL.",
-      "How I approach a project: I don't move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising, and I write code once I understand what it's supposed to do. I'm not the engineer who ships in week one and apologises in week four — I'm the one who's slower at the beginning and less painful at the end. A few of the entries below are set up as cases — the symptom first, my actual diagnosis one click away.",
+      "Full-stack engineer with two years shipping production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow and learner dashboard every paid learner works through, and the engine that issues their completion certificates. Most recently I led four engineers at Jobss.ai, where I owned authentication, role-based access and the employer workspace, and built the marketplace search both sides query — in Laravel.",
+      "During my Master's I built two connected systems from the data model up: a warehouse platform with lot-level inventory and state-machine fulfilment, and a multi-tenant Next.js storefront that trades stock with it. I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
+      "How I approach a project: I don't move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising, and I write code once I understand what it's supposed to do. I'm not the engineer who ships in week one and apologises in week four — I'm the one who's slower at the beginning and less painful at the end.",
       "Originally from Nepal, now in Melbourne wrapping up a Master's in Software Engineering. Outside work I read, travel when I can, and watch more anime than is probably respectable."
     ],
     "languages": [
@@ -63,31 +63,35 @@
     "categories": [
       {
         "name": "Languages",
-        "items": ["TypeScript", "JavaScript", "Python", "Java", "C#", "Kotlin", "SQL", "HTML", "CSS"]
+        "items": ["TypeScript", "JavaScript", "PHP", "Python", "SQL", "HTML", "CSS", "Java", "C#", "Kotlin"]
       },
       {
-        "name": "Frameworks & Libraries",
-        "items": ["React", "Next.js", "Node.js", "Express", "Django", "React Query", "Zustand", "Drizzle", "Mongoose", "Sequelize"]
+        "name": "Frontend",
+        "items": ["React", "Next.js", "React Query", "Zustand", "Tailwind CSS", "Server-side rendering", "Static generation", "Technical SEO"]
+      },
+      {
+        "name": "Backend",
+        "items": ["Node.js", "Express", "Laravel", "Django", "REST APIs", "Authentication", "Role-based access control", "Multi-tenancy", "State machines", "Microservices", "Monoliths"]
       },
       {
         "name": "Data",
-        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Relational schema design", "Data modelling"]
+        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Drizzle", "Sequelize", "Mongoose", "Schema design", "Data modelling", "Concurrency control", "Row-level locking", "Caching", "Sharding"]
       },
       {
-        "name": "Architecture",
-        "items": ["REST APIs", "Multi-tenancy", "State machines", "Microservices", "Monoliths", "Sharding", "Server-side rendering", "Static generation", "Role-based access control", "Caching"]
-      },
-      {
-        "name": "Cloud & DevOps",
-        "items": ["AWS (EC2, RDS, S3, Lambda)", "Docker", "Containerisation"]
+        "name": "Testing & CI",
+        "items": ["Playwright", "Cypress", "End-to-end testing", "GitHub Actions"]
       },
       {
         "name": "Practices",
-        "items": ["Agile delivery (Scrum)", "Sprint planning", "Code review", "Requirements gathering", "Product analytics & instrumentation"]
+        "items": ["Agile", "Scrum", "Kanban", "Spec-driven development", "Code review", "Sprint planning", "Requirements gathering", "Product analytics & instrumentation"]
       },
       {
         "name": "Tools",
-        "items": ["Git", "Jira", "Asana", "Directus", "Mixpanel", "Microsoft Clarity"]
+        "items": ["Git", "Jira", "Trello", "Asana", "Directus", "Mixpanel", "Microsoft Clarity", "Lighthouse"]
+      },
+      {
+        "name": "Currently learning",
+        "items": ["Docker", "AWS (EC2, RDS, S3)"]
       }
     ]
   },
@@ -97,49 +101,24 @@
     "entries": [
       {
         "id": "jobs-ai",
-        "company": "Jobs.ai",
-        "product": "Job and task distribution platform.",
+        "company": "Jobss.ai",
+        "product": "Job and task distribution platform. Laravel, PHP and Blade views built from Figma designs.",
         "links": [
           { "label": "jobss.ai", "href": "https://jobss.ai/", "kind": "site" }
         ],
-        "role": "Software Engineering Intern (Team Lead)",
+        "role": "Software Engineering Intern (Technical Lead)",
         "period": "Feb 2026 – May 2026",
         "location": "Melbourne, Australia",
         "tags": ["Team Leadership", "Marketplace", "Auth"],
         "bullets": [
-          "Led four engineers — set the technical direction and reviewed code before it merged.",
-          "Owned authentication and the role model that separates employers from job seekers, which every permission check in the rest of the platform reads from.",
+          "Led four engineers as technical lead — set the technical direction and ran code review. Nothing merged unread.",
+          "Owned authentication and the role-based access model that separates employers from job seekers, which every permission check in the rest of the platform reads from.",
           "Designed the employer workspace end to end, so an employer posts a job or task and then moves applicants through review, shortlist and rejection without leaving it.",
           "Built the marketplace search on a single index that serves both sides, so employers looking for people and seekers looking for work query the same system from opposite directions.",
           "Chose cursor-based pagination over offset for the job and task feeds — read cost stays flat as the dataset grows rather than degrading with page depth, and the feed stays scoped to active dates.",
           "Designed the allocation logic that spreads available workers across open jobs and tasks by demand, so no job sits unstaffed while another is oversubscribed."
         ],
-        "stack": ["React", "Next.js", "Node.js", "PostgreSQL"],
-        "case": {
-          "symptom": "Employers post jobs continuously, seekers scroll for open ones, and the table only grows. A page-number feed looked like the obvious way to build it.",
-          "prompt": "What's the real risk in a standard offset-paginated feed here?",
-          "options": [
-            {
-              "id": "database",
-              "label": "It's slow — throw a faster database at it",
-              "correct": false,
-              "response": "The database was never the bottleneck. A bigger box buys time, not correctness — the feed would still drift under it, just more expensively."
-            },
-            {
-              "id": "correctness",
-              "label": "New jobs shift everyone's page numbers while they're mid-scroll",
-              "correct": true,
-              "response": "That's the one. Offset counts rows from zero on every request — insert a job while someone's on page 3 and their page 4 shifts under them, so listings repeat or vanish. Cursor-based pagination anchors to a stable position instead of a row count, so the feed stays correct while it's being read, and the read cost doesn't climb as the table grows."
-            },
-            {
-              "id": "filters",
-              "label": "It needed better filters so people find jobs faster",
-              "correct": false,
-              "response": "Filters help people find things. This wasn't a findability problem — it was a correctness problem. Get the underlying feed wrong and better filters just help people miss things faster."
-            }
-          ],
-          "diagnosis": "The real problem wasn't page speed — it was correctness under a live, growing table. I built the job and task feeds on cursor-based pagination so read cost stays flat as the dataset grows and nobody's feed shifts under them mid-scroll."
-        }
+        "stack": ["Laravel", "PHP", "Blade"]
       },
       {
         "id": "programiz",
@@ -164,39 +143,15 @@
         "location": "Kathmandu, Nepal",
         "tags": ["EdTech", "Product Engineering", "Team Leadership"],
         "bullets": [
-          "Led Programiz Reports with a team of six on a Scrum cycle — gathered the requirements, owned the scope, ran sprint planning, and carried it from proposal to release.",
+          "Led Programiz Reports, a feature for beginners learning to program, with a team of six on a Scrum cycle — gathered the requirements, owned the scope, ran sprint planning, and carried it from proposal to release.",
           "Built the course flow and learner dashboard on programiz.pro, the surface all 100,000+ paid learners move through to finish a course.",
-          "Built the certificate engine that issues a verified completion certificate to every learner who finishes a course.",
+          "Built the certificate engine that issues a verified completion certificate to every learner who finishes a course — over 100,000 issued so far.",
+          "Wrote end-to-end tests in Playwright and Cypress and ran them in a GitHub Actions CI workflow.",
           "Worked on the in-browser Python and JavaScript compilers on programiz.com, where visitors run code without installing anything.",
           "Integrated sensAI, the in-product tutor, so learners get help at the point in an exercise where they're stuck rather than after they give up.",
           "Instrumented landing pages with Mixpanel and Microsoft Clarity, then rewrote the pages against what the behaviour data showed."
         ],
-        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel"],
-        "case": {
-          "symptom": "Learners were getting stuck mid-exercise and quietly closing the tab. The obvious fix: bolt on an AI assistant.",
-          "prompt": "What actually needed to change?",
-          "options": [
-            {
-              "id": "visibility",
-              "label": "Learners didn't know an assistant existed — promote it harder",
-              "correct": false,
-              "response": "Visibility wasn't the gap. Someone staring at a failing test isn't browsing the nav bar for tools — they're deciding whether to keep going."
-            },
-            {
-              "id": "docs",
-              "label": "They needed better documentation to read first",
-              "correct": false,
-              "response": "Docs assume someone's willing to go looking. By the time they're searching, some of them have already decided it's not worth it."
-            },
-            {
-              "id": "timing",
-              "label": "Help had to land inside the window between getting stuck and giving up",
-              "correct": true,
-              "response": "That's it. It was never about whether help existed — it was about when it showed up. sensAI sits inside the exercise itself, so a learner gets pulled back in at the moment they're stuck, not after they've already closed the tab."
-            }
-          ],
-          "diagnosis": "The problem wasn't 'add an AI tutor' — it was catching people in the narrow window between getting stuck and giving up. I integrated sensAI directly into the exercise flow so help arrives at that moment, not after."
-        }
+        "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel", "Playwright", "Cypress", "GitHub Actions"]
       }
     ]
   },
@@ -207,12 +162,13 @@
       {
         "id": "nexus",
         "name": "Nexus — Warehouse Management Platform",
-        "description": "Personal project. Built after running an anime-apparel side business where stock went missing and fulfilment was manual.",
+        "description": "Personal project, built during my Master's after running an anime-apparel side business where stock went missing and fulfilment was manual. Trades stock and order state with Aroma.",
         "period": "Feb 2025 – Jan 2026",
         "tags": ["Systems Design", "Inventory", "State Machines"],
         "bullets": [
           "Modelled the warehouse as a labelled tree — any item resolves to a location in seconds, which is the missing-stock problem the project was built to end.",
           "Modelled product drops as a state machine covering supplier onboarding, lot negotiation, intake and lot-level pricing. Nothing advances out of order.",
+          "Recorded stock movements in a PostgreSQL ledger with SELECT FOR UPDATE row locks, so two buyers cannot claim one unit.",
           "Built lot-aware replenishment with a return-to-order path, so a refund or exchange resolves back to the correct inventory state instead of drifting.",
           "Wrote the fulfilment pipeline that batches retail orders on a timer and tracks each one to completion as its own state machine."
         ],
@@ -221,76 +177,26 @@
           "text": "Private repo — it runs a live side business, so the code isn't public. I'm happy to walk through the data model and the state machines.",
           "linkLabel": "Ask for a walkthrough →",
           "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Nexus%20%E2%80%94%20architecture%20walkthrough"
-        },
-        "case": {
-          "symptom": "Stock was disappearing. Orders shipped without anyone knowing which lot the item came from, and returns left no data trail.",
-          "prompt": "What was actually going wrong?",
-          "options": [
-            {
-              "id": "carelessness",
-              "label": "The team was careless with stock counts",
-              "correct": false,
-              "response": "That's where most people start — and it's why the first fix is usually a new rule nobody follows. The stock wasn't walking off. Nothing recorded where it went in the first place."
-            },
-            {
-              "id": "spreadsheet",
-              "label": "They just needed a better spreadsheet",
-              "correct": false,
-              "response": "A faster version of the wrong model. The spreadsheet wasn't slow — it was structurally unable to express a lot, a location, or a state."
-            },
-            {
-              "id": "model",
-              "label": "Nothing modelled the real shape of the operation",
-              "correct": true,
-              "response": "That's it. The problem wasn't carelessness — there just wasn't a system built for the actual complexity of the business: hierarchical inventory, lot tracking, a return path back to the correct state."
-            }
-          ],
-          "diagnosis": "The problem wasn't carelessness — there was no system that matched the real complexity of the operation. So before writing fulfilment logic, I modelled the warehouse as a labelled tree and product drops as a state machine, so every item resolves to a location and a lot, every time."
         }
       },
       {
         "id": "aroma",
         "name": "Aroma — Multi-tenant Clothing E-commerce",
-        "description": "Personal project. A storefront layer that sits on Nexus, so sellers run their own shop on shared infrastructure.",
+        "description": "Personal project. A multi-tenant storefront that trades stock with Nexus, so sellers run their own shop on shared infrastructure.",
         "period": "Mar 2024 – Jan 2026",
         "tags": ["Multi-tenant", "E-commerce", "SSR / SSG"],
         "bullets": [
           "Designed the tenancy model so each seller runs an isolated storefront on one shared backend, drawing the line between what's shared and what a tenant controls.",
           "Built the buyer path front to back: search and product pages through cart, reservation, checkout and order history.",
           "Split rendering by page — server rendering and static generation for catalogue pages that have to be indexed and paint fast, client fetching for anything per-user, with React Query holding the cache and Zustand holding cart state.",
-          "Measured the result in Lighthouse rather than assuming it — every page renders in under two seconds.",
+          "Measured the product details page in Lighthouse rather than assuming it — Largest Contentful Paint (LCP) came in under two seconds.",
           "Added a post-purchase order-status view. Sellers who trade only through social media can't offer that visibility, and the trust gap costs them sales."
         ],
-        "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "React Query", "Zustand"],
+        "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Directus", "React Query", "Zustand"],
         "codeNote": {
-          "text": "Private repo — pre-launch and built on Nexus, so the code isn't public. I'm happy to walk through the tenancy model and the rendering split.",
+          "text": "Private repo — pre-launch and connected to Nexus, so the code isn't public. I'm happy to walk through the tenancy model and the rendering split.",
           "linkLabel": "Ask for a walkthrough →",
           "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Aroma%20%E2%80%94%20architecture%20walkthrough"
-        },
-        "case": {
-          "symptom": "These sellers move real volume, but they run entirely through social media DMs — no shared storefront, no shared trust.",
-          "prompt": "What's the right way to give each seller their own shop without giving each one their own infrastructure?",
-          "options": [
-            {
-              "id": "separate-apps",
-              "label": "Spin up a separate app and database per seller",
-              "correct": false,
-              "response": "That scales sellers, not the business — every seller becomes its own deploy and its own migration to keep alive. Fine for three sellers, not for the model."
-            },
-            {
-              "id": "filter",
-              "label": "One shared app, filter every query by seller ID",
-              "correct": false,
-              "response": "Works until someone forgets a filter clause. A tenancy boundary enforced by developer discipline breaks the first time a developer doesn't remember it."
-            },
-            {
-              "id": "boundary",
-              "label": "Draw the line in the data model — shared infrastructure, isolated tenant data",
-              "correct": true,
-              "response": "That's the shape. One backend, one catalogue engine — but the boundary between what's shared and what belongs to a seller is structural, not a WHERE clause someone has to remember."
-            }
-          ],
-          "diagnosis": "The question wasn't 'how do we give each seller a shop' — it was where to draw the line between shared and owned. Aroma runs each seller as an isolated storefront on shared backend infrastructure, so the boundary is architectural, not a filter someone could forget."
         }
       }
     ],
@@ -344,7 +250,8 @@
     "heading": "The tools speed up the work. The judgment stays mine.",
     "body": [
       "I use agentic coding tools to delegate work and then check it — a light model to explore, a stronger one to plan and design, a mid one to implement.",
-      "I read and test every change before it goes in, and if I don't understand a piece of code it doesn't merge. The tools speed up boilerplate and exploration. The design calls and the quality stay mine."
+      "I read and test every change before it goes in, and if I don't understand a piece of code it doesn't merge. The tools speed up boilerplate and exploration. The design calls and the quality stay mine.",
+      "Nexus and Aroma were both built with spec-driven development: I write the spike, the reference implementation and the spec myself, then AI models plan and implement against the frozen spec. I read every change before it merges."
     ]
   },
   "education": {

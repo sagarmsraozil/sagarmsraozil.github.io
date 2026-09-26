@@ -18,19 +18,11 @@ Reaches the CTA already having mentally said yes
 
 Every design and copy decision serves this arc. Nothing on the page is decorative.
 
-> **Format note (2026 rebuild):** the site was restructured into a CV-style single page whose information architecture mirrors amitj.me/cv (sticky section nav → header block → factual, reverse-chronological sections). The tone is **hybrid**: narrative voice is preserved in the Summary; Experience, Projects, and Skills are factual and bulleted. The elegant monochrome/serif design is unchanged.
+> **Format note (2026 rebuild):** the site was restructured into a CV-style single page whose information architecture mirrors amitj.me/cv (sticky section nav → header block → factual, reverse-chronological sections). The tone is **hybrid**: narrative voice is preserved in the Summary; Experience, Projects, and Skills are factual and bulleted. The visual design is now the Starbucks-derived system in [04-design-system.md](./04-design-system.md).
 
-> **The Diagnosis Layer (2026 gamification pass):** the site's core claim — *"A working product is not the same as a solved problem. The build was never the problem. The diagnosis was."* — used to be only asserted in prose. Four entries (Jobs.ai, Programiz, Nexus, Aroma) now let a visitor experience it instead: read a symptom, commit to what they think the real problem was, then see Sagar's actual diagnosis. See "The Diagnosis Mechanic" below and [02-component-map.md](./02-component-map.md) for the `components/game/` implementation.
+> **Gamification removed (Sept 2026):** the interactive "Diagnosis Layer" (case-file quizzes on four entries, a "Cases N/4" header chip, and an unlock-on-completion email composer) was removed entirely, including the symptom/diagnosis copy. The page is plain CV content again: nothing to play, nothing gated. Don't reintroduce quiz mechanics without a fresh decision from Sagar.
 
-## The Diagnosis Mechanic
-
-**Nobody loses.** Each case offers exactly 3 options; all 3 return a substantive, specific response — never "Incorrect." One option is marked `correct` for styling only. A "wrong" pick reads like *"That's where most people start — and it's why the first fix is usually a rule nobody follows…"*, not a buzzer. The visitor is never tested; they're shown how Sagar thinks. **Get this tone wrong and the mechanic reads as condescending — write every response as if the visitor made a reasonable guess, because they did.**
-
-**Layered, nothing hidden.** The symptom, the prompt, and the diagnosis are always present in the static HTML (a native `<details>`/`<summary>` fallback, readable and crawlable with zero JavaScript). The three-option picker is additive: it replaces the plain "click to reveal" affordance only after the page hydrates. A recruiter skimming in 60 seconds loses nothing by ignoring it; a curious visitor gets 5–10 minutes of genuine engagement.
-
-**Four cases only** (Jobs.ai, Programiz, Nexus, Aroma) — enough to establish the pattern without becoming a chore. Not every Experience/Project entry needs one; `case` is optional data.
-
-**The win state is a conversation, not a score.** Once all four cases are attempted (not necessarily "solved" — there's no such thing here), the CTA section reveals a short outreach-draft composer referencing the specific cases the visitor engaged with. The plain email address and CV download stay visible and unconditional throughout — contact is never gated behind the game.
+> **CV is the source of truth (Sept 2026):** where the site and `public/Sagar_Mishra_CV.pdf` disagree on a fact (stack, title, metric, spelling), the CV wins. Site-only detail that doesn't contradict the CV is kept.
 
 ## Section-by-Section Mechanics
 
@@ -38,7 +30,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 **Mechanic:** A recruiter's first five seconds. Everything needed to place and contact the candidate, above the fold.
 
-- Name (large serif), title, and a monospace stack line (`React · Next.js · …`).
+- Name (large, Starbucks Green), title, and a stack line matching the CV headline (`React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel`).
 - Round profile photo to the side — the CV-format equivalent of a résumé header.
 - Contact line with `·` separators: location · phone · email · LinkedIn · GitHub. Work-rights/visa stated plainly (important for AU roles).
 - Two CTAs: "See the work" (anchor) and "Download CV" (the PDF).
@@ -47,8 +39,8 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 **Mechanic:** The one section that keeps the narrative voice. Factual credentials first, then how this person actually works.
 
-- Opens with the CV summary (Programiz scale, Jobs.ai lead role, two shipped systems), then a short paragraph on approach ("slower at the beginning and less painful at the end").
-- Readable serif heading, comfortable line height. No bolding inside body — paragraph rhythm does the work.
+- Opens with the CV summary (Programiz scale, Jobss.ai technical-lead role, two connected systems built during the Master's), then a short paragraph on approach ("slower at the beginning and less painful at the end").
+- Bold sans heading, comfortable line height. No bolding inside body — paragraph rhythm does the work.
 - Spoken languages listed simply at the end — no flags, no bars.
 
 ### Section 03 — Skills (ATS + Human Scanner)
@@ -56,7 +48,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 **Mechanic:** Complete and easy to scan. A hiring manager finds a specific technology in under 5 seconds. Placed early, like the reference site.
 
 - No skill bars, radar charts, or proficiency indicators.
-- Six categories (incl. Cloud & DevOps), items as inline text separated by dots.
+- Eight categories matching the CV (Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning), items as inline text separated by dots. Docker and AWS sit under "Currently learning" — the CV is explicit that they're not yet production skills.
 
 ### Section 04 — Experience (Social Proof Through Specificity)
 

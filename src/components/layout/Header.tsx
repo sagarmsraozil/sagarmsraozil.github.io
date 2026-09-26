@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import type { NavLink } from '@/types/portfolio'
 import { CVModal } from '@/components/ui/CVModal'
-import { CaseProgress } from '@/components/game/CaseProgress'
 import styles from './Header.module.scss'
 
 interface HeaderProps {
@@ -81,10 +80,7 @@ export function Header({ name, links }: Readonly<HeaderProps>) {
     <>
       <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
         <div className={styles.headerInner}>
-          <div className={styles.headerBrandGroup}>
-            <span className={styles.headerBrand}>{name}</span>
-            <CaseProgress />
-          </div>
+          <span className={styles.headerBrand}>{name}</span>
 
           <nav className={styles.headerNav} aria-label="Main navigation">
             {links.map(renderDesktopLink)}

@@ -65,20 +65,6 @@ export interface CodeNote {
   linkHref?: string
 }
 
-export interface CaseOption {
-  id: string
-  label: string
-  correct: boolean
-  response: string
-}
-
-export interface CaseData {
-  symptom: string
-  prompt: string
-  options: CaseOption[]
-  diagnosis: string
-}
-
 export interface ExperienceEntry {
   id: string
   company: string
@@ -90,7 +76,6 @@ export interface ExperienceEntry {
   bullets: string[]
   stack?: string[]
   links?: ResourceLinkData[]
-  case?: CaseData
 }
 
 export interface ExperienceData {
@@ -109,7 +94,6 @@ export interface ProjectEntry {
   stack: string[]
   links?: ResourceLinkData[]
   codeNote?: CodeNote
-  case?: CaseData
 }
 
 export interface EarlierProject {

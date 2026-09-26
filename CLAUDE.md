@@ -46,7 +46,7 @@ Read: [03-data-schema.md](./03-data-schema.md) -> edit `src/data/portfolio.json`
 Read: [02-component-map.md](./02-component-map.md) (how to add a section) + [03-data-schema.md](./03-data-schema.md) (data interface) + [08-sass-styling-guide.md](./08-sass-styling-guide.md) (styling patterns)
 
 ### "Change the visual design"
-Read: [04-design-system.md](./04-design-system.md) (tokens & philosophy) + [08-sass-styling-guide.md](./08-sass-styling-guide.md) (implementation)
+Read: [04-design-system.md](./04-design-system.md) (tokens & philosophy) + [08-sass-styling-guide.md](./08-sass-styling-guide.md) (implementation). [DESIGN.md](./DESIGN.md) is the upstream Starbucks reference the system is adapted from.
 
 ### "Update personal info or career details"
 Read: [10-owner-profile.md](./10-owner-profile.md) (source of truth) -> update [03-data-schema.md](./03-data-schema.md) fields in `portfolio.json`

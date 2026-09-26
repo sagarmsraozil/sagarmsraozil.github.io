@@ -10,12 +10,13 @@ The description is a single `SITE_DESCRIPTION` constant reused across meta, OG, 
 
 ```
 Title:       "Sagar Mishra -- Full-Stack Engineer"
-Description: "Full-stack engineer in Melbourne. Two years shipping production code at
-              Programiz Pro (100,000+ paid learners), recent team lead at Jobs.ai.
-              React, Next.js, Node.js, TypeScript, Django, PostgreSQL. Full working rights in Australia."
+Description: "Full-stack engineer in Melbourne. Two years of production work at
+              Programiz (100,000+ paid learners), recent technical lead at Jobss.ai.
+              React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia."
 Keywords:    Sagar Mishra, full-stack engineer Melbourne, software engineer Melbourne,
              React developer Melbourne, Next.js developer, Node.js engineer,
-             hire software engineer Melbourne, Programiz Pro engineer
+             Laravel developer, Django developer, hire software engineer Melbourne,
+             Programiz Pro engineer
 ```
 
 ### Open Graph
@@ -59,7 +60,7 @@ twitter:image       https://sagarmsraozil.github.io/sagar.jpeg
     "https://github.com/sagarmsraozil",
     "https://x.com/SagarMi31569172"
   ],
-  "knowsAbout": ["React", "Next.js", "Node.js", "TypeScript", "Django", "PostgreSQL", "Full-stack Engineering", "Software Architecture"],
+  "knowsAbout": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "Laravel", "Django", "Full-stack Engineering", "Software Architecture"],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Victorian Institute of Technology", "url": "https://vit.edu.au" },
     { "@type": "CollegeOrUniversity", "name": "Softwarica College of IT and E-commerce", "url": "https://softwarica.edu.np" }

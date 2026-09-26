@@ -1,9 +1,10 @@
+@use '../../styles/mixins' as *;
+
+/* The dark House Green bookend — contact and footer in one band. */
 .cta {
-  padding: var(--section-padding) 32px;
-  /* --bg-deepest at 88% opacity, not the solid token — lets the lake continue
-   * through, dimmed, instead of the section punching a flat hole in the water. */
-  background-color: rgba(10, 15, 24, 0.88);
-  color: var(--color-cta-text);
+  @include section;
+  @include house-band;
+  padding-bottom: 40px;
 }
 
 .ctaInner {
@@ -11,28 +12,26 @@
   margin: 0 auto;
 }
 
-.ctaLabel {
-  color: var(--color-text-muted);
+/* Two-class selector so it beats SectionLabel's own colour regardless of
+   stylesheet order. */
+.cta .ctaLabel {
+  color: var(--green-light);
 }
 
 .ctaHeading {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3.5vw, 38px);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--color-cta-text);
-  margin-bottom: 32px;
-  max-width: 560px;
+  @include section-heading;
+  color: var(--text-on-dark);
+  margin-bottom: 24px;
+  max-width: 620px;
 }
 
 .ctaBody {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 
   p {
-    font-family: var(--font-body);
-    font-size: 17px;
-    color: var(--color-text-secondary);
-    line-height: 1.8;
+    font-size: 18px;
+    color: var(--text-on-dark-soft);
+    line-height: 1.75;
   }
 
   p + p {
@@ -46,19 +45,19 @@
 
 .ctaEmailLink {
   display: inline-block;
-  font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--accent-gold);
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 700;
+  color: var(--text-on-dark);
   text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--accent-gold-deep);
-  margin-bottom: 32px;
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--green-light);
+  margin-bottom: 28px;
+  overflow-wrap: anywhere;
+  transition: text-decoration-color var(--duration-button) ease;
 
   &:hover {
-    color: var(--accent-gold-hover);
-    text-decoration-color: var(--accent-gold-hover);
+    text-decoration-color: var(--text-on-dark);
   }
 }
 
@@ -66,70 +65,49 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px 28px;
+  gap: 20px 28px;
 }
 
 .ctaDownload {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--bg-deepest);
-  background-color: var(--accent-gold);
-  padding: 12px 22px;
-  border-radius: var(--radius-md);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  transition: background-color 0.15s ease, transform 0.1s ease;
-
-  &:hover {
-    background-color: var(--accent-gold-hover);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
+  @include pill;
+  @include pill-inverted;
 }
 
 .ctaSocialLinks {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
 }
 
 .ctaSocialItem {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .ctaSeparator {
-  color: var(--color-rule);
-  font-size: 16px;
+  color: var(--text-on-dark-soft);
 }
 
 .ctaSocialLink {
-  font-family: var(--font-body);
   font-size: 15px;
-  color: var(--color-text-muted);
-  transition: color 0.15s ease;
+  font-weight: 600;
+  color: var(--text-on-dark-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-on-dark);
+  text-underline-offset: 4px;
+  transition: color var(--duration-button) ease, text-decoration-color var(--duration-button) ease;
 
   &:hover {
-    color: var(--link);
+    color: var(--text-on-dark);
+    text-decoration-color: var(--text-on-dark);
   }
 }
 
 .ctaCopyright {
   margin-top: 56px;
-  padding-top: 28px;
-  border-top: 1px solid var(--color-rule);
-  font-family: var(--font-body);
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-on-dark);
   font-size: 13px;
-  color: var(--color-text-muted);
-}
-
-@media (max-width: 640px) {
-  .cta {
-    padding: var(--section-padding-mobile) 24px;
-  }
+  color: var(--text-on-dark-soft);
 }

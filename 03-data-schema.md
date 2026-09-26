@@ -43,16 +43,6 @@ Language:    { name, level }
 SummaryData: { label, heading, body: string[], languages: Language[] }
 ```
 
-### Diagnosis case (optional, on Experience/Project entries)
-```ts
-CaseOption: { id, label, correct: boolean, response }
-CaseData:   { symptom, prompt, options: CaseOption[], diagnosis }
-```
-Exactly 3 `options`. `correct` picks which option's response is treated as the "right call" for
-styling purposes only — all three responses are written to be substantive, never a buzzer.
-`symptom`, `prompt`, and `diagnosis` are the only case text guaranteed to render in the static
-(no-JS/crawler) HTML, via a native `<details>` fallback — see [07-react-nextjs-patterns.md](./07-react-nextjs-patterns.md).
-
 ### Outbound links (shared by Experience, Projects, Earlier projects)
 ```ts
 ResourceLinkData: { label, href, note?, kind?: 'site' | 'repo' }
@@ -72,13 +62,13 @@ links on your strongest projects reads worse than a stated reason.
 
 ### Experience
 ```ts
-ExperienceEntry: { id, company, product, role, period, location, tags[], bullets: string[], stack?, links?: ResourceLinkData[], case?: CaseData }
+ExperienceEntry: { id, company, product, role, period, location, tags[], bullets: string[], stack?, links?: ResourceLinkData[] }
 ExperienceData:  { label, heading, entries: ExperienceEntry[] }
 ```
 
 ### Projects
 ```ts
-ProjectEntry:  { id, name, description, period, tags[], bullets: string[], stack[], links?: ResourceLinkData[], codeNote?: CodeNote, case?: CaseData }
+ProjectEntry:  { id, name, description, period, tags[], bullets: string[], stack[], links?: ResourceLinkData[], codeNote?: CodeNote }
 EarlierProject:{ id, name, period, tags[], summary, stack[], links?: ResourceLinkData[] }
 ProjectsData:  { label, heading, entries: ProjectEntry[], earlierLabel, earlier: EarlierProject[] }
 ```
@@ -122,12 +112,12 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 
 | Section | Key Data Points |
 |---|---|
-| Intro (header) | Name, "Full-Stack Engineer" + stack line (incl. Django), photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights ("Full working rights in Australia.") |
+| Intro (header) | Name, "Full-Stack Engineer" + stack line (React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel — the CV headline), photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights ("Full working rights in Australia (subclass 485).") |
 | Summary | "I work out what to build before I build it." — 4 narrative paragraphs + 3 spoken languages (English, Nepali, Hindi) |
-| Skills | 7 categories: Languages, Frameworks & Libraries, Data, Architecture, Cloud & DevOps, Practices, Tools |
-| Experience | 2 entries: Jobs.ai (Intern/Team Lead, Feb–May 2026, Melbourne), ParewaLabs/Programiz (SWE, Oct 2021–Nov 2023, Kathmandu) — bulleted, both carry a `case` |
-| Projects | Detailed: Nexus, Aroma (both carry a `case`). Earlier: Hospital E-Ticketing, Futsal Finder |
-| AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 2 paragraphs |
+| Skills | 8 categories, matching the CV: Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning (Docker, AWS). A few site-only items the CV omits (Java, C#, Kotlin, Mongoose, microservices, monoliths, sharding) are kept because they don't contradict it |
+| Experience | 2 entries: Jobss.ai (Intern, Technical Lead, Feb–May 2026, Melbourne — Laravel/PHP/Blade), ParewaLabs/Programiz (SWE, Oct 2021–Nov 2023, Kathmandu) — bulleted |
+| Projects | Detailed: Nexus, Aroma (two connected systems built during the Master's; they trade stock). Earlier: Hospital E-Ticketing, Futsal Finder |
+| AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 3 paragraphs, the last on spec-driven development |
 | Education | VIT Melbourne (Master's, Feb 2024–Jul 2026), Softwarica Kathmandu (BSc, Nov 2018–Oct 2021) |
 | References | 5 people from Programiz (Sanjeev, Ranjit, Raman, Abidit, Shirish) |
 | CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_CV.pdf`), Links: LinkedIn, GitHub, X, copyright |
@@ -140,7 +130,7 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 3. Bullets render as a `<ul>`; the company name links out when `companyUrl` is set
 
 ### Add a new project
-1. Detailed project → `projects.entries[]` (`ProjectEntry`: `id`, `name`, `description`, `period`, `tags[]`, `bullets[]`, `stack[]`, optional `links[]` / `codeNote` / `case`)
+1. Detailed project → `projects.entries[]` (`ProjectEntry`: `id`, `name`, `description`, `period`, `tags[]`, `bullets[]`, `stack[]`, optional `links[]` / `codeNote`)
 2. Compact "earlier" project → `projects.earlier[]` (`EarlierProject`: `id`, `name`, `period`, `tags[]`, `summary`, `stack[]`, optional `links[]`)
 
 ### Add or change an outbound link (site or repo)
@@ -148,12 +138,6 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 2. Set `kind: 'repo'` for source code, `kind: 'site'` (or omit) for websites — this picks the icon and the group label
 3. Use `note` when the destination needs a word of explanation ("the product I built", "teammate's repo")
 4. Never hand-roll an `<a>` in a card — see [02-component-map.md](./02-component-map.md) for why the primitive exists
-
-### Add a diagnostic case to an Experience or Project entry
-1. Add a `case: CaseData` object to the entry in `portfolio.json` (see the "Diagnosis case" interface above) — exactly 3 `options`, one `correct: true`
-2. Register the entry's `id` + a short label in `CASE_REGISTRY` in `src/lib/cases.ts` (used by the progress chip and the outreach draft — keep it in sync or the total/labels drift)
-3. Write all 3 option `response` strings as substantive, never punitive — see [05-content-strategy.md](./05-content-strategy.md) for the "nobody loses" rule
-4. No component change needed — `ExperienceCard`/`ProjectCard` already render `CaseFile` whenever `entry.case`/`project.case` is present
 
 ### Add a new skill category
 1. Add entry to `portfolio.json` → `skills.categories[]`

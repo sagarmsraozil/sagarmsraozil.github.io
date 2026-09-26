@@ -1,52 +1,67 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* mika night-raid palette — backgrounds (stacked navies for subtle banding) */
-  --bg-base: #0f1624;
-  --bg-deep: #0a0f19;
-  --bg-deepest: #0a0f18;
-  --surface-raised: #151e30;
-  --surface-tab: #394a65;
+  /* Starbucks-derived system — DESIGN.md is the upstream reference,
+     04-design-system.md is how this site adapts it. */
 
-  /* legacy token names mapped to mika values (components read these) */
-  --color-bg: var(--bg-base);
-  --color-surface: var(--surface-raised);
-  --color-text-primary: #f1f1f1;
-  --color-text-secondary: #b3c0d5;
-  --color-text-muted: #7989a3;
-  --color-text-info: #d0e4ff;
-  --color-rule: #27334a;
-  --color-rule-strong: #506380;
-  --color-cta-bg: var(--bg-deepest);
-  --color-cta-text: #f1f1f1;
+  /* surfaces — warm cream canvas, white cards */
+  --canvas: #f2f0eb;
+  --canvas-ceramic: #edebe9;
+  --surface: #ffffff;
+  --surface-cool: #f9f9f9;
 
-  /* accents — used only where they carry meaning */
-  --accent-gold: #ffc857;
-  --accent-gold-hover: #ffd479;
-  --accent-gold-deep: #c7a740;
-  --accent-orange: #f46b29;
-  --link: #5cbbff;
-  --link-hover: #7cc8ff;
-  /* violet from the original mika palette (Discord/community accent) — reused,
-     not invented, as the midpoint of the ambient-background aurora ramp */
-  --accent-violet: #8088ff;
-  /* real aurora borealis is famously green (oxygen emission) — used only for
-     the fish twinkle on click, a momentary, meaningful signal, not a
-     persistent UI colour */
-  --accent-aurora-green: #43e8a0;
+  /* the four greens, each with one job */
+  --green-starbucks: #006241; /* headings that name a thing */
+  --green-accent: #00754a; /* CTAs, links, focus */
+  --green-house: #1e3932; /* dark feature band + footer */
+  --green-uplift: #2b5148; /* hover surface on dark bands */
+  --green-light: #d4e9e2; /* tag and avatar fills, selection */
+
+  /* gold is ceremony, not decoration — "the product I built", warm nodes */
+  --gold: #cba258;
+  --gold-light: #dfc49d;
+  --gold-lightest: #faf6ee;
+
+  /* text — never pure black on the warm canvas */
+  --text: rgba(0, 0, 0, 0.87);
+  --text-soft: rgba(0, 0, 0, 0.58);
+  --text-on-dark: #ffffff;
+  --text-on-dark-soft: rgba(255, 255, 255, 0.7);
+
+  /* rules */
+  --rule: rgba(0, 0, 0, 0.1);
+  --rule-strong: #d6dbde;
+  --rule-on-dark: rgba(255, 255, 255, 0.2);
+
+  /* ambient background — read by the constellation renderer at runtime */
+  --constellation-ink: var(--green-starbucks);
+  --constellation-warm: var(--gold);
 
   /* radii */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-pill: 28px;
+  --radius-input: 4px;
+  --radius-card: 12px;
+  --radius-pill: 50px;
 
-  --font-body: var(--font-lato), -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: var(--font-cinzel), 'Copperplate Gothic Bold', Georgia, serif;
-  --font-mono: var(--font-jetbrains), 'Courier New', monospace;
+  /* elevation — 2-3 stacked low-alpha shadows, never one heavy one */
+  --shadow-card: 0 0 0.5px rgba(0, 0, 0, 0.14), 0 1px 1px rgba(0, 0, 0, 0.24);
+  --shadow-nav: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.07);
+  --shadow-float: 0 0 6px rgba(0, 0, 0, 0.24), 0 8px 12px rgba(0, 0, 0, 0.14);
 
-  --section-padding: 96px;
-  --section-padding-mobile: 64px;
+  /* motion */
+  --press-scale: 0.95;
+  --duration-button: 0.2s;
+
+  /* type — Manrope stands in for the proprietary SoDoSans */
+  --font-body: var(--font-manrope), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --tracking: -0.01em;
+  --tracking-caps: 0.1em;
+  --tracking-caps-loose: 0.15em;
+
+  /* layout */
+  --section-padding: 64px;
+  --section-padding-mobile: 48px;
+  --gutter: 40px;
+  --gutter-mobile: 16px;
   --max-width-reading: 720px;
   --max-width-hero: 900px;
   --header-height: 72px;
@@ -62,14 +77,16 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
+  background-color: var(--canvas);
+  color: var(--text);
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: var(--tracking);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -79,24 +96,32 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* LakeBackground sits fixed at z-index: 0. Without this, a positioned
- * z-index:0 element paints AFTER non-positioned in-flow content in the
- * standard stacking order (regardless of DOM order) — so main would need
- * this regardless of where the canvas is mounted. Header already has its
- * own z-index: 100 and needs no change. */
+::selection {
+  background-color: var(--green-light);
+  color: var(--green-house);
+}
+
+/* ConstellationBackground sits fixed at z-index: 0. A positioned z-index:0
+ * element paints AFTER non-positioned in-flow content, so main needs its own
+ * layer to stay on top. Header already has z-index: 100. */
 main {
   position: relative;
   z-index: 1;
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-gold);
+  outline: 2px solid var(--green-accent);
   outline-offset: 2px;
 }
 

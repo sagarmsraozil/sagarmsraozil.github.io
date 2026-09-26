@@ -4,18 +4,17 @@
 
 ## This Project's React Model
 
-This is a **static portfolio site**. Almost everything is a Server Component that renders once at build time. Client-side React is limited to Header/CVModal (existing), the opt-in "Diagnosis Layer" game components (`components/game/`, 2026), and the ambient background (`components/ambient/`, 2026).
+This is a **static portfolio site**. Almost everything is a Server Component that renders once at build time. Client-side React is limited to Header/CVModal and the ambient constellation background (`components/ambient/`). The 2026 "Diagnosis Layer" game components were removed in Sept 2026.
 
 ```
 Server Components (default): IntroSection, SummarySection, SkillsSection, ExperienceSection,
                               ProjectsSection, AiEngineeringSection, EducationSection,
                               ReferencesSection, CTASection, SectionLabel, StackTag,
                               ExperienceCard, ProjectCard, AdditionalProjectCard
-Client Components ('use client'): Header, CVModal, CaseFile, CaseProgress, BriefComposer,
-                                   LakeBackground
+Client Components ('use client'): Header, CVModal, ConstellationBackground
 ```
 
-`'use client'` components still render to static HTML at build time (this is a Next.js static export, not a browser-only app) — they just also ship JS to hydrate. This matters for the game components: their build-time HTML output is real, crawlable content, not empty divs waiting for JS.
+`'use client'` components still render to static HTML at build time (this is a Next.js static export, not a browser-only app) — they just also ship JS to hydrate. Any content a client component renders is still real, crawlable HTML in `/out`, not an empty div waiting for JS.
 
 ## React Core Mental Model
 
@@ -157,77 +156,42 @@ export function InteractivePart({ items }) {
 3. Use `Link` from `next/link` for navigation
 4. Ensure `generateStaticParams` if dynamic
 
-## localStorage State via `useSyncExternalStore` (no Zustand)
+> **Removed Sept 2026:** the `localStorage` case store (`caseStore.ts` + atomic `useSyncExternalStore` selectors) and the `useHydrated` progressive-enhancement hook went away with the gamification layer. If either pattern is needed again, both are in git history at commit `e765dc1`. Rule of thumb that still stands: if client state grows past a handful of small stores, bring in Zustand for real rather than hand-rolling more.
 
-CLAUDE.md's rule of thumb is "Zustand for client state," but Zustand isn't a project dependency, and the one piece of client state this site has — case-diagnosis answers, persisted to `localStorage` — is small enough (~80 lines total) that `useSyncExternalStore` (a React 19 built-in) covers it without adding a package. The *spirit* of the rule (atomic selectors, no whole-store subscriptions) is kept:
+## Imperative Browser API Ownership: the Canvas Lifecycle Pattern
 
-```ts
-// src/lib/caseStore.ts — module-level singleton store, not a hook
-let snapshot: CaseAnswers = readFromStorage()      // eager read on the client only
-export function subscribe(listener) { /* Set<listener>, plus a `storage` event bridge */ }
-export function getSnapshot() { return snapshot }           // client value
-export function getServerSnapshot() { return EMPTY }        // SSR / pre-hydration value
-export function recordAnswer(id, optionId, correct) { /* replace snapshot, persist, notify */ }
-```
+`ConstellationBackground` (`src/components/ambient/ConstellationBackground.tsx`) owns a 2D canvas and a `requestAnimationFrame` loop — this is the canonical case the Effects Discipline section already calls out ("Subscribing to browser APIs... do need an Effect"), not an exception to "hooks over Effects."
 
-```ts
-// src/hooks/useCaseProgress.ts — atomic selectors over the store
-export function useCaseAnswer(caseId: string) {
-  const getSelected = useCallback(() => getSnapshot()[caseId], [caseId])
-  const getSelectedServer = useCallback(() => getServerSnapshot()[caseId], [caseId])
-  return useSyncExternalStore(subscribe, getSelected, getSelectedServer)
-}
-```
-
-Each hook slices the snapshot down to exactly what one component needs (`useCaseAnswer(id)`, `useSolvedCount(total)`), so answering one case only re-renders that case's `CaseFile` — not every case on the page. If client state ever grows past a handful of small stores, that's the signal to bring in Zustand for real; don't reach for it preemptively.
-
-**If you need this pattern again:** reuse `caseStore.ts`'s shape (module-scope snapshot + `Set<listener>` + a `storage` event bridge for cross-tab sync) rather than inventing a new one — it's the whole pattern in ~50 lines, and it's already wrapped in the try/catch needed for Safari private-mode `localStorage` throwing on write.
-
-## Progressive Enhancement: Detecting Hydration Without `useEffect`
-
-When a component must render different markup before vs. after hydration (e.g. a no-JS `<details>` fallback that upgrades to an interactive picker), don't use `useEffect(() => setMounted(true), [])` — that's an extra render pass and violates "hooks over Effects." Use `useSyncExternalStore` with a no-op subscribe:
-
-```ts
-// src/hooks/useHydrated.ts
-function subscribe() { return () => {} }
-export function useHydrated(): boolean {
-  return useSyncExternalStore(subscribe, () => true, () => false)
-}
-```
-
-Server and the first client (hydration) render both resolve to `false` — output matches, no hydration-mismatch warning. Immediately after mount, React detects `getSnapshot()` (`true`) differs from what was rendered and forces a resync render, flipping the value to `true` — no manual state, no Effect. Used by `CaseFile` to swap its `<details>` fallback for the interactive option-picker only once the client has taken over.
-
-## Imperative Browser API Ownership: the WebGL Lifecycle Pattern
-
-`LakeBackground` (`src/components/ambient/LakeBackground.tsx`) owns a WebGL context and a `requestAnimationFrame` loop — this is the canonical case doc's own Effects Discipline section already calls out ("Subscribing to browser APIs... do need an Effect"), not an exception to "hooks over Effects."
-
-The shape to reuse for any future component that owns an imperative resource (WebGL, a `<video>` element, a websocket, a third-party widget):
+The shape to reuse for any future component that owns an imperative resource (a canvas, a `<video>` element, a websocket, a third-party widget):
 
 ```tsx
 'use client'
 useEffect(() => {
-  if (someGuardCondition) return           // e.g. reducedMotion — bail before creating anything
+  const resource = ImperativeThing.create(ref.current)  // returns null instead of throwing
+  if (!resource) return                                 // failed setup leaves nothing to clean up
 
-  const resource = new ImperativeThing(ref.current)
-  if (!resource.init()) return             // failed setup leaves nothing to clean up
+  const onEvent = () => resource.doSomething()          // arrow consts, not function declarations:
+  window.addEventListener('event', onEvent)             // hoisted declarations lose TS null-narrowing
+
+  if (someGuardCondition) {                             // e.g. reducedMotion — static frame only
+    return () => window.removeEventListener('event', onEvent)
+  }
+
   resource.start()
-
-  function onEvent() { resource.doSomething() }
-  window.addEventListener('event', onEvent)
-
-  return () => {                           // cleanup mirrors setup, in reverse
+  return () => {                                        // cleanup mirrors setup
+    resource.stop()
     window.removeEventListener('event', onEvent)
-    resource.destroy()
   }
 }, [someGuardCondition])
 ```
 
-Rules this pattern enforces, taken from `LakeBackground`/`LakeRenderer`:
-- **All imperative state lives in a plain class (`LakeRenderer`), not in React state.** Frame time, ripple positions, and GL handles change up to 30x/second — routing that through `useState` would mean 30 re-renders/second for no reason. React only tracks the two things a render actually needs: whether reduced-motion is active, and whether the canvas is ready to fade in.
-- **The guard condition is checked before any resource is created**, not after — `if (reducedMotion) return` is the first line of the effect, so a reduced-motion visitor never even gets a WebGL context allocated.
-- **`init()` returns success/failure rather than throwing.** A synchronous exception inside an Effect on a static export has no error boundary to catch it gracefully; a boolean the caller checks does not.
-- **Cleanup is exhaustive and symmetric with setup** — every `addEventListener` in the effect has a matching `removeEventListener` in its cleanup, in the same order reversed. This is what makes React StrictMode's mount→unmount→mount dev-time double-invoke safe to develop against.
-- **Failure has a visual answer, not just a caught error.** `LakeBackground` always renders a CSS-gradient fallback `<div>` beneath the canvas; the effect's early returns and the renderer's `onFail` callback all funnel toward "the fallback stays visible," never toward a blank layer.
+Rules this pattern enforces, taken from `ConstellationBackground`/`ConstellationRenderer`:
+- **All imperative state lives in a plain class (`ConstellationRenderer`), not in React state.** Node positions, pulses and pointer easing change 60 times a second; routing that through `useState` would mean 60 re-renders a second for nothing. The component has **zero** `useState` — React only tracks whether reduced motion is active.
+- **Factory returns `null` rather than throwing.** A synchronous exception inside an Effect on a static export has no error boundary to catch it gracefully; a nullable result the caller checks does not.
+- **Reduced motion is a branch inside the effect, not a skipped effect.** The renderer is still created and draws one static frame (and redraws on resize); only the loop and the pointer/scroll/click listeners are skipped.
+- **Cleanup is exhaustive and symmetric with setup** — every `addEventListener` has a matching `removeEventListener`. This is what makes React StrictMode's dev-time mount→unmount→mount double-invoke safe.
+- **Failure has a visual answer.** The wrapper's CSS radial glows are always painted beneath the canvas, so no-JS, no-2D-context and pre-mount all look intentional, never blank.
+- **Colours come from CSS tokens** (`readPalette()` reads `--constellation-ink`/`--constellation-warm` from `:root`), so a palette change is a `globals.scss` edit only.
 
 ## Anti-Patterns to Avoid
 

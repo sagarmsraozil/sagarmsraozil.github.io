@@ -1,43 +1,33 @@
+@use '../../styles/mixins' as *;
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background-color 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
-  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .headerScrolled {
-  background-color: rgba(10, 15, 25, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-color: var(--color-rule);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-nav);
 }
 
 .headerInner {
-  max-width: calc(var(--max-width-hero) + 64px);
+  max-width: calc(var(--max-width-hero) + 2 * var(--gutter));
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--gutter);
   height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.headerBrandGroup {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
 .headerBrand {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.01em;
-  color: var(--color-text-primary);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--green-house);
   flex-shrink: 0;
 }
 
@@ -48,35 +38,24 @@
 }
 
 .headerNavLink {
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
-  color: var(--color-text-secondary);
-  letter-spacing: 0.01em;
-  transition: color 0.15s ease;
+  color: var(--text);
+  transition: color var(--duration-button) ease;
 
   &:hover {
-    color: var(--color-text-primary);
+    color: var(--green-accent);
   }
 }
 
 .headerNavLinkCv {
-  color: var(--accent-gold);
-  font-weight: 700;
-  border: 1px solid var(--accent-gold);
-  padding: 5px 12px;
-  border-radius: var(--radius-sm);
-  transition: background-color 0.15s ease, color 0.15s ease;
-
-  &:hover {
-    background-color: rgba(255, 200, 87, 0.12);
-    color: var(--accent-gold-hover);
-  }
+  @include pill(small);
+  @include pill-outlined;
 }
 
 .headerMobileNavLinkCv {
   font-weight: 700;
-  color: var(--accent-gold);
+  color: var(--green-accent);
 }
 
 .headerMenuToggle {
@@ -86,8 +65,8 @@
   cursor: pointer;
   padding: 8px;
   margin: -8px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -97,7 +76,8 @@
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--color-text-primary);
+  border-radius: 1px;
+  background-color: var(--text);
   position: relative;
   transition: background-color 0.2s ease;
 
@@ -107,7 +87,8 @@
     display: block;
     width: 22px;
     height: 2px;
-    background-color: var(--color-text-primary);
+    border-radius: 1px;
+    background-color: var(--text);
     position: absolute;
     left: 0;
     transition: transform 0.2s ease, top 0.2s ease;
@@ -139,24 +120,29 @@
 .headerMobileNav {
   display: none;
   flex-direction: column;
-  padding: 16px 32px 24px;
-  border-top: 1px solid var(--color-rule);
-  background-color: var(--color-bg);
+  padding: 8px var(--gutter-mobile) 16px;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-nav);
 }
 
 .headerMobileNavLink {
-  font-family: var(--font-body);
   font-size: 16px;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-align: left;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--rule);
   padding: 12px 0;
-  border-bottom: 1px solid var(--color-rule);
+  min-height: 44px;
+  cursor: pointer;
 
   &:last-child {
     border-bottom: none;
   }
 
   &:hover {
-    color: var(--color-text-primary);
+    color: var(--green-accent);
   }
 }
 
@@ -174,6 +160,11 @@
   }
 
   .headerInner {
-    padding: 0 24px;
+    padding: 0 var(--gutter-mobile);
+  }
+
+  /* An open drawer needs a solid bar above it, scrolled or not. */
+  .header:has(.headerMobileNav) {
+    background-color: var(--surface);
   }
 }

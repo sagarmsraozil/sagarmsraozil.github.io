@@ -1,50 +1,56 @@
+@use '../../styles/mixins' as *;
+
 .skills {
-  padding: var(--section-padding) 32px;
-  border-top: 1px solid var(--color-rule);
+  @include section;
 }
 
 .skillsInner {
-  max-width: 680px;
+  max-width: var(--max-width-reading);
   margin: 0 auto;
 }
 
 .skillsList {
+  @include card;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  padding: 8px 32px;
 }
 
 .skillsItem {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 180px 1fr;
   gap: 16px;
   align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .skillsCategoryName {
-  font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  flex-shrink: 0;
+  color: var(--green-starbucks);
 }
 
 .skillsCategoryItems {
-  font-family: var(--font-body);
   font-size: 16px;
-  color: var(--color-text-secondary);
+  color: var(--text);
   line-height: 1.6;
 }
 
 @media (max-width: 640px) {
-  .skills {
-    padding: var(--section-padding-mobile) 24px;
+  .skillsList {
+    padding: 4px 20px;
   }
 
   .skillsItem {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 4px;
+    padding: 16px 0;
   }
 }

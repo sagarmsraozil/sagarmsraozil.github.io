@@ -1,7 +1,6 @@
 import type { ProjectEntry } from '@/types/portfolio'
 import { StackTag } from '@/components/ui/StackTag'
 import { ResourceLinks } from '@/components/ui/ResourceLinks'
-import { CaseFile } from '@/components/game/CaseFile'
 import styles from './ProjectCard.module.scss'
 
 interface ProjectCardProps {
@@ -27,8 +26,6 @@ export function ProjectCard({ project }: Readonly<ProjectCardProps>) {
           </span>
         ))}
       </div>
-
-      {project.case && <CaseFile caseId={project.id} data={project.case} />}
 
       <ul className={styles.cardBullets}>
         {project.bullets.map((bullet) => (
