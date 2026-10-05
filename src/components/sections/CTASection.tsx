@@ -27,7 +27,7 @@ export function CTASection({ data }: Readonly<CTASectionProps>) {
 
           <div className={styles.ctaActions}>
             <a href={data.cvHref} className={styles.ctaDownload} download>
-              Download CV (PDF) ↓
+              Download resume ↓
             </a>
 
             <nav className={styles.ctaSocialLinks} aria-label="Social links">

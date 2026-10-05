@@ -112,15 +112,15 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 
 | Section | Key Data Points |
 |---|---|
-| Intro (header) | Name, "Full-Stack Engineer" + stack line (React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel — the CV headline), photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights ("Full working rights in Australia (subclass 485).") |
+| Intro (header) | Name, "Full-Stack Engineer" + stack line (React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel, kept from the old CV headline; the Oct 2026 resume has none), photo (`/sagar.jpeg`), contact (Melbourne VIC · phone · email · LinkedIn · GitHub), work-rights ("Full working rights in Australia (subclass 485).") |
 | Summary | "I work out what to build before I build it." — 4 narrative paragraphs + 3 spoken languages (English, Nepali, Hindi) |
-| Skills | 8 categories, matching the CV: Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning (Docker, AWS). A few site-only items the CV omits (Java, C#, Kotlin, Mongoose, microservices, monoliths, sharding) are kept because they don't contradict it |
+| Skills | 8 categories, the old CV grouping kept on purpose (the Oct 2026 resume uses 6), with its new items folded in: Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning (Docker, AWS). A few site-only items the CV omits (Java, C#, Kotlin, Mongoose, microservices, monoliths, sharding) are kept because they don't contradict it |
 | Experience | 2 entries: Jobss.ai (Intern, Technical Lead, Feb–May 2026, Melbourne — Laravel/PHP/Blade), ParewaLabs/Programiz (SWE, Oct 2021–Nov 2023, Kathmandu) — bulleted |
 | Projects | Detailed: Nexus, Aroma (two connected systems built during the Master's; they trade stock). Earlier: Hospital E-Ticketing, Futsal Finder |
 | AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 3 paragraphs, the last on spec-driven development |
 | Education | VIT Melbourne (Master's, Feb 2024–Jul 2026), Softwarica Kathmandu (BSc, Nov 2018–Oct 2021) |
 | References | 5 people from Programiz (Sanjeev, Ranjit, Raman, Abidit, Shirish) |
-| CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_CV.pdf`), Links: LinkedIn, GitHub, X, copyright |
+| CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
 
 ## Common Edit Tasks
 
@@ -155,5 +155,5 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 3. Also update the Person JSON-LD `image` in `src/app/layout.tsx` and OG/Twitter image paths
 
 ### Update the CV PDF
-1. Replace `public/Sagar_Mishra_CV.pdf` (keep the filename, or update every reference)
+1. Replace `public/Sagar_Mishra_Resume.pdf` (keep the filename, or update every reference)
 2. The path appears in `navigation.links[]` (CV), `header.ctaSecondary.href`, and `cta.cvHref`

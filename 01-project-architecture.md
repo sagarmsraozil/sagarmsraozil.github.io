@@ -22,7 +22,7 @@ sagarmsraozil.github.io/
 ├── .github/workflows/deploy.yml    # CI/CD — builds and deploys to GitHub Pages
 ├── DESIGN.md                       # Upstream Starbucks design reference (getdesign); adapted in 04-design-system.md
 ├── public/
-│   ├── Sagar_Mishra_CV.pdf         # Resume — source of truth for content (served statically, opened in CVModal)
+│   ├── Sagar_Mishra_Resume.pdf     # Resume (Oct 2026), source of truth for career facts (served statically, opened in CVModal)
 │   ├── sagar.jpeg                  # Profile photo
 │   ├── robots.txt
 │   ├── sitemap.xml

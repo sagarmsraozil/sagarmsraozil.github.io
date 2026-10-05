@@ -2,7 +2,9 @@
 
 > Sagar Mishra's professional details, career history, education, skills, and contact info. Consult when updating portfolio content or ensuring accuracy of personal information.
 >
-> **Source of truth is `public/Sagar_Mishra_CV.pdf`** (updated Sept 2026). Where this file and the CV disagree, the CV wins; this file was re-synced to it in Sept 2026.
+> **Source of truth is `public/Sagar_Mishra_Resume.pdf`** (Oct 2026). It replaces the old Sept 2026 CV. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
+>
+> **Deliberate exceptions (Sagar's decision):** the site keeps the "Full-Stack Engineer" title (the resume says "Software engineer"), and keeps site-only details the resume omits. Those are marked *(site-only)* below. Don't delete them.
 
 ## Identity
 
@@ -11,37 +13,41 @@
 | Name | Sagar Mishra |
 | Date of Birth | 14 December, 1999 |
 | Email | sagarcrcoc@gmail.com |
-| Phone | 0424308228 |
+| Phone | 0424308228 (resume: +61 424 308 228) |
 | Location | Melbourne, Australia |
 | Work rights | Full working rights in Australia (subclass 485) |
 | Origin | Nepal |
 | LinkedIn | https://www.linkedin.com/in/sagar-mishra-a3455121b/ |
 | GitHub | https://github.com/sagarmsraozil |
 | X/Twitter | https://x.com/SagarMi31569172 |
+| Site title | Full-Stack Engineer (kept on the site; the resume uses "Software engineer") |
 
 ## Professional Experience
 
 ### Programiz Pro (Oct 2021 -- Nov 2023)
 
-Organization: ParewaLabs. EdTech platform — "Make learning to code easy and beginner friendly."
+Organization: ParewaLabs. Role: Software Engineer, Kathmandu. EdTech platform: "Make learning to code easy and beginner friendly." Over 100,000 paid learners.
 
-**Contributions:**
-1. Designed and developed interactive course learning flow
-2. Progressive learning dashboard for students
-3. Certificate generation algorithm on course completion — has issued over 100,000 verified completion certificates
-4. Interactive learning paths for courses
-5. Online compilers (Python, JavaScript)
-6. AI assistant setup (sensAI)
-7. Conversion-focused landing pages
-8. Analytics (Mixpanel, Microsoft Clarity)
-9. End-to-end tests in Playwright and Cypress, run in a GitHub Actions CI workflow
+**Contributions (per resume):**
+1. Course flow APIs in Node.js, TypeScript and MySQL. Over 100,000 paid learners use them to finish a course
+2. Paddle payment integration, which every paid learner pays through. Wrote the webhooks and the checkout iframe messaging. Programiz still takes payment through that workflow today
+3. Certificate engine in Node.js and TypeScript. Has issued over 100,000 verified completion certificates
+4. Owned the online compiler, around 23 million visits a month from Google search. Fixed Python output arriving over the socket in pieces with a heartbeat that joins it into one response, working with the principal engineer
+5. sensAI, an LLM-backed tutor inside the exercise page. Learners ask it over 300 questions a day
+6. End-to-end tests in Playwright and Cypress, run in a GitHub Actions CI workflow
+
+**Site-only (not on the resume, kept):**
+- Progressive learning dashboard for students
+- Interactive learning paths for courses
+- Conversion-focused landing pages
+- Analytics (Mixpanel, Microsoft Clarity)
 
 **Leadership:**
-- Led "Programiz Reports" (a feature for beginners learning to program) — team of 6 (developers + managers)
+- Led "Programiz Reports" (a feature for beginners learning to program), team of six. Took it from content-team requirements to release in two weeks
 - Whiteboard sessions, groomed backlogs, weekly delivery cycles
 - Sat in on board-level product direction conversations
 
-**Tools:** React.js, Next.js, Node.js, C#, Directus, Jira, Agile (Scrum/Kanban), Python, Playwright, Cypress, GitHub Actions
+**Tools:** React.js, Next.js, Node.js, TypeScript, MySQL, Paddle, C#, Directus, Jira, Agile (Scrum/Kanban), Python, Playwright, Cypress, GitHub Actions
 
 **Links:**
 - Platform: https://programiz.pro/
@@ -49,57 +55,71 @@ Organization: ParewaLabs. EdTech platform — "Make learning to code easy and be
 
 ### ApplyKart / Jobss AI (Feb 2026 -- May 2026)
 
-Melbourne startup. Job/task distribution platform between employers and task-seekers.
+Melbourne startup. Job/task distribution platform between employers and task-seekers. Live in production.
 
-**Role:** Software Engineering Intern — technical lead of a 4-person team. Set technical direction and ran code review; nothing merged unread.
+**Role:** Software Engineering Intern. Led four engineers and reviewed every pull request before it merged.
 
-**Stack (per CV):** Laravel, PHP, Blade views built from Figma designs. *Not* React/Next.js — the site previously listed that stack for this role and was corrected in Sept 2026.
+**Stack (per resume):** Laravel, PHP, Blade views built from Figma designs. *Not* React/Next.js. The site previously listed that stack for this role and was corrected in Sept 2026.
 
-**Contributions:**
-- Authentication and role-based access model (employers vs job seekers) — every permission check reads from it
+**Contributions (per resume):**
+- Owned authentication and role-based access control for four roles, all checked against one permission model
+- Employer workspace in Laravel and Blade. Applicants move through review, shortlist and rejection
+- Marketplace search on one index that serves both sides, people looking for work and people looking to hire
+
+**Site-only (not on the resume, kept):**
 - Job/task posting dashboard
-- Recruitment pipeline (shortlist, hire, reject)
 - Category-based marketing pages
 - Paginated and cursor-based APIs
-- Marketplace search on one index, queried by employers and seekers from opposite directions
-- Employee slot distribution algorithm
+- Employee slot distribution (allocation) algorithm
 
 **Website:** https://jobss.ai/
 
-## Self Projects
+## Projects
 
-### Nexus — EWarehouse (Feb 2025 -- Jan 2026)
+Nexus and Aroma were built by a **team of three that Sagar led**, during the Master's. They are not solo personal projects. He architected both, wrote the spikes and specs, and reviewed every pull request, over 400 in two years. AI models implemented against the frozen specs (spec-driven development).
+
+### Nexus: warehouse management platform (Feb 2025 -- Jan 2026)
 
 Digital warehouse management system. Born from real problems running an anime apparel side business.
 
 **Problems solved:** Missing stock tracking, no supplier onboarding workflow, irregular supply, chaotic market pricing, random stock fulfillment, no return-to-order flow, no stock pipeline visibility.
 
-**Built:** Hierarchical digital warehouse with labels, state-machine workflow for product drops, replenishment system, lot-level tracking, addon system for sales/discounts, return-to-order flow, order marshalling pipeline.
+**Per resume:**
+- Stock ledger in PostgreSQL with `SELECT FOR UPDATE` row locks, so two buyers cannot claim one unit
+- Fulfilment pipeline: cron jobs batch retail orders, and each order is tracked as its own state machine
+- Product drops modelled as a state machine through supplier onboarding, lot negotiation, intake and pricing
+- Now being rebuilt as **e-warehouse** with an agentic workflow in Claude Code. Sagar writes the spikes, assumptions and some of the code; agents implement the rest, and he reviews their code before it merges
 
-**Also (per CV):** stock movements recorded in a PostgreSQL ledger with `SELECT FOR UPDATE` row locks, so two buyers cannot claim one unit. Trades stock and order state with Aroma. Built during the Master's with spec-driven development (Sagar writes the spike, reference implementation and spec; AI models plan and implement against the frozen spec; every change is read before merge).
+**Site-only (not on the resume, kept):** hierarchical labelled-tree digital warehouse, replenishment system, lot-level tracking, addon system for sales/discounts, return-to-order flow, order marshalling and allocation logic.
 
-**Stack:** React, Next.js, Node.js, PostgreSQL, Redis
+**Stack:** TypeScript, Node.js, PostgreSQL, Redis, Next.js (site also lists React)
 
-### Aroma — Multi-tenant Ecommerce (Mar 2024 -- Jan 2026)
+### Aroma: multi-tenant eCommerce storefront (Mar 2024 -- Jan 2026)
 
-Clothing marketplace for sellers currently relying on social media DMs. Built with spec-driven development, same as Nexus.
+Clothing marketplace for sellers currently relying on social media DMs. Built by the same team, same spec-driven process as Nexus.
 
-**Built:** Search/catalog, product detail, cart, reservation, checkout, order history, order status. Multi-tenant architecture with isolated storefronts on shared infrastructure. Trades stock with Nexus (the CV's wording — two connected systems, not a layer on top). Lighthouse: product details page LCP under 2 seconds.
+**Per resume:**
+- Tenancy model: each seller runs an isolated storefront on one shared backend
+- Checkout reserves stock on order confirmation. An idempotency key stops a retry creating a duplicate order
+- Payments separated into their own service, with the eSewa and Khalti gateways behind one interface
+- Orders handed to Nexus through a shared Redis instance, with REST as the fallback. Catalogue cached in Redis
 
-**Stack:** React, Next.js, Node.js, PostgreSQL, Directus
+**Site-only (not on the resume, kept):** search/catalog, product detail, cart, order history and status pages; the rendering split; Lighthouse product details page LCP under 2 seconds.
 
-### Futsal Opponent Finder (Oct 2020 -- Jul 2021)
+**Stack:** TypeScript, Node.js, PostgreSQL, Redis, Next.js (site also lists React, Directus)
 
-Tinder-style matchmaking for futsal teams.
+### Futsal matchmaking app (Oct 2020 -- Jul 2021)
 
-**Features:** Team creation, opponent matching, Clash of Clans-style dashboards, league/knockout/Champions League tournament formats, battle seasons with tier progression (Bronze to Champion), court booking.
+**Per resume:** Android app built in Kotlin. Players find venues and opponents by their preferences.
 
-**Stack:** React.js, Node.js, Chart.js, MongoDB
+**Site-only (not on the resume, kept):** Tinder-style team matching, team creation, Clash of Clans-style dashboards, league/knockout/Champions League tournament formats, battle seasons with tier progression (Bronze to Champion), court booking. The linked repos below are a React/Node/MongoDB web version.
+
+**Stack:** Kotlin (Android). Web repos: React.js, Node.js, Chart.js, MongoDB
 **GitHub:** Backend: https://github.com/sagarmsraozil/FutsalBooking-Backend_Node- | Frontend: https://github.com/sagarmsraozil/FutsalBooking_Frontend-React-
 
-### Hospital E-Ticketing Platform (Aug 2021 -- Oct 2021)
+### Hospital E-Ticketing Platform (Aug 2021 -- Oct 2021) *(site-only, not on the resume)*
 
-University group project — online doctor appointment booking for Nepal.
+University group project: online doctor appointment booking for Nepal.
 
 **Features:** Digital hospital/doctor registration, weekly slot management, inversion test algorithm for double-booking prevention, dashboards for doctor/patient/admin, notification system, role-based auth.
 
@@ -110,27 +130,27 @@ University group project — online doctor appointment booking for Nepal.
 
 | Institution | Location | Period | Degree |
 |---|---|---|---|
-| Victorian Institute of Technology (VIT) | Melbourne, Australia | Feb 2024 -- Jul 2026 | Master of IT and Systems — Software Engineering |
+| Victorian Institute of Technology (VIT) | Melbourne, Australia | Feb 2024 -- Jul 2026 | Master of Information Technology and Systems (Software Engineering) |
 | Softwarica College of IT and E-commerce | Kathmandu, Nepal | Nov 2018 -- Oct 2021 | BSc (Hons) Software Engineering |
 
 ## Technical Skills
 
-As listed on the CV (Sept 2026):
+As listed on the resume (Oct 2026):
 
-**Languages:** TypeScript, JavaScript, PHP, Python, SQL, HTML, CSS
-**Frontend:** React, Next.js, React Query, Zustand, Tailwind CSS, server-side rendering, static generation, technical SEO
-**Backend:** Node.js, Express, Laravel, Django, REST APIs, authentication, role-based access control, multi-tenancy, state machines
-**Data:** PostgreSQL, MySQL, MongoDB, Redis, Drizzle, Sequelize, schema design, concurrency control, row-level locking, caching
-**Testing & CI:** Playwright, Cypress, end-to-end testing, GitHub Actions
-**Practices:** Agile, Scrum, Kanban, spec-driven development, code review, sprint planning, requirements gathering
-**Tools:** Git, Jira, Trello, Asana, Directus, Mixpanel, Microsoft Clarity, Lighthouse
-**Currently learning:** Docker, AWS (EC2, RDS, S3)
+**Languages & Frameworks:** TypeScript, JavaScript, Node.js, Express, Kotlin, PHP, Laravel, Python, SQL, React, Next.js
+**Backend:** REST APIs, payment integration, webhooks, authentication, role-based access control, idempotency, caching
+**Cloud Platforms:** Vercel. Currently learning AWS (EC2, RDS, S3) and Docker
+**DevOps & Tools:** Git, GitHub Actions CI, Playwright, Cypress, Postman, Sentry, Jira, Directus, Claude Code
+**Databases:** PostgreSQL (Postgres), MySQL, MongoDB, Redis, Drizzle, Sequelize, row-level locking
+**Practices:** Code review, Agile, spec-driven development, AI-assisted development
 
-Kept on the website though the new CV omits them (they don't contradict it): Java, C#, Kotlin, Mongoose, data modelling, microservices, monoliths, sharding, product analytics & instrumentation.
+New on the resume vs the old CV: Postman, Sentry, Vercel, Claude Code, payment integration, webhooks, idempotency, AI-assisted development.
+
+Kept on the website though the resume omits them (they don't contradict it): HTML, CSS, React Query, Zustand, Tailwind CSS, server-side rendering, static generation, technical SEO, Django, multi-tenancy, state machines, schema design, concurrency control, Scrum, Kanban, sprint planning, requirements gathering, Trello, Asana, Mixpanel, Microsoft Clarity, Lighthouse, Java, C#, Mongoose, data modelling, microservices, monoliths, sharding, product analytics & instrumentation.
 
 ## Soft Skills
 
-- **Leadership:** Led cross-functional team of 6 at Programiz; technical lead of a 4-person team at Jobss.ai
+- **Leadership:** Led a team of six on Programiz Reports; led four engineers at Jobss.ai; led the team of three that built Nexus and Aroma
 - **Whiteboard sessions:** Facilitated brainstorming for complex problems
 - **Strategic thinking:** Board-level product direction discussions at ParewaLabs
 - **Communication:** Understands professional vs day-to-day communication nuance

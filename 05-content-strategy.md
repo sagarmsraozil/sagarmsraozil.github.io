@@ -22,7 +22,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 > **Gamification removed (Sept 2026):** the interactive "Diagnosis Layer" (case-file quizzes on four entries, a "Cases N/4" header chip, and an unlock-on-completion email composer) was removed entirely, including the symptom/diagnosis copy. The page is plain CV content again: nothing to play, nothing gated. Don't reintroduce quiz mechanics without a fresh decision from Sagar.
 
-> **CV is the source of truth (Sept 2026):** where the site and `public/Sagar_Mishra_CV.pdf` disagree on a fact (stack, title, metric, spelling), the CV wins. Site-only detail that doesn't contradict the CV is kept.
+> **The resume is the source of truth (Oct 2026):** where the site and `public/Sagar_Mishra_Resume.pdf` disagree on a fact (stack, metric, spelling), the resume wins. One deliberate exception: the site keeps the "Full-Stack Engineer" title (Sagar's decision). Site-only detail that doesn't contradict the resume is kept.
 
 ## Section-by-Section Mechanics
 
@@ -30,7 +30,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 **Mechanic:** A recruiter's first five seconds. Everything needed to place and contact the candidate, above the fold.
 
-- Name (large, Starbucks Green), title, and a stack line matching the CV headline (`React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel`).
+- Name (large, Starbucks Green), title, and a stack line kept from the old CV headline (`React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel`).
 - Round profile photo to the side — the CV-format equivalent of a résumé header.
 - Contact line with `·` separators: location · phone · email · LinkedIn · GitHub. Work-rights/visa stated plainly (important for AU roles).
 - Two CTAs: "See the work" (anchor) and "Download CV" (the PDF).
@@ -48,7 +48,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 **Mechanic:** Complete and easy to scan. A hiring manager finds a specific technology in under 5 seconds. Placed early, like the reference site.
 
 - No skill bars, radar charts, or proficiency indicators.
-- Eight categories matching the CV (Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning), items as inline text separated by dots. Docker and AWS sit under "Currently learning" — the CV is explicit that they're not yet production skills.
+- Eight categories, the old CV grouping kept on purpose with the resume's new items folded in (Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning), items as inline text separated by dots. Docker and AWS sit under "Currently learning", because the resume is explicit that they're not yet production skills.
 
 ### Section 04 — Experience (Social Proof Through Specificity)
 

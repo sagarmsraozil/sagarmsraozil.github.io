@@ -32,7 +32,7 @@ export function CVModal({ isOpen, onClose, pdfHref }: Readonly<CVModalProps>) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="CV Preview"
+      aria-label="Resume preview"
     >
       <div
         ref={panelRef}
@@ -41,7 +41,7 @@ export function CVModal({ isOpen, onClose, pdfHref }: Readonly<CVModalProps>) {
         tabIndex={-1}
       >
         <div className={styles.panelBar}>
-          <span className={styles.panelTitle}>Curriculum Vitae</span>
+          <span className={styles.panelTitle}>Resume</span>
           <div className={styles.panelActions}>
             <a href={pdfHref} download className={styles.panelDownload}>
               Download ↓
@@ -61,7 +61,7 @@ export function CVModal({ isOpen, onClose, pdfHref }: Readonly<CVModalProps>) {
           <iframe
             src={pdfHref}
             className={styles.panelFrame}
-            title="Sagar Mishra's CV"
+            title="Sagar Mishra's resume"
           />
         </div>
       </div>
