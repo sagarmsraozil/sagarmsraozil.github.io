@@ -120,7 +120,7 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 | AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 3 paragraphs, the last on spec-driven development |
 | Education | VIT Melbourne (Master's, Feb 2024–Jul 2026), Softwarica Kathmandu (BSc, Nov 2018–Oct 2021) |
 | References | 5 people from Programiz (Sanjeev, Ranjit, Raman, Abidit, Shirish) |
-| CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
+| CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_FullStack_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
 
 ## Common Edit Tasks
 
@@ -155,5 +155,5 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 3. Also update the Person JSON-LD `image` in `src/app/layout.tsx` and OG/Twitter image paths
 
 ### Update the CV PDF
-1. Replace `public/Sagar_Mishra_Resume.pdf` (keep the filename, or update every reference)
+1. Replace `public/Sagar_Mishra_FullStack_Resume.pdf` (keep the filename, or update every reference)
 2. The path appears in `navigation.links[]` (CV), `header.ctaSecondary.href`, and `cta.cvHref`

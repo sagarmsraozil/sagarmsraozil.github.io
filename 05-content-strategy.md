@@ -22,7 +22,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 > **Gamification removed (Sept 2026):** the interactive "Diagnosis Layer" (case-file quizzes on four entries, a "Cases N/4" header chip, and an unlock-on-completion email composer) was removed entirely, including the symptom/diagnosis copy. The page is plain CV content again: nothing to play, nothing gated. Don't reintroduce quiz mechanics without a fresh decision from Sagar.
 
-> **The resume is the source of truth (Oct 2026):** where the site and `public/Sagar_Mishra_Resume.pdf` disagree on a fact (stack, metric, spelling), the resume wins. One deliberate exception: the site keeps the "Full-Stack Engineer" title (Sagar's decision). Site-only detail that doesn't contradict the resume is kept.
+> **The resume is the source of truth (Oct 2026):** where the site and `public/Sagar_Mishra_FullStack_Resume.pdf` disagree on a fact (stack, metric, spelling), the resume wins. One deliberate exception: the site keeps the "Full-Stack Engineer" title (Sagar's decision). Site-only detail that doesn't contradict the resume is kept.
 
 ## Section-by-Section Mechanics
 

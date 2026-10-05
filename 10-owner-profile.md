@@ -2,9 +2,9 @@
 
 > Sagar Mishra's professional details, career history, education, skills, and contact info. Consult when updating portfolio content or ensuring accuracy of personal information.
 >
-> **Source of truth is `public/Sagar_Mishra_Resume.pdf`** (Oct 2026). It replaces the old Sept 2026 CV. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
+> **Source of truth is `public/Sagar_Mishra_FullStack_Resume.pdf`** (Oct 2026). It replaces the earlier Oct 2026 resume and the Sept 2026 CV. Items marked *(earlier resume)* were on the previous Oct 2026 resume but cut from this one for space; they are still true and stay on the site. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
 >
-> **Deliberate exceptions (Sagar's decision):** the site keeps the "Full-Stack Engineer" title (the resume says "Software engineer"), and keeps site-only details the resume omits. Those are marked *(site-only)* below. Don't delete them.
+> **Deliberate exceptions (Sagar's decision):** the site uses the "Full-Stack Engineer" title (the resume says "Full stack software engineer"), and keeps site-only details the resume omits. Those are marked *(site-only)* below. Don't delete them.
 
 ## Identity
 
@@ -20,7 +20,7 @@
 | LinkedIn | https://www.linkedin.com/in/sagar-mishra-a3455121b/ |
 | GitHub | https://github.com/sagarmsraozil |
 | X/Twitter | https://x.com/SagarMi31569172 |
-| Site title | Full-Stack Engineer (kept on the site; the resume uses "Software engineer") |
+| Site title | Full-Stack Engineer (matches the resume) |
 
 ## Professional Experience
 
@@ -29,15 +29,14 @@
 Organization: ParewaLabs. Role: Software Engineer, Kathmandu. EdTech platform: "Make learning to code easy and beginner friendly." Over 100,000 paid learners.
 
 **Contributions (per resume):**
-1. Course flow APIs in Node.js, TypeScript and MySQL. Over 100,000 paid learners use them to finish a course
-2. Paddle payment integration, which every paid learner pays through. Wrote the webhooks and the checkout iframe messaging. Programiz still takes payment through that workflow today
+1. Course flow APIs in Node.js, TypeScript and MySQL, and the learner dashboard, for over 100,000 paid learners
+2. Paddle payment integration. Wrote the webhooks and the checkout iframe messaging. Still in use today. *(earlier resume: every paid learner pays through it)*
 3. Certificate engine in Node.js and TypeScript. Has issued over 100,000 verified completion certificates
-4. Owned the online compiler, around 23 million visits a month from Google search. Fixed Python output arriving over the socket in pieces with a heartbeat that joins it into one response, working with the principal engineer
-5. sensAI, an LLM-backed tutor inside the exercise page. Learners ask it over 300 questions a day
+4. Owned the online compiler. Fixed Python output arriving over the socket in pieces with a heartbeat that joins it into one response. *(earlier resume: around 23 million visits a month from Google search; fix made with the principal engineer)*
+5. *(earlier resume)* sensAI, an LLM-backed tutor inside the exercise page. Learners ask it over 300 questions a day
 6. End-to-end tests in Playwright and Cypress, run in a GitHub Actions CI workflow
 
 **Site-only (not on the resume, kept):**
-- Progressive learning dashboard for students
 - Interactive learning paths for courses
 - Conversion-focused landing pages
 - Analytics (Mixpanel, Microsoft Clarity)
@@ -88,7 +87,7 @@ Digital warehouse management system. Born from real problems running an anime ap
 - Stock ledger in PostgreSQL with `SELECT FOR UPDATE` row locks, so two buyers cannot claim one unit
 - Fulfilment pipeline: cron jobs batch retail orders, and each order is tracked as its own state machine
 - Product drops modelled as a state machine through supplier onboarding, lot negotiation, intake and pricing
-- Now being rebuilt as **e-warehouse** with an agentic workflow in Claude Code. Sagar writes the spikes, assumptions and some of the code; agents implement the rest, and he reviews their code before it merges
+- Now being rebuilt as **e-warehouse** with an agentic workflow in Claude Code. Sagar writes the specs, agents implement, and he reviews every change
 
 **Site-only (not on the resume, kept):** hierarchical labelled-tree digital warehouse, replenishment system, lot-level tracking, addon system for sales/discounts, return-to-order flow, order marshalling and allocation logic.
 
@@ -101,16 +100,18 @@ Clothing marketplace for sellers currently relying on social media DMs. Built by
 **Per resume:**
 - Tenancy model: each seller runs an isolated storefront on one shared backend
 - Checkout reserves stock on order confirmation. An idempotency key stops a retry creating a duplicate order
-- Payments separated into their own service, with the eSewa and Khalti gateways behind one interface
-- Orders handed to Nexus through a shared Redis instance, with REST as the fallback. Catalogue cached in Redis
+- Buyer path designed front to back in Next.js: search, product pages, cart, checkout, order history
+- Rendering split by page, server-side for the catalogue. Lighthouse put LCP under 2 seconds
+- *(earlier resume)* Payments separated into their own service, with the eSewa and Khalti gateways behind one interface
+- *(earlier resume)* Orders handed to Nexus through a shared Redis instance, with REST as the fallback. Catalogue cached in Redis
 
-**Site-only (not on the resume, kept):** search/catalog, product detail, cart, order history and status pages; the rendering split; Lighthouse product details page LCP under 2 seconds.
+**Site-only (not on the resume, kept):** order-status view; the static-generation half of the rendering split; React Query and Zustand.
 
 **Stack:** TypeScript, Node.js, PostgreSQL, Redis, Next.js (site also lists React, Directus)
 
 ### Futsal matchmaking app (Oct 2020 -- Jul 2021)
 
-**Per resume:** Android app built in Kotlin. Players find venues and opponents by their preferences.
+**Per resume:** Android app built in Kotlin and MongoDB. Players find venues and opponents by their preferences.
 
 **Site-only (not on the resume, kept):** Tinder-style team matching, team creation, Clash of Clans-style dashboards, league/knockout/Champions League tournament formats, battle seasons with tier progression (Bronze to Champion), court booking. The linked repos below are a React/Node/MongoDB web version.
 

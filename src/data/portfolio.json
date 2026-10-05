@@ -20,7 +20,7 @@
       { "label": "Projects", "href": "#projects" },
       { "label": "Education", "href": "#education" },
       { "label": "References", "href": "#references" },
-      { "label": "Resume", "href": "/Sagar_Mishra_Resume.pdf", "download": true }
+      { "label": "Resume", "href": "/Sagar_Mishra_FullStack_Resume.pdf", "download": true }
     ]
   },
   "header": {
@@ -41,7 +41,7 @@
       ]
     },
     "ctaPrimary": { "label": "See my work →", "href": "#experience" },
-    "ctaSecondary": { "label": "Download resume", "href": "/Sagar_Mishra_Resume.pdf" }
+    "ctaSecondary": { "label": "Download resume", "href": "/Sagar_Mishra_FullStack_Resume.pdf" }
   },
   "summary": {
     "label": "SUMMARY",
@@ -172,7 +172,7 @@
           "Designed the stock ledger in PostgreSQL. It locks rows with SELECT FOR UPDATE, so two buyers can't claim the same unit.",
           "Built lot-aware replenishment with a return-to-order path. A refund or exchange puts the stock back in the correct inventory state.",
           "Designed the fulfilment pipeline. Cron jobs batch retail orders, and each order is its own state machine, tracked until it completes.",
-          "I'm now rebuilding it as e-warehouse with an agentic workflow in Claude Code. I write the spikes, the assumptions and some of the code. Agents write the rest, and I review it before it merges."
+          "I'm now rebuilding it as e-warehouse with an agentic workflow in Claude Code. I write the specs, agents implement them, and I review every change."
         ],
         "stack": ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
         "codeNote": {
@@ -192,7 +192,7 @@
           "Specified checkout to reserve stock when an order is confirmed. An idempotency key stops a retry from creating a duplicate order.",
           "Moved payments into their own service, with the eSewa and Khalti gateways behind one interface.",
           "Orders go to Nexus through a shared Redis instance, with REST as the fallback. The catalogue is cached in Redis too.",
-          "Built the buyer flow: search, product pages, cart, reservation, checkout and order history.",
+          "Designed the buyer path in Next.js: search, product pages, cart, reservation, checkout and order history.",
           "Catalogue pages use server rendering and static generation because they need to be indexed and load fast. Anything per-user is fetched on the client, with React Query holding the cache and Zustand holding the cart.",
           "Ran Lighthouse on the product details page. Largest Contentful Paint (LCP) came in under two seconds.",
           "Added an order-status view so buyers can track an order after paying. Sellers who only sell through social media can't offer that."
@@ -323,7 +323,7 @@
       "I reply to every message."
     ],
     "email": "sagarcrcoc@gmail.com",
-    "cvHref": "/Sagar_Mishra_Resume.pdf",
+    "cvHref": "/Sagar_Mishra_FullStack_Resume.pdf",
     "links": [
       { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sagar-mishra-a3455121b/" },
       { "label": "GitHub", "href": "https://github.com/sagarmsraozil" },
