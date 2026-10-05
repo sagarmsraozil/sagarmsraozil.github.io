@@ -12,11 +12,13 @@ const manrope = Manrope({
   display: "swap",
 });
 
+const SITE_TITLE = "Sagar Mishra | Full-Stack Engineer";
+
 const SITE_DESCRIPTION =
   "Full-stack engineer in Melbourne. Two years of production work at Programiz (100,000+ paid learners), recent technical lead at Jobss.ai. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia.";
 
 export const metadata: Metadata = {
-  title: "Sagar Mishra — Full-Stack Engineer",
+  title: SITE_TITLE,
   description: SITE_DESCRIPTION,
   keywords: [
     "Sagar Mishra",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Sagar Mishra — Full-Stack Engineer",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     type: "website",
     url: SITE_URL,
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sagar Mishra — Full-Stack Engineer",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     creator: "@SagarMi31569172",
     images: [`${SITE_URL}/sagar.jpeg`],

@@ -61,7 +61,7 @@ export function CVModal({ isOpen, onClose, pdfHref }: Readonly<CVModalProps>) {
           <iframe
             src={pdfHref}
             className={styles.panelFrame}
-            title="Sagar Mishra — Curriculum Vitae"
+            title="Sagar Mishra's CV"
           />
         </div>
       </div>

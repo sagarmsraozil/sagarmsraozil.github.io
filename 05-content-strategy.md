@@ -39,7 +39,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 **Mechanic:** The one section that keeps the narrative voice. Factual credentials first, then how this person actually works.
 
-- Opens with the CV summary (Programiz scale, Jobss.ai technical-lead role, two connected systems built during the Master's), then a short paragraph on approach ("slower at the beginning and less painful at the end").
+- Opens with the CV summary (Programiz scale, Jobss.ai technical-lead role, two connected systems built during the Master's), then a short paragraph on approach (asks questions before writing code).
 - Bold sans heading, comfortable line height. No bolding inside body — paragraph rhythm does the work.
 - Spoken languages listed simply at the end — no flags, no bars.
 
@@ -73,9 +73,11 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 **Mechanic:** The sections above did the selling. CTA makes the next step obvious and low-friction.
 
 - Dark background signals conclusion. No contact form — a direct email link, a Download-CV button, socials, and a copyright line.
-- "I respond to every message" makes it feel safe to send something imperfect.
+- "I reply to every message" makes it feel safe to send something imperfect.
 
 ## Voice and Tone
+
+> **Unslop pass (Oct 2026):** all copy was rewritten to remove AI-writing patterns. No em dashes anywhere in rendered copy (titles use `|` or `:`), no slogan closers, plain first person. Keep it that way when editing.
 
 - **Confident but not arrogant.** State things directly. Don't hedge unnecessarily.
 - **Specific over vague.** "100,000+ paid learners" not "large-scale platform."

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sagar Mishra — Full-Stack Engineer",
-    "description": "Full-stack engineer in Melbourne. Two years of production work at Programiz (100,000+ paid learners), recent technical lead at Jobss.ai. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia.",
+    "title": "Sagar Mishra | Full-Stack Engineer",
+    "description": "Full-stack engineer in Melbourne. Two years at Programiz, which has 100,000+ paid learners, then technical lead intern at Jobss.ai. Full working rights in Australia.",
     "phone": "0424 308 228",
     "location": "Melbourne, VIC",
     "workRights": "Full working rights in Australia (subclass 485).",
@@ -40,17 +40,17 @@
         { "label": "GitHub", "href": "https://github.com/sagarmsraozil" }
       ]
     },
-    "ctaPrimary": { "label": "See the work →", "href": "#experience" },
+    "ctaPrimary": { "label": "See my work →", "href": "#experience" },
     "ctaSecondary": { "label": "Download CV", "href": "/Sagar_Mishra_CV.pdf" }
   },
   "summary": {
     "label": "SUMMARY",
-    "heading": "I work out what to build before I build it.",
+    "heading": "I ask a lot of questions before I write code.",
     "body": [
-      "Full-stack engineer with two years shipping production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow and learner dashboard every paid learner works through, and the engine that issues their completion certificates. Most recently I led four engineers at Jobss.ai, where I owned authentication, role-based access and the employer workspace, and built the marketplace search both sides query — in Laravel.",
-      "During my Master's I built two connected systems from the data model up: a warehouse platform with lot-level inventory and state-machine fulfilment, and a multi-tenant Next.js storefront that trades stock with it. I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
-      "How I approach a project: I don't move quickly at the start. I ask questions that feel obvious until the answer turns out to be surprising, and I write code once I understand what it's supposed to do. I'm not the engineer who ships in week one and apologises in week four — I'm the one who's slower at the beginning and less painful at the end.",
-      "Originally from Nepal, now in Melbourne wrapping up a Master's in Software Engineering. Outside work I read, travel when I can, and watch more anime than is probably respectable."
+      "I'm a full-stack engineer. I spent two years writing production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow and learner dashboard, plus the engine that issues completion certificates. Most recently I led four engineers as technical lead during my internship at Jobss.ai, where I was responsible for authentication, role-based access, the employer workspace and the marketplace search.",
+      "During my Master's I built two connected systems from the data model up. One is a warehouse platform with lot-level inventory and state-machine fulfilment. The other is a multi-tenant Next.js storefront that shares stock with it. Day to day I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
+      "Some of those questions sound obvious. I ask them anyway, because now and then the answer isn't what anyone assumed, and I'd rather find that out before the code exists.",
+      "I'm from Nepal and live in Melbourne, where I recently finished a Master's in Software Engineering. Outside work I read, travel when I can, and watch a lot of anime."
     ],
     "languages": [
       { "name": "English", "level": "fluent" },
@@ -97,12 +97,12 @@
   },
   "experience": {
     "label": "EXPERIENCE",
-    "heading": "The work so far.",
+    "heading": "Where I've worked.",
     "entries": [
       {
         "id": "jobs-ai",
         "company": "Jobss.ai",
-        "product": "Job and task distribution platform. Laravel, PHP and Blade views built from Figma designs.",
+        "product": "Job and task distribution platform. Laravel and PHP, with Blade views built from Figma designs.",
         "links": [
           { "label": "jobss.ai", "href": "https://jobss.ai/", "kind": "site" }
         ],
@@ -111,30 +111,30 @@
         "location": "Melbourne, Australia",
         "tags": ["Team Leadership", "Marketplace", "Auth"],
         "bullets": [
-          "Led four engineers as technical lead — set the technical direction and ran code review. Nothing merged unread.",
-          "Owned authentication and the role-based access model that separates employers from job seekers, which every permission check in the rest of the platform reads from.",
-          "Designed the employer workspace end to end, so an employer posts a job or task and then moves applicants through review, shortlist and rejection without leaving it.",
-          "Built the marketplace search on a single index that serves both sides, so employers looking for people and seekers looking for work query the same system from opposite directions.",
-          "Chose cursor-based pagination over offset for the job and task feeds — read cost stays flat as the dataset grows rather than degrading with page depth, and the feed stays scoped to active dates.",
-          "Designed the allocation logic that spreads available workers across open jobs and tasks by demand, so no job sits unstaffed while another is oversubscribed."
+          "Technical lead for a team of four engineers. I made the architecture decisions and reviewed the team's code before it merged.",
+          "Built authentication and the role-based access control that separates employers from job seekers.",
+          "Designed the employer workspace. An employer posts a job or task there, then moves applicants through review, shortlist and rejection without leaving the page.",
+          "Marketplace search runs on a single index for both sides. Employers use it to find people, seekers use it to find work.",
+          "I picked cursor-based pagination over offset for the job and task feeds, because offset gets slower the deeper you page. Each feed is scoped to active dates.",
+          "Wrote the allocation logic that spreads available workers across open jobs and tasks based on demand."
         ],
         "stack": ["Laravel", "PHP", "Blade"]
       },
       {
         "id": "programiz",
         "company": "ParewaLabs (Programiz)",
-        "product": "Coding-education platform — programiz.com and programiz.pro. Over 100,000 paid learners.",
+        "product": "Coding-education platform behind programiz.com and programiz.pro, with over 100,000 paid learners.",
         "links": [
           {
             "label": "programiz.pro",
             "href": "https://programiz.pro/",
-            "note": "the product I built",
+            "note": "what I built",
             "kind": "site"
           },
           {
             "label": "programiz.com",
             "href": "https://www.programiz.com/",
-            "note": "parent site",
+            "note": "the parent site",
             "kind": "site"
           }
         ],
@@ -143,13 +143,13 @@
         "location": "Kathmandu, Nepal",
         "tags": ["EdTech", "Product Engineering", "Team Leadership"],
         "bullets": [
-          "Led Programiz Reports, a feature for beginners learning to program, with a team of six on a Scrum cycle — gathered the requirements, owned the scope, ran sprint planning, and carried it from proposal to release.",
-          "Built the course flow and learner dashboard on programiz.pro, the surface all 100,000+ paid learners move through to finish a course.",
-          "Built the certificate engine that issues a verified completion certificate to every learner who finishes a course — over 100,000 issued so far.",
-          "Wrote end-to-end tests in Playwright and Cypress and ran them in a GitHub Actions CI workflow.",
-          "Worked on the in-browser Python and JavaScript compilers on programiz.com, where visitors run code without installing anything.",
-          "Integrated sensAI, the in-product tutor, so learners get help at the point in an exercise where they're stuck rather than after they give up.",
-          "Instrumented landing pages with Mixpanel and Microsoft Clarity, then rewrote the pages against what the behaviour data showed."
+          "Led Programiz Reports, a feature for beginners learning to program. Team of six, running Scrum. I gathered the requirements, decided the scope, ran sprint planning and took it from proposal to release.",
+          "Built the course flow and learner dashboard on programiz.pro, which paid learners use to work through and finish a course.",
+          "Built the certificate engine. Learners who finish a course get a verified completion certificate, and it has issued over 100,000 so far.",
+          "Wrote end-to-end tests in Playwright and Cypress and ran them in GitHub Actions CI.",
+          "Worked on the in-browser Python and JavaScript compilers on programiz.com. Visitors run code there without installing anything.",
+          "Integrated sensAI, the in-product tutor. Learners can ask it for help in the middle of an exercise.",
+          "Added Mixpanel and Microsoft Clarity to the landing pages, then rewrote the pages based on what people actually did on them."
         ],
         "stack": ["React", "Next.js", "Node.js", "C#", "Python", "Directus", "Mixpanel", "Playwright", "Cypress", "GitHub Actions"]
       }
@@ -157,46 +157,46 @@
   },
   "projects": {
     "label": "PROJECTS",
-    "heading": "Systems I built end to end.",
+    "heading": "Systems I designed and built.",
     "entries": [
       {
         "id": "nexus",
-        "name": "Nexus — Warehouse Management Platform",
-        "description": "Personal project, built during my Master's after running an anime-apparel side business where stock went missing and fulfilment was manual. Trades stock and order state with Aroma.",
+        "name": "Nexus: warehouse management platform",
+        "description": "Personal project. I run an anime-apparel side business where stock kept going missing and I packed every order by hand, so during my Master's I built the system I wanted. Nexus syncs stock and order state with Aroma.",
         "period": "Feb 2025 – Jan 2026",
         "tags": ["Systems Design", "Inventory", "State Machines"],
         "bullets": [
-          "Modelled the warehouse as a labelled tree — any item resolves to a location in seconds, which is the missing-stock problem the project was built to end.",
-          "Modelled product drops as a state machine covering supplier onboarding, lot negotiation, intake and lot-level pricing. Nothing advances out of order.",
-          "Recorded stock movements in a PostgreSQL ledger with SELECT FOR UPDATE row locks, so two buyers cannot claim one unit.",
-          "Built lot-aware replenishment with a return-to-order path, so a refund or exchange resolves back to the correct inventory state instead of drifting.",
-          "Wrote the fulfilment pipeline that batches retail orders on a timer and tracks each one to completion as its own state machine."
+          "Modelled the warehouse as a labelled tree, so I can look up any item's exact location in seconds.",
+          "Product drops run through a state machine covering supplier onboarding, lot negotiation, intake and lot-level pricing. A drop can't jump a stage.",
+          "Stock movements go into a PostgreSQL ledger. I lock rows with SELECT FOR UPDATE, so two buyers can't claim the same unit.",
+          "Built lot-aware replenishment with a return-to-order path. A refund or exchange puts the stock back in the correct inventory state.",
+          "Wrote the fulfilment pipeline. It batches retail orders on a timer, and each order is its own state machine that I track until it completes."
         ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
         "codeNote": {
-          "text": "Private repo — it runs a live side business, so the code isn't public. I'm happy to walk through the data model and the state machines.",
+          "text": "The repo is private because it runs a live side business. I can walk you through the data model and the state machines.",
           "linkLabel": "Ask for a walkthrough →",
-          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Nexus%20%E2%80%94%20architecture%20walkthrough"
+          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Nexus%20architecture%20walkthrough"
         }
       },
       {
         "id": "aroma",
-        "name": "Aroma — Multi-tenant Clothing E-commerce",
-        "description": "Personal project. A multi-tenant storefront that trades stock with Nexus, so sellers run their own shop on shared infrastructure.",
+        "name": "Aroma: multi-tenant clothing e-commerce",
+        "description": "Personal project. A multi-tenant storefront where sellers run their own shop on shared infrastructure, with stock synced from Nexus.",
         "period": "Mar 2024 – Jan 2026",
         "tags": ["Multi-tenant", "E-commerce", "SSR / SSG"],
         "bullets": [
-          "Designed the tenancy model so each seller runs an isolated storefront on one shared backend, drawing the line between what's shared and what a tenant controls.",
-          "Built the buyer path front to back: search and product pages through cart, reservation, checkout and order history.",
-          "Split rendering by page — server rendering and static generation for catalogue pages that have to be indexed and paint fast, client fetching for anything per-user, with React Query holding the cache and Zustand holding cart state.",
-          "Measured the product details page in Lighthouse rather than assuming it — Largest Contentful Paint (LCP) came in under two seconds.",
-          "Added a post-purchase order-status view. Sellers who trade only through social media can't offer that visibility, and the trust gap costs them sales."
+          "Designed the tenancy model. Each seller gets an isolated storefront, and all of them run on one shared backend.",
+          "Built the buyer flow: search, product pages, cart, reservation, checkout and order history.",
+          "Catalogue pages use server rendering and static generation because they need to be indexed and load fast. Anything per-user is fetched on the client, with React Query holding the cache and Zustand holding the cart.",
+          "Ran Lighthouse on the product details page. Largest Contentful Paint (LCP) came in under two seconds.",
+          "Added an order-status view so buyers can track an order after paying. Sellers who only sell through social media can't offer that."
         ],
         "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Directus", "React Query", "Zustand"],
         "codeNote": {
-          "text": "Private repo — pre-launch and connected to Nexus, so the code isn't public. I'm happy to walk through the tenancy model and the rendering split.",
+          "text": "The repo is private. It hasn't launched yet and it's wired into Nexus. Happy to walk through the tenancy model and how I split rendering.",
           "linkLabel": "Ask for a walkthrough →",
-          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Aroma%20%E2%80%94%20architecture%20walkthrough"
+          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Aroma%20architecture%20walkthrough"
         }
       }
     ],
@@ -207,7 +207,7 @@
         "name": "Hospital E-Ticketing",
         "period": "Aug 2021 – Oct 2021",
         "tags": ["Healthcare", "Full-stack"],
-        "summary": "A platform where hospitals and doctors register digitally, open weekly appointment slots, and patients book online — with an inversion-test algorithm that prevents double-bookings across Doctor, Patient and Hospital Admin roles.",
+        "summary": "Hospitals and doctors register on the platform and open weekly appointment slots, and patients book online. The backend uses an inversion-test algorithm to stop double bookings across the Doctor, Patient and Hospital Admin roles.",
         "stack": ["React", "Node.js", "Chart.js"],
         "links": [
           {
@@ -218,7 +218,7 @@
           {
             "label": "Frontend",
             "href": "https://github.com/Abishek180181/E-ticketing-Frontend",
-            "note": "teammate's repo",
+            "note": "built by a teammate",
             "kind": "repo"
           }
         ]
@@ -228,7 +228,7 @@
         "name": "Futsal Finder",
         "period": "Oct 2020 – Jul 2021",
         "tags": ["Matchmaking", "Full-stack"],
-        "summary": "Tinder-style matchmaking for competitive futsal teams — teams set preferences and get paired with nearby opponents, with league and knockout tournaments, tiered battle seasons, and Airbnb-style court booking. My first end-to-end system.",
+        "summary": "Tinder-style matchmaking for competitive futsal teams. Teams set their preferences and get paired with nearby opponents. It also had league and knockout tournaments, tiered battle seasons and court booking. This was the first full system I built.",
         "stack": ["React", "Node.js", "MongoDB", "Chart.js"],
         "links": [
           {
@@ -247,11 +247,11 @@
   },
   "aiEngineering": {
     "label": "AI-ASSISTED ENGINEERING",
-    "heading": "The tools speed up the work. The judgment stays mine.",
+    "heading": "How I use AI tools",
     "body": [
-      "I use agentic coding tools to delegate work and then check it — a light model to explore, a stronger one to plan and design, a mid one to implement.",
-      "I read and test every change before it goes in, and if I don't understand a piece of code it doesn't merge. The tools speed up boilerplate and exploration. The design calls and the quality stay mine.",
-      "Nexus and Aroma were both built with spec-driven development: I write the spike, the reference implementation and the spec myself, then AI models plan and implement against the frozen spec. I read every change before it merges."
+      "I use agentic coding tools and give different jobs to different models. A light model explores the codebase, a stronger one drafts plans, and a mid-tier one writes the code.",
+      "I read and test every change before it merges, and I make the design calls. The tools save me time on boilerplate and on finding my way around code I haven't seen before.",
+      "I built Nexus and Aroma with spec-driven development. I wrote the spike, the reference implementation and the spec myself. Once the spec was frozen, I had the models plan and implement against it, and I reviewed what they produced."
     ]
   },
   "education": {
@@ -261,7 +261,7 @@
         "institution": "Victorian Institute of Technology",
         "location": "Melbourne, Australia",
         "period": "Feb 2024 – Jul 2026",
-        "degree": "Master of Information Technology and Systems — Software Engineering",
+        "degree": "Master of Information Technology and Systems, Software Engineering",
         "url": "https://vit.edu.au/mits/mits-software-engineering"
       },
       {
@@ -275,7 +275,7 @@
   },
   "references": {
     "label": "REFERENCES",
-    "heading": "The people who watched closely",
+    "heading": "People I worked with at Programiz",
     "people": [
       {
         "name": "Sanjeev Kumar Pandit",
@@ -308,14 +308,14 @@
         "linkedinUrl": "https://www.linkedin.com/in/sshikhrakar/"
       }
     ],
-    "closing": "Five names from a longer story. Every sprint had people who caught what I missed, pushed back on the wrong calls, and made hard weeks worthwhile. The work is always collective. These five just agreed to be named."
+    "closing": "All five agreed to be named here and know my work at Programiz well."
   },
   "cta": {
     "label": "WHAT'S NEXT",
-    "heading": "If any of this is relevant to something you're working on, the conversation is worth having.",
+    "heading": "Hiring? Get in touch.",
     "body": [
-      "I'm open to full-time engineering roles, contract work, and serious collaboration on interesting problems. Based in Melbourne, available for remote work globally.",
-      "I respond to every message. I don't send templated replies."
+      "I'm looking for full-time engineering roles or contract work, and I'm open to collaborations. I'm based in Melbourne and happy to work remotely with teams anywhere.",
+      "I reply to every message."
     ],
     "email": "sagarcrcoc@gmail.com",
     "cvHref": "/Sagar_Mishra_CV.pdf",
