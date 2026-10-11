@@ -13,13 +13,13 @@ portfolio.json
 ├── skills            — label, categories[]
 ├── experience        — label, heading, entries[] (bulleted)
 ├── projects          — label, heading, entries[] + earlierLabel, earlier[]
-├── aiEngineering     — label, heading, body[]
+├── aiEngineering     — label, heading, intro[], blocks[]
 ├── education         — label, entries[]
 ├── references        — label, heading, people[], closing
 └── cta               — label, heading, body[], email, cvHref, links[], copyright
 ```
 
-Section render order (mirrors amitj.me/cv): Intro → Summary → Skills → Experience → Projects → AI-Assisted Engineering → Education → References → Contact.
+Section render order (mirrors amitj.me/cv): Intro → Summary → Skills → Agentic Engineering → Experience → Projects → Education → References → Contact.
 
 ## TypeScript Interfaces (from `src/types/portfolio.ts`)
 
@@ -73,9 +73,11 @@ EarlierProject:{ id, name, period, tags[], summary, stack[], links?: ResourceLin
 ProjectsData:  { label, heading, entries: ProjectEntry[], earlierLabel, earlier: EarlierProject[] }
 ```
 
-### AI-Assisted Engineering
+### Agentic Engineering
 ```ts
-AiEngineeringData: { label, heading, body: string[] }
+NamedLine: { name, text }
+AiEngineeringBlock: { id, heading, meta?, body: string[], items?: NamedLine[], notes?: string[], stack?: string[], codeNote?: CodeNote }
+AiEngineeringData: { label, heading, intro: string[], blocks: AiEngineeringBlock[] }
 ```
 
 ### Education
@@ -117,10 +119,10 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 | Skills | 8 categories, the old CV grouping kept on purpose (the Oct 2026 resume uses 6), with its new items folded in: Languages, Frontend, Backend, Data, Testing & CI, Practices, Tools, Currently learning (Docker, AWS). A few site-only items the CV omits (Java, C#, Kotlin, Mongoose, microservices, monoliths, sharding) are kept because they don't contradict it |
 | Experience | 2 entries: Jobss.ai (Intern, Technical Lead, Feb–May 2026, Melbourne — Laravel/PHP/Blade), ParewaLabs/Programiz (SWE, Oct 2021–Nov 2023, Kathmandu) — bulleted |
 | Projects | Detailed: Nexus, Aroma (two connected systems built during the Master's; they trade stock). Earlier: Hospital E-Ticketing, Futsal Finder |
-| AI-Assisted Engineering | "The tools speed up the work. The judgment stays mine." — 3 paragraphs, the last on spec-driven development |
+| Agentic Engineering | "How I work with AI agents": 2 intro paragraphs, then blocks for e-warehouse (pre-launch, private repo), the tools Sagar uses, and the agent skills he built |
 | Education | VIT Melbourne (Master's, Feb 2024–Jul 2026), Softwarica Kathmandu (BSc, Nov 2018–Oct 2021) |
 | References | 5 people from Programiz (Sanjeev, Ranjit, Raman, Abidit, Shirish) |
-| CTA | Email: sagarcrcoc@gmail.com, Download CV (`/Sagar_Mishra_FullStack_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
+| CTA | Email: sagarcrcoc@gmail.com, Download resume (`/Sagar_Mishra_FullStack_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
 
 ## Common Edit Tasks
 
@@ -156,4 +158,4 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 
 ### Update the CV PDF
 1. Replace `public/Sagar_Mishra_FullStack_Resume.pdf` (keep the filename, or update every reference)
-2. The path appears in `navigation.links[]` (CV), `header.ctaSecondary.href`, and `cta.cvHref`
+2. The path appears in `navigation.links[]` (Resume), `header.ctaSecondary.href`, and `cta.cvHref`

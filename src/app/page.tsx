@@ -21,9 +21,9 @@ export default function HomePage() {
         <IntroSection data={data.header} />
         <SummarySection data={data.summary} />
         <SkillsSection data={data.skills} />
+        <AiEngineeringSection data={data.aiEngineering} />
         <ExperienceSection data={data.experience} />
         <ProjectsSection data={data.projects} />
-        <AiEngineeringSection data={data.aiEngineering} />
         <EducationSection data={data.education} />
         <ReferencesSection data={data.references} />
         <CTASection data={data.cta} />

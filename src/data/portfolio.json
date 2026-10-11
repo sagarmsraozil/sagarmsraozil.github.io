@@ -16,6 +16,7 @@
     "links": [
       { "label": "Summary", "href": "#summary" },
       { "label": "Skills", "href": "#skills" },
+      { "label": "Agentic", "href": "#ai-engineering" },
       { "label": "Experience", "href": "#experience" },
       { "label": "Projects", "href": "#projects" },
       { "label": "Education", "href": "#education" },
@@ -251,12 +252,134 @@
     ]
   },
   "aiEngineering": {
-    "label": "AI-ASSISTED ENGINEERING",
-    "heading": "How I use AI tools",
-    "body": [
-      "I use agentic coding tools and give different jobs to different models. A light model explores the codebase, a stronger one drafts plans, and a mid-tier one writes the code.",
-      "I read and test every change before it merges, and I make the design calls. The tools save me time on boilerplate and on finding my way around code I haven't seen before.",
-      "Nexus and Aroma were built by a team of three that I led. I designed both systems, wrote the spikes and specs, and reviewed every pull request, over 400 in two years. Once a spec was frozen, AI models implemented against it."
+    "label": "AGENTIC ENGINEERING",
+    "heading": "How I work with AI agents",
+    "intro": [
+      "I run my development through AI coding agents, and I keep the decisions. I decide what gets built, write the spec it's built against, and review what comes back.",
+      "Nexus and Aroma were built this way by a team of three I led. I wrote the spikes and specs, AI models implemented against them, and I reviewed every pull request, over 400 in two years. Below is what I'm building now, the setup I use, and the skills I built for it."
+    ],
+    "blocks": [
+      {
+        "id": "e-warehouse",
+        "heading": "e-warehouse",
+        "meta": "Pre-launch · started Sep 2026 · private repo",
+        "body": [
+          "A web app for clothing merchants. Version 1 is an age-aware lot ledger. Each batch of stock, called a lot, is recorded with its variants, quantities and arrival date, so the merchant always knows how old the stock is.",
+          "Clothes don't rot. They go out of season. So every lot gets a market-level expiry date, the date it should be sold by. The bigger idea is a timeline where the merchant sketches each lot's life from ordered to closed, with notes like \"the offer should have started on 25 Sep\". When a lot closes, those lessons carry into the next order. The merchant makes the calls, and the app only guides."
+        ],
+        "items": [
+          {
+            "name": "Backend",
+            "text": "The skeleton is built and merged. It starts, validates its settings, connects to Postgres, reports its health and shuts down cleanly. There are no product features yet, and no tests yet either. That's on purpose, and ADR 0006 says why."
+          },
+          {
+            "name": "Architecture",
+            "text": "Ten decision records so far. Express stays at the edge, so business logic never imports it. The whole API shares one response envelope and a fixed set of error codes. Every response and log line carries a request ID. Stock changes are stored as new rows and never edited in place."
+          },
+          {
+            "name": "Design",
+            "text": "Designed, not built. I had Claude Design generate four directions on the same data, picked one, and refined it over two more rounds, with three options only for the two parts I was unsure about. Then I ran a design psychology audit. UX calls trace back to growth.design case studies and named principles such as Hick's law and the endowment effect."
+          },
+          {
+            "name": "Scope",
+            "text": "I work in Musk's order: question, delete, simplify, accelerate, automate. The warehouse map, rooms and pricing are parked until the lot ledger proves itself. On 2 Oct a review showed the product had drifted into a layout builder. On 3 Oct I pulled it back to the ledger and moved maps to version 2."
+          },
+          {
+            "name": "Users",
+            "text": "None yet. My own business check flagged that no merchant has confirmed the problem, so it's written in the decision log where I can't ignore it."
+          },
+          {
+            "name": "Records",
+            "text": "11 merged pull requests since 13 Sep 2026, a dated log of every product decision with its source, and a log of open questions."
+          }
+        ],
+        "notes": [
+          "The frontend comes next, in Vite, React and TypeScript, desktop first. One pnpm check command is the definition of done, and a commit hook blocks secrets before they reach the repo."
+        ],
+        "stack": ["Node 24", "TypeScript 7", "Express 5", "PostgreSQL", "Drizzle", "zod", "pino", "helmet", "pnpm", "Biome", "knip", "secretlint", "husky"],
+        "codeNote": {
+          "text": "The repo is private. I can walk you through the ADRs and the decision log.",
+          "linkLabel": "Ask for a walkthrough →",
+          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=e-warehouse%20walkthrough"
+        }
+      },
+      {
+        "id": "setup",
+        "heading": "The setup",
+        "meta": "Tools I use, not tools I built",
+        "body": [
+          "These are the tools I use every day."
+        ],
+        "items": [
+          {
+            "name": "Claude Code",
+            "text": "My main coding agent. I moved to it from Pi in September 2026. Different models get different jobs: a light one explores the codebase, a stronger one drafts plans, and a mid-tier one writes the code."
+          },
+          {
+            "name": "Firstmate",
+            "text": "Supervises several AI workers at once. Each one works in its own copy of the repo and delivers a pull request that I review and merge."
+          },
+          {
+            "name": "Lavish",
+            "text": "Turns agent output into review pages. I answer design questions, pick options and leave notes on the page, and the agent picks them up."
+          },
+          {
+            "name": "Claude Design",
+            "text": "Generates UI directions for me to choose between and refine."
+          },
+          {
+            "name": "Excalidraw",
+            "text": "Where I sketch the structure of a problem before any code exists."
+          }
+        ],
+        "notes": [
+          "Some decisions never go to an agent, and the project's instructions say so. I decide what gets built next. I write every spec and get grilled on it before any code. I do code review and merging. And I keep one-way doors, meaning anything expensive to undo, like a database table, the API's shape, deleting data, security or a new package. Two-way doors go fast. The e-warehouse design is frozen, but its new tables still wait for a spec.",
+          "Every handoff comes back with a receipt: the objective, what changed, what was verified, what wasn't, the risks and the approval needed. I review against the receipt instead of taking the agent's word that it's done.",
+          "When a mistake repeats, it moves down a ladder: first an explanation, then a checklist, a template, an automated check, and finally an enforced policy."
+        ]
+      },
+      {
+        "id": "skills",
+        "heading": "Agent skills I built",
+        "meta": "Private repo · 5 merged pull requests",
+        "body": [
+          "A library of reusable skills my agents load when a task calls for one."
+        ],
+        "items": [
+          {
+            "name": "spec-driven",
+            "text": "Decides first whether a feature needs a spec at all. If it does, it works through spike, reference, spec, test plan and running order, and grills me at each step."
+          },
+          {
+            "name": "chifuyu",
+            "text": "An architecture reviewer built from the published work of Kun Chen, Matt Pocock and Kent C. Dodds. It weighs a change by its blast radius."
+          },
+          {
+            "name": "hunter-sung",
+            "text": "A business check built from the published thinking of Jeff Bezos, Jamie Dimon, Satya Nadella, Lisa Su, Steve Jobs and Elon Musk. It asks whose problem this is, what we can drop, what the worst case is, and which number proves it worked. Every point cites its source."
+          },
+          {
+            "name": "kaizen",
+            "text": "Keeps work to one task at a time, with a Now, Next and Parked list."
+          },
+          {
+            "name": "project-map",
+            "text": "Keeps each project's map of where information lives."
+          },
+          {
+            "name": "clean-code",
+            "text": "145 rules from Robert C. Martin's Clean Code, rewritten for TypeScript and React after I read all 462 pages. My own engineering rules win in the 8 places they disagree."
+          },
+          {
+            "name": "ew-code",
+            "text": "e-warehouse's own code rules in one skill. It replaced 19 separate rule files."
+          }
+        ],
+        "notes": [
+          "clean-code is split into one file per topic, so an agent loads only the rules a task needs. A naming-only task went from about 7,400 tokens to about 2,200. When agents do most of the reading, that's a real cost saving.",
+          "The library also revises itself. A hook logs every time a skill is used. After 20 uses, 30 days or any feedback, a skill comes up for review, and a fresh agent drafts the changes, each one backed by evidence from real uses."
+        ]
+      }
     ]
   },
   "education": {

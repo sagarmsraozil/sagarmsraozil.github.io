@@ -22,7 +22,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 > **Gamification removed (Sept 2026):** the interactive "Diagnosis Layer" (case-file quizzes on four entries, a "Cases N/4" header chip, and an unlock-on-completion email composer) was removed entirely, including the symptom/diagnosis copy. The page is plain CV content again: nothing to play, nothing gated. Don't reintroduce quiz mechanics without a fresh decision from Sagar.
 
-> **The resume is the source of truth (Oct 2026):** where the site and `public/Sagar_Mishra_FullStack_Resume.pdf` disagree on a fact (stack, metric, spelling), the resume wins. One deliberate exception: the site keeps the "Full-Stack Engineer" title (Sagar's decision). Site-only detail that doesn't contradict the resume is kept.
+> **The resume is the source of truth (Oct 2026):** where the site and `public/Sagar_Mishra_FullStack_Resume.pdf` disagree on a fact (stack, metric, spelling), the resume wins. The "Full-Stack Engineer" title matches it. Site-only detail that doesn't contradict the resume is kept.
 
 ## Section-by-Section Mechanics
 
@@ -64,9 +64,11 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 - Nexus and Aroma detailed (bulleted, with stack). Hospital E-Ticketing and Futsal Finder kept as a compact "Earlier projects" group with GitHub links.
 
-### Section 06 — AI-Assisted Engineering (Modern Signal)
+### Section 04 — Agentic Engineering (Modern Signal)
 
-**Mechanic:** Addresses head-on how the candidate uses agentic tooling — delegate, then verify. Short, in the narrative voice.
+**Mechanic:** Placed before Experience (Oct 2026) so the current work leads. Shows how Sagar runs development through AI agents while keeping the decisions. Three blocks: e-warehouse (honest stage: pre-launch, skeleton backend, designs not code, no users), the tools he uses (named, and stated as not his), and the agent skills library he built.
+
+**What not to claim:** no launch, customers, revenue or merchant interviews; no product features or tests in the backend yet; the playground is designs only; Firstmate, Lavish, Claude Code and Claude Design are tools he uses, not tools he built. Update the block when the first feature ships and a merchant has seen it.
 
 ### Section 07 — CTA (Closing the Loop)
 
@@ -96,7 +98,7 @@ Every section begins with a small-caps label above the heading:
 | Skills | TECHNICAL SKILLS |
 | Experience | EXPERIENCE |
 | Projects | PROJECTS |
-| AI-Assisted Engineering | AI-ASSISTED ENGINEERING |
+| Agentic Engineering | AGENTIC ENGINEERING |
 | Education | EDUCATION |
 | References | REFERENCES |
 | CTA | WHAT'S NEXT |
@@ -108,9 +110,9 @@ Every section begins with a small-caps label above the heading:
 1. **Intro** — name, title, contact, visa; everything a recruiter needs up top
 2. **Summary** — positioning in the candidate's own voice
 3. **Skills** — scannable technology list, placed early like the reference site
-4. **Experience** — bulleted proof, reverse-chronological
-5. **Projects** — systems built end to end
-6. **AI-Assisted Engineering** — how modern tooling is used responsibly
+4. **Agentic Engineering** — current work and how he works with AI agents
+5. **Experience** — bulleted proof, reverse-chronological
+6. **Projects** — systems built end to end
 7. **Education** — academic credentials
 8. **References** — named vouchers
 9. **CTA** — close the loop (email + Download CV)

@@ -114,10 +114,29 @@ export interface ProjectsData {
   earlier: EarlierProject[]
 }
 
+/** A bold name followed by a plain-text explanation, e.g. a tool or a skill. */
+export interface NamedLine {
+  name: string
+  text: string
+}
+
+/** One sub-block of the agentic engineering section: prose, then named lines, then closing notes. */
+export interface AiEngineeringBlock {
+  id: string
+  heading: string
+  meta?: string
+  body: string[]
+  items?: NamedLine[]
+  notes?: string[]
+  stack?: string[]
+  codeNote?: CodeNote
+}
+
 export interface AiEngineeringData {
   label: string
   heading: string
-  body: string[]
+  intro: string[]
+  blocks: AiEngineeringBlock[]
 }
 
 export interface EducationEntry {

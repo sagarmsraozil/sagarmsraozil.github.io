@@ -16,6 +16,10 @@ RootLayout (server)                    — layout.tsx
     ├── SummarySection (server)        — SectionLabel + narrative summary + spoken languages
     ├── SkillsSection (server)
     │   └── SectionLabel
+    ├── AiEngineeringSection (server)  — House Green feature band, placed before Experience
+    │   ├── SectionLabel
+    │   └── AiBlock[]                  — e-warehouse, the setup, skills; prose + named lines + notes
+    │       └── StackTag[]
     ├── ExperienceSection (server)
     │   ├── SectionLabel
     │   └── ExperienceCard[]           — white card, bulleted achievements
@@ -27,8 +31,6 @@ RootLayout (server)                    — layout.tsx
     │   │   └── StackTag[]
     │   └── AdditionalProjectCard[]    — "Earlier projects" (Hospital, Futsal)
     │       └── StackTag[]
-    ├── AiEngineeringSection (server)  — House Green feature band
-    │   └── SectionLabel
     ├── EducationSection (server)
     │   └── SectionLabel
     ├── ReferencesSection (server)
@@ -66,7 +68,7 @@ All section components follow the same pattern:
 | SkillsSection | `sections/SkillsSection.tsx` | `SkillsData` | `#skills` | 8 categories in one white card, inline text with dots |
 | ExperienceSection | `sections/ExperienceSection.tsx` | `ExperienceData` | `#experience` | Entries via ExperienceCard (bulleted) |
 | ProjectsSection | `sections/ProjectsSection.tsx` | `ProjectsData` | `#projects` | Detailed ProjectCard[] + "Earlier projects" AdditionalProjectCard[] |
-| AiEngineeringSection | `sections/AiEngineeringSection.tsx` | `AiEngineeringData` | `#ai-engineering` | House Green feature band, heading + short prose |
+| AiEngineeringSection | `sections/AiEngineeringSection.tsx` | `AiEngineeringData` | `#ai-engineering` | House Green feature band before Experience: intro, then three blocks (e-warehouse, the setup, agent skills) |
 | EducationSection | `sections/EducationSection.tsx` | `EducationData` | `#education` | 2 institutions, clickable links |
 | ReferencesSection | `sections/ReferencesSection.tsx` | `ReferencesData` | `#references` | 5 people with initials avatars, LinkedIn links |
 | CTASection | `sections/CTASection.tsx` | `CTAData` | `#contact` | House Green band (`--green-house`), email link, Download-CV button, social links, copyright |
