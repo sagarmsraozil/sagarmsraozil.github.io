@@ -23,6 +23,7 @@ sagarmsraozil.github.io/
 ├── DESIGN.md                       # Upstream Starbucks design reference (getdesign); adapted in 04-design-system.md
 ├── public/
 │   ├── Sagar_Mishra_FullStack_Resume.pdf     # Resume (Oct 2026), source of truth for career facts (served statically, opened in CVModal)
+│   ├── Sagar_Mishra_Engineering_Portfolio.pdf # Meeting-focused overview of selected engineering work
 │   ├── sagar.jpeg                  # Profile photo
 │   ├── robots.txt
 │   ├── sitemap.xml

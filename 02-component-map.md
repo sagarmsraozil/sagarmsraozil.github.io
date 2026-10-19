@@ -18,8 +18,9 @@ RootLayout (server)                    — layout.tsx
     │   └── SectionLabel
     ├── AiEngineeringSection (server)  — House Green feature band, placed before Experience
     │   ├── SectionLabel
-    │   └── AiBlock[]                  — e-warehouse, the setup, skills; prose + named lines + notes
-    │       └── StackTag[]
+    │   └── AiBlock[]                  — e-warehouse, the setup, skills; prose + named lines + notes + links
+    │       ├── StackTag[]
+    │       └── ResourceLinks
     ├── ExperienceSection (server)
     │   ├── SectionLabel
     │   └── ExperienceCard[]           — white card, bulleted achievements
@@ -68,7 +69,7 @@ All section components follow the same pattern:
 | SkillsSection | `sections/SkillsSection.tsx` | `SkillsData` | `#skills` | 8 categories in one white card, inline text with dots |
 | ExperienceSection | `sections/ExperienceSection.tsx` | `ExperienceData` | `#experience` | Entries via ExperienceCard (bulleted) |
 | ProjectsSection | `sections/ProjectsSection.tsx` | `ProjectsData` | `#projects` | Detailed ProjectCard[] + "Earlier projects" AdditionalProjectCard[] |
-| AiEngineeringSection | `sections/AiEngineeringSection.tsx` | `AiEngineeringData` | `#ai-engineering` | House Green feature band before Experience: intro, then three blocks (e-warehouse, the setup, agent skills) |
+| AiEngineeringSection | `sections/AiEngineeringSection.tsx` | `AiEngineeringData` | `#ai-engineering` | House Green feature band before Experience: intro, then three blocks (e-warehouse, the setup, agent skills) with optional outbound links |
 | EducationSection | `sections/EducationSection.tsx` | `EducationData` | `#education` | 2 institutions, clickable links |
 | ReferencesSection | `sections/ReferencesSection.tsx` | `ReferencesData` | `#references` | 5 people with initials avatars, LinkedIn links |
 | CTASection | `sections/CTASection.tsx` | `CTAData` | `#contact` | House Green band (`--green-house`), email link, Download-CV button, social links, copyright |

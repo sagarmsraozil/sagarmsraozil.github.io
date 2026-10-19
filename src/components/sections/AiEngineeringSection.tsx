@@ -1,4 +1,5 @@
 import type { AiEngineeringBlock, AiEngineeringData } from '@/types/portfolio'
+import { ResourceLinks } from '@/components/ui/ResourceLinks'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { StackTag } from '@/components/ui/StackTag'
 import styles from './AiEngineeringSection.module.scss'
@@ -72,6 +73,12 @@ function AiBlock({ block }: Readonly<AiBlockProps>) {
           {block.stack.map((item) => (
             <StackTag key={item} label={item} />
           ))}
+        </div>
+      )}
+
+      {block.links && (
+        <div className={styles.blockLinks}>
+          <ResourceLinks links={block.links} label="Project notes" />
         </div>
       )}
 

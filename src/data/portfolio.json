@@ -21,6 +21,7 @@
       { "label": "Projects", "href": "#projects" },
       { "label": "Education", "href": "#education" },
       { "label": "References", "href": "#references" },
+      { "label": "Work PDF", "href": "/Sagar_Mishra_Engineering_Portfolio.pdf", "newTab": true },
       { "label": "Resume", "href": "/Sagar_Mishra_FullStack_Resume.pdf", "download": true }
     ]
   },
@@ -301,7 +302,14 @@
           "text": "The repo is private. I can walk you through the ADRs and the decision log.",
           "linkLabel": "Ask for a walkthrough →",
           "linkHref": "mailto:sagarcrcoc@gmail.com?subject=e-warehouse%20walkthrough"
-        }
+        },
+        "links": [
+          {
+            "label": "Lot timeline design",
+            "href": "https://app.notion.com/p/Lot-timeline-3fcb0195dfa781fea098dba7242a8a40",
+            "note": "Notion"
+          }
+        ]
       },
       {
         "id": "setup",
@@ -341,9 +349,9 @@
       {
         "id": "skills",
         "heading": "Agent skills I built",
-        "meta": "Private repo · 5 merged pull requests",
+        "meta": "Private library · built from real project work",
         "body": [
-          "A library of reusable skills my agents load when a task calls for one."
+          "A library of reusable skills with a narrow job each. Recent additions cover reading finished designs, writing Gherkin tickets, reporting bugs, coaching prompts and building backend features."
         ],
         "items": [
           {
@@ -359,8 +367,8 @@
             "text": "A business check built from the published thinking of Jeff Bezos, Jamie Dimon, Satya Nadella, Lisa Su, Steve Jobs and Elon Musk. It asks whose problem this is, what we can drop, what the worst case is, and which number proves it worked. Every point cites its source."
           },
           {
-            "name": "kaizen",
-            "text": "Keeps work to one task at a time, with a Now, Next and Parked list."
+            "name": "koala",
+            "text": "Keeps the work to one task at a time and leaves decisions that need my judgment with me."
           },
           {
             "name": "project-map",
@@ -373,11 +381,42 @@
           {
             "name": "ew-code",
             "text": "e-warehouse's own code rules in one skill. It replaced 19 separate rule files."
+          },
+          {
+            "name": "design-read",
+            "text": "Turns a finished UI design into behaviour notes, then groups the work into slices and dependencies before specs are written."
+          },
+          {
+            "name": "ticket",
+            "text": "Writes Gherkin tickets for epics, stories, tasks, bugs and reviews, starting with the behaviour and examples."
+          },
+          {
+            "name": "bug-report-walkthrough",
+            "text": "Builds a reproducible bug report one section at a time, then assembles it into a prompt."
+          },
+          {
+            "name": "prompt-coach",
+            "text": "Helps improve a prompt by showing how its wording could steer an agent toward the wrong work."
+          },
+          {
+            "name": "zippo",
+            "text": "An e-warehouse backend engineer that starts as an intern and learns only from lessons proven in separate tasks."
+          },
+          {
+            "name": "build-resume",
+            "text": "Builds an ATS-focused resume and LinkedIn profile from real job posts without inventing metrics."
           }
         ],
         "notes": [
-          "clean-code is split into one file per topic, so an agent loads only the rules a task needs. A naming-only task went from about 7,400 tokens to about 2,200. When agents do most of the reading, that's a real cost saving.",
-          "The library also revises itself. A hook logs every time a skill is used. After 20 uses, 30 days or any feedback, a skill comes up for review, and a fresh agent drafts the changes, each one backed by evidence from real uses."
+          "clean-code is split by topic, so an agent loads only the rules a task needs. A naming-only task went from about 7,400 tokens to about 2,200.",
+          "A weekly backpass proposes revisions from real sessions. Each change needs evidence from at least two separate sessions and arrives in a pull request for me to review."
+        ],
+        "links": [
+          {
+            "label": "Spec-driven development",
+            "href": "https://app.notion.com/p/spec_driven_development-3fcb0195dfa781bfa33ceff40d4637cd",
+            "note": "Notion"
+          }
         ]
       }
     ]

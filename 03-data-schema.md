@@ -76,9 +76,10 @@ ProjectsData:  { label, heading, entries: ProjectEntry[], earlierLabel, earlier:
 ### Agentic Engineering
 ```ts
 NamedLine: { name, text }
-AiEngineeringBlock: { id, heading, meta?, body: string[], items?: NamedLine[], notes?: string[], stack?: string[], codeNote?: CodeNote }
+AiEngineeringBlock: { id, heading, meta?, body: string[], items?: NamedLine[], notes?: string[], stack?: string[], links?: ResourceLinkData[], codeNote?: CodeNote }
 AiEngineeringData: { label, heading, intro: string[], blocks: AiEngineeringBlock[] }
 ```
+`links` uses the shared outbound-link primitive for related project or Notion notes.
 
 ### Education
 ```ts

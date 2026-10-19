@@ -129,6 +129,7 @@ export interface AiEngineeringBlock {
   items?: NamedLine[]
   notes?: string[]
   stack?: string[]
+  links?: ResourceLinkData[]
   codeNote?: CodeNote
 }
 
