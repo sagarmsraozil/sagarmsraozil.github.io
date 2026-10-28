@@ -68,7 +68,7 @@ Every design and copy decision serves this arc. Nothing on the page is decorativ
 
 **Mechanic:** Placed before Experience (Oct 2026) so the current work leads. Shows how Sagar runs development through AI agents while keeping the decisions. Three blocks: e-warehouse (honest stage: pre-launch, skeleton backend, designs not code, no users), the tools he uses (named, and stated as not his), and the agent skills library he built.
 
-**What not to claim:** no launch, customers, revenue or merchant interviews; no product features or tests in the backend yet; the playground is designs only; Firstmate, Lavish, Claude Code and Claude Design are tools he uses, not tools he built. Update the block when the first feature ships and a merchant has seen it.
+**What not to claim:** no launch, customers, revenue or merchant interviews; no product features or tests in the backend yet; the playground is designs only; Claude Code and Claude Design are tools he uses, not tools he built. Update the block when the first feature ships and a merchant has seen it.
 
 ### Section 07 — CTA (Closing the Loop)
 

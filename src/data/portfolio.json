@@ -279,11 +279,11 @@
           },
           {
             "name": "Design",
-            "text": "Designed, not built. I had Claude Design generate four directions on the same data, picked one, and refined it over two more rounds, with three options only for the two parts I was unsure about. Then I ran a design psychology audit. UX calls trace back to growth.design case studies and named principles such as Hick's law and the endowment effect."
+            "text": "Designed, not built. I had Claude Design generate four directions on the same data, picked one, and refined it over two more rounds, with three options only for the two parts I was unsure about. Then I ran a design psychology audit."
           },
           {
             "name": "Scope",
-            "text": "I work in Musk's order: question, delete, simplify, accelerate, automate. The warehouse map, rooms and pricing are parked until the lot ledger proves itself. On 2 Oct a review showed the product had drifted into a layout builder. On 3 Oct I pulled it back to the ledger and moved maps to version 2."
+            "text": "I work in a fixed order: question it, delete what I can, simplify, speed up, then automate. The warehouse map, rooms and pricing are parked until the lot ledger proves itself. On 2 Oct a review showed the product had drifted into a layout builder. On 3 Oct I pulled it back to the ledger and moved maps to version 2."
           },
           {
             "name": "Users",
@@ -324,14 +324,6 @@
             "text": "My main coding agent. I moved to it from Pi in September 2026. Different models get different jobs: a light one explores the codebase, a stronger one drafts plans, and a mid-tier one writes the code."
           },
           {
-            "name": "Firstmate",
-            "text": "Supervises several AI workers at once. Each one works in its own copy of the repo and delivers a pull request that I review and merge."
-          },
-          {
-            "name": "Lavish",
-            "text": "Turns agent output into review pages. I answer design questions, pick options and leave notes on the page, and the agent picks them up."
-          },
-          {
             "name": "Claude Design",
             "text": "Generates UI directions for me to choose between and refine."
           },
@@ -347,40 +339,16 @@
         ]
       },
       {
-        "id": "skills",
-        "heading": "Agent skills I built",
+        "id": "skills-planning",
+        "heading": "Skills for planning and deciding",
         "meta": "Private library · built from real project work",
         "body": [
-          "A library of reusable skills with a narrow job each. Recent additions cover reading finished designs, writing Gherkin tickets, reporting bugs, coaching prompts and building backend features."
+          "22 skills in a private library, each with one narrow job. Agents load them while they work, and a skill only goes public after it has held up in real use."
         ],
         "items": [
           {
             "name": "spec-driven",
             "text": "Decides first whether a feature needs a spec at all. If it does, it works through spike, reference, spec, test plan and running order, and grills me at each step."
-          },
-          {
-            "name": "chifuyu",
-            "text": "An architecture reviewer built from the published work of Kun Chen, Matt Pocock and Kent C. Dodds. It weighs a change by its blast radius."
-          },
-          {
-            "name": "hunter-sung",
-            "text": "A business check built from the published thinking of Jeff Bezos, Jamie Dimon, Satya Nadella, Lisa Su, Steve Jobs and Elon Musk. It asks whose problem this is, what we can drop, what the worst case is, and which number proves it worked. Every point cites its source."
-          },
-          {
-            "name": "koala",
-            "text": "Keeps the work to one task at a time and leaves decisions that need my judgment with me."
-          },
-          {
-            "name": "project-map",
-            "text": "Keeps each project's map of where information lives."
-          },
-          {
-            "name": "clean-code",
-            "text": "145 rules from Robert C. Martin's Clean Code, rewritten for TypeScript and React after I read all 462 pages. My own engineering rules win in the 8 places they disagree."
-          },
-          {
-            "name": "ew-code",
-            "text": "e-warehouse's own code rules in one skill. It replaced 19 separate rule files."
           },
           {
             "name": "design-read",
@@ -391,25 +359,21 @@
             "text": "Writes Gherkin tickets for epics, stories, tasks, bugs and reviews, starting with the behaviour and examples."
           },
           {
-            "name": "bug-report-walkthrough",
-            "text": "Builds a reproducible bug report one section at a time, then assembles it into a prompt."
+            "name": "chifuyu",
+            "text": "An architecture reviewer. It checks a design for failure cases and weighs each change by its blast radius."
           },
           {
-            "name": "prompt-coach",
-            "text": "Helps improve a prompt by showing how its wording could steer an agent toward the wrong work."
+            "name": "hunter-sung",
+            "text": "A business check. It asks whose problem this is, what we can drop, what the worst case is, and which number proves it worked."
           },
           {
-            "name": "zippo",
-            "text": "An e-warehouse backend engineer that starts as an intern and learns only from lessons proven in separate tasks."
+            "name": "koala",
+            "text": "Keeps the work to one task at a time and leaves decisions that need my judgment with me."
           },
           {
-            "name": "build-resume",
-            "text": "Builds an ATS-focused resume and LinkedIn profile from real job posts without inventing metrics."
+            "name": "project-map",
+            "text": "Keeps each project's map of where information lives."
           }
-        ],
-        "notes": [
-          "clean-code is split by topic, so an agent loads only the rules a task needs. A naming-only task went from about 7,400 tokens to about 2,200.",
-          "A weekly backpass proposes revisions from real sessions. Each change needs evidence from at least two separate sessions and arrives in a pull request for me to review."
         ],
         "links": [
           {
@@ -417,6 +381,99 @@
             "href": "https://app.notion.com/p/spec_driven_development-3fcb0195dfa781bfa33ceff40d4637cd",
             "note": "Notion"
           }
+        ]
+      },
+      {
+        "id": "skills-building",
+        "heading": "Skills for building",
+        "body": [],
+        "items": [
+          {
+            "name": "zippo",
+            "text": "An e-warehouse backend engineer that starts as an intern and learns only from lessons proven in separate tasks."
+          },
+          {
+            "name": "clean-code",
+            "text": "145 code rules for TypeScript, Node and React. Where they clash with my own engineering rules, mine win."
+          },
+          {
+            "name": "ew-code",
+            "text": "e-warehouse's own code rules in one skill. It replaced 19 separate rule files."
+          },
+          {
+            "name": "frontend-hero",
+            "text": "Frontend rules for Next.js, React and SCSS: thin routes, small client components, one state per component, and effects only for syncing."
+          },
+          {
+            "name": "css-hero",
+            "text": "Treats CSS as a set of layout algorithms. It makes the layout call itself and writes down why."
+          },
+          {
+            "name": "semantic-html",
+            "text": "Short markup rules, about 780 tokens, covering only the calls models get wrong when nobody tells them."
+          }
+        ]
+      },
+      {
+        "id": "skills-reviewing",
+        "heading": "Skills for reviewing",
+        "body": [],
+        "items": [
+          {
+            "name": "semantic-html-review",
+            "text": "Reviews markup in a fresh context, apart from whoever wrote it. Every finding has a severity, a file and line, and a rule ID. It reports and never fixes."
+          },
+          {
+            "name": "ux-review",
+            "text": "Reviews a screen or flow against the project's own user and UX rules, and merges an interface check into one ranked report."
+          },
+          {
+            "name": "claim-check",
+            "text": "Checks UX and psychology claims before anyone builds on them, and labels each one by how strong its evidence is."
+          },
+          {
+            "name": "ethics-gate",
+            "text": "Gives Pass, Flag or Block to any tactic that could push users, like countdowns, \"was\" prices or hard-to-cancel subscriptions, with the honest version each time."
+          }
+        ]
+      },
+      {
+        "id": "skills-words",
+        "heading": "Skills for words and career",
+        "body": [],
+        "items": [
+          {
+            "name": "copywriting",
+            "text": "Writes and checks website copy that persuades honestly. It builds a facts sheet first, so nothing gets invented."
+          },
+          {
+            "name": "seo",
+            "text": "SEO for one marketing page: keywords, title and meta description, a check before launch, and reading the results after."
+          },
+          {
+            "name": "build-resume",
+            "text": "Builds an ATS-focused resume and LinkedIn profile from real job posts without inventing metrics."
+          },
+          {
+            "name": "prompt-coach",
+            "text": "Helps improve a prompt by showing how its wording could steer an agent toward the wrong work."
+          },
+          {
+            "name": "bug-report-walkthrough",
+            "text": "Builds a reproducible bug report one section at a time, then assembles it into a prompt."
+          }
+        ]
+      },
+      {
+        "id": "skills-proof",
+        "heading": "How a skill earns its place",
+        "body": [],
+        "notes": [
+          "I test a skill blind before I trust it, against the same task run without it. claim-check scored 5 of 5 with the skill and 1 of 5 without. ethics-gate scored 3 of 3 against 0 of 3.",
+          "Writing and reviewing are separate skills. semantic-html writes markup and semantic-html-review checks it in a fresh context, so no agent grades its own work.",
+          "Skills hand work to each other instead of copying rules. copywriting sends claims to claim-check and pressure tactics to ethics-gate, and spec-driven asks chifuyu for the blast radius of a plan.",
+          "clean-code is split by topic, so an agent loads only the rules a task needs. A naming-only task went from about 7,400 tokens to about 2,200.",
+          "A weekly backpass proposes revisions from real sessions. Each change needs evidence from at least two separate sessions and arrives in a pull request for me to review."
         ]
       }
     ]
