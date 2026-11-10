@@ -123,7 +123,7 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 | Agentic Engineering | "How I work with AI agents": 2 intro paragraphs, then blocks for e-warehouse (pre-launch, private repo), the tools Sagar uses, and the agent skills he built |
 | Education | VIT Melbourne (Master's, Feb 2024–Jul 2026), Softwarica Kathmandu (BSc, Nov 2018–Oct 2021) |
 | References | 5 people from Programiz (Sanjeev, Ranjit, Raman, Abidit, Shirish) |
-| CTA | Email: sagarcrcoc@gmail.com, Download resume (`/Sagar_Mishra_FullStack_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
+| CTA | Email: sagarcrcoc@gmail.com, Download resume (`/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf`), Links: LinkedIn, GitHub, X, copyright |
 
 ## Common Edit Tasks
 
@@ -158,5 +158,5 @@ PortfolioData: { meta, navigation, header, summary, skills, experience, projects
 3. Also update the Person JSON-LD `image` in `src/app/layout.tsx` and OG/Twitter image paths
 
 ### Update the CV PDF
-1. Replace `public/Sagar_Mishra_FullStack_Resume.pdf` (keep the filename, or update every reference)
+1. Replace `public/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf` (keep the filename, or update every reference)
 2. The path appears in `navigation.links[]` (Resume), `header.ctaSecondary.href`, and `cta.cvHref`
