@@ -22,8 +22,7 @@ sagarmsraozil.github.io/
 ├── .github/workflows/deploy.yml    # CI/CD — builds and deploys to GitHub Pages
 ├── DESIGN.md                       # Upstream Starbucks design reference (getdesign); adapted in 04-design-system.md
 ├── public/
-│   ├── Sagar_Mishra_FullStack_Resume.pdf     # Resume (Oct 2026), source of truth for career facts (served statically, opened in CVModal)
-│   ├── Sagar_Mishra_Engineering_Portfolio.pdf # Meeting-focused overview of selected engineering work
+│   ├── Sagar_Mishra_Full_Stack_Engineer_Resume.pdf     # Resume (Oct 2026), source of truth for career facts (served statically, opened in CVModal)
 │   ├── sagar.jpeg                  # Profile photo
 │   ├── robots.txt
 │   ├── sitemap.xml

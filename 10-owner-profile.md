@@ -2,7 +2,7 @@
 
 > Sagar Mishra's professional details, career history, education, skills, and contact info. Consult when updating portfolio content or ensuring accuracy of personal information.
 >
-> **Source of truth is `public/Sagar_Mishra_FullStack_Resume.pdf`** (Oct 2026). It replaces the earlier Oct 2026 resume and the Sept 2026 CV. Items marked *(earlier resume)* were on the previous Oct 2026 resume but cut from this one for space; they are still true and stay on the site. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
+> **Source of truth is `public/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf`** (Oct 2026). It replaces the earlier Oct 2026 resume and the Sept 2026 CV. Items marked *(earlier resume)* were on the previous Oct 2026 resume but cut from this one for space; they are still true and stay on the site. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
 >
 > **Deliberate exceptions (Sagar's decision):** the site uses the "Full-Stack Engineer" title (the resume says "Full stack software engineer"), and keeps site-only details the resume omits. Those are marked *(site-only)* below. Don't delete them.
 

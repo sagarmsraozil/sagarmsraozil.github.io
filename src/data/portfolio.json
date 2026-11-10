@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Sagar Mishra | Full-Stack Engineer",
-    "description": "Full-stack engineer in Melbourne. Two years at Programiz, which has 100,000+ paid learners, then technical lead intern at Jobss.ai. Full working rights in Australia.",
+    "description": "Full-stack engineer in Melbourne with about 4 years in TypeScript, Node.js, React and PHP. Two years at Programiz, then led four engineers at Jobss.ai.",
     "phone": "0424 308 228",
     "location": "Melbourne, VIC",
-    "workRights": "Full working rights in Australia (subclass 485).",
+    "workRights": "Unrestricted Australian work rights (subclass 485, valid to Oct 2028).",
     "social": {
       "linkedin": "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
       "github": "https://github.com/sagarmsraozil",
@@ -21,8 +21,7 @@
       { "label": "Projects", "href": "#projects" },
       { "label": "Education", "href": "#education" },
       { "label": "References", "href": "#references" },
-      { "label": "Work PDF", "href": "/Sagar_Mishra_Engineering_Portfolio.pdf", "newTab": true },
-      { "label": "Resume", "href": "/Sagar_Mishra_FullStack_Resume.pdf", "download": true }
+      { "label": "Resume", "href": "/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf", "download": true }
     ]
   },
   "header": {
@@ -31,7 +30,7 @@
     "titleStack": "React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel",
     "photoSrc": "/sagar.jpeg",
     "photoAlt": "Sagar Mishra",
-    "workRights": "Full working rights in Australia (subclass 485).",
+    "workRights": "Unrestricted Australian work rights (subclass 485, valid to Oct 2028).",
     "contact": {
       "location": "Melbourne, VIC",
       "phone": "0424 308 228",
@@ -43,14 +42,14 @@
       ]
     },
     "ctaPrimary": { "label": "See my work →", "href": "#experience" },
-    "ctaSecondary": { "label": "Download resume", "href": "/Sagar_Mishra_FullStack_Resume.pdf" }
+    "ctaSecondary": { "label": "Download resume", "href": "/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf" }
   },
   "summary": {
     "label": "SUMMARY",
     "heading": "I ask a lot of questions before I write code.",
     "body": [
-      "I'm a full-stack engineer. I spent two years writing production code at Programiz Pro, a coding-education platform with over 100,000 paid learners. I built the course flow APIs, the learner dashboard and the certificate engine, and I integrated Paddle, which every paid learner pays through. Most recently I led four engineers during my internship at Jobss.ai, on a Laravel job platform that's live in production. I was responsible for authentication, role-based access, the employer workspace and the marketplace search.",
-      "During my Master's I led a team of three that built two connected systems. One is a warehouse platform with a locking stock ledger in PostgreSQL. The other is a multi-tenant Next.js storefront with its own payment service. Day to day I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
+      "I'm a full-stack engineer with about four years of production work. I spent two years at Programiz, which exists to make programming easier to learn, writing the code behind Programiz Pro for over 100,000 paid learners. I built the course flow APIs, the learner dashboard and the certificate engine, and I integrated Paddle, which every paid learner pays through. Most recently I was a software engineer at Jobss.ai, where I led four engineers on a Laravel work marketplace that's live in production. I was responsible for authentication, role-based access, the employer workspace and the marketplace search.",
+      "Before that I co-founded Iruka Technologies, a startup building stock and order tools for small clothing sellers. I led a team of three on two connected systems: a warehouse platform with a locking stock ledger in PostgreSQL, and a multi-tenant Next.js storefront with its own payment service. Development stopped in January 2026, before launch. Day to day I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
       "Some of those questions sound obvious. I ask them anyway, because now and then the answer isn't what anyone assumed, and I'd rather find that out before the code exists.",
       "I'm from Nepal and live in Melbourne, where I recently finished a Master's in Software Engineering. Outside work I read, travel when I can, and watch a lot of anime."
     ],
@@ -65,7 +64,7 @@
     "categories": [
       {
         "name": "Languages",
-        "items": ["TypeScript", "JavaScript", "PHP", "Python", "SQL", "HTML", "CSS", "Java", "C#", "Kotlin"]
+        "items": ["TypeScript", "JavaScript", "PHP", "Python", "SQL", "HTML", "CSS", "C#", "Kotlin"]
       },
       {
         "name": "Frontend",
@@ -77,11 +76,11 @@
       },
       {
         "name": "Data",
-        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Drizzle", "Sequelize", "Mongoose", "Schema design", "Data modelling", "Concurrency control", "Row-level locking", "Caching", "Sharding"]
+        "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Drizzle", "Sequelize", "Mongoose", "Schema design", "Data modelling", "Concurrency control", "Row-level locking", "Caching"]
       },
       {
         "name": "Testing & CI",
-        "items": ["Playwright", "Cypress", "End-to-end testing", "GitHub Actions"]
+        "items": ["Playwright", "Cypress", "Selenium", "End-to-end testing", "GitHub Actions", "CI/CD"]
       },
       {
         "name": "Practices",
@@ -89,11 +88,11 @@
       },
       {
         "name": "Tools",
-        "items": ["Git", "Jira", "Trello", "Asana", "Postman", "Sentry", "Vercel", "Claude Code", "Directus", "Mixpanel", "Microsoft Clarity", "Lighthouse"]
+        "items": ["Git", "Jira", "Trello", "Asana", "Postman", "Sentry", "Vercel", "DigitalOcean", "Claude Code", "Directus", "Mixpanel", "Microsoft Clarity", "Lighthouse"]
       },
       {
         "name": "Currently learning",
-        "items": ["Docker", "AWS (EC2, RDS, S3)"]
+        "items": ["Agentic engineering"]
       }
     ]
   },
@@ -104,18 +103,18 @@
       {
         "id": "jobs-ai",
         "company": "Jobss.ai",
-        "product": "Job and task distribution platform, live in production. Laravel and PHP, with Blade views built from Figma designs.",
+        "product": "A work marketplace that puts hourly tasks and long-term jobs on one platform. The aim is one place where people find work, whether they need a few hours of it or a career, and where employers find them. Live in production, built in Laravel and PHP with Blade views from Figma designs.",
         "links": [
           { "label": "jobss.ai", "href": "https://jobss.ai/", "kind": "site" }
         ],
-        "role": "Software Engineering Intern",
+        "role": "Software Engineer",
         "period": "Feb 2026 – May 2026",
         "location": "Melbourne, Australia",
         "tags": ["Team Leadership", "Marketplace", "Auth"],
         "bullets": [
-          "Led four engineers. I made the architecture decisions and reviewed every pull request before it merged.",
+          "Led four engineers. I turned the founder's requirements into tasks, made the architecture decisions and reviewed all 25+ pull requests before they merged.",
           "Built authentication and role-based access control for four roles, all checked against one permission model.",
-          "Designed the employer workspace in Laravel and Blade. An employer posts a job or task there, then moves applicants through review, shortlist and rejection.",
+          "Built the employer workspace in Laravel and Blade with one designer and four developers. An employer posts a job or task there, then moves applicants through review, shortlist and rejection.",
           "Marketplace search runs on a single index for both sides. Employers use it to find people, seekers use it to find work.",
           "I picked cursor-based pagination over offset for the job and task feeds, because offset gets slower the deeper you page. Each feed is scoped to active dates.",
           "Wrote the allocation logic that spreads available workers across open jobs and tasks based on demand."
@@ -123,9 +122,24 @@
         "stack": ["Laravel", "PHP", "Blade"]
       },
       {
+        "id": "iruka",
+        "company": "Iruka Technologies Pvt. Ltd.",
+        "product": "A startup I co-founded to give small clothing sellers the stock and order tools that large retailers have. Many of them sell through social media, track stock by hand and can't tell a buyer where an order is. We built two connected products for them: Nexus for the warehouse and Aroma for the storefront. Development stopped in January 2026, before launch.",
+        "role": "Co-founder & Software Engineer",
+        "period": "Mar 2024 – Jan 2026",
+        "location": "Kathmandu, Nepal (remote from Melbourne)",
+        "tags": ["Startup", "Architecture", "Team Leadership"],
+        "bullets": [
+          "Owned architecture, backend, frontend and code review for both products, and led a team of three with my co-founder and a paid intern.",
+          "Wrote the specs, had AI coding tools build against them, and reviewed over 400 pull requests.",
+          "Ran CI/CD pipelines that tested each change and deployed it to DigitalOcean."
+        ],
+        "stack": ["TypeScript", "Next.js", "Node.js", "PostgreSQL", "Redis"]
+      },
+      {
         "id": "programiz",
         "company": "ParewaLabs (Programiz)",
-        "product": "Coding-education platform behind programiz.com and programiz.pro, with over 100,000 paid learners.",
+        "product": "Programiz exists to make programming easier to learn. Its free tutorials and online compiler reach millions of beginners every month, and Programiz Pro, which I worked on, turns that into guided, paid courses for over 100,000 learners.",
         "links": [
           {
             "label": "programiz.pro",
@@ -146,15 +160,15 @@
         "tags": ["EdTech", "Product Engineering", "Team Leadership"],
         "bullets": [
           "Built the course flow APIs in Node.js, TypeScript and MySQL, and the learner dashboard on programiz.pro. Over 100,000 paid learners use them to work through and finish a course.",
-          "Integrated the Paddle payment API, which every paid learner pays through. I wrote the webhooks and the checkout iframe messaging, and Programiz still takes payment through that flow today.",
-          "Built the certificate engine in Node.js and TypeScript. It has issued over 100,000 verified completion certificates.",
-          "Owned the online compiler on programiz.com, which gets around 23 million visits a month from Google search. Python output was arriving over the socket in pieces. With the principal engineer, I fixed it with a heartbeat that joins the pieces into one response.",
-          "Led a team of six on Programiz Reports, a feature for beginners learning to program. We went from the content team's requirements to release in two weeks.",
-          "Integrated sensAI, an LLM-backed tutor, into the exercise page. Learners ask it over 300 questions a day.",
-          "Wrote end-to-end tests in Playwright and Cypress and ran them in GitHub Actions CI.",
+          "Integrated the Paddle payment API after agreeing the payment flow with the founder. I wrote the webhooks and the checkout iframe messaging, and fixed its live failures reported by Sentry. Every paid learner still pays through that flow.",
+          "Built the certificate engine in Node.js and TypeScript and fixed its live errors in production. It has issued over 100,000 verified completion certificates.",
+          "Built annotations for the online compiler on programiz.com, which gets around 23 million visits a month. Python output was arriving over the socket in pieces, and with the principal engineer I fixed it with a heartbeat that joins the pieces into one response.",
+          "Led a Scrum team of six on Programiz Reports, a feature for beginners learning to program. I agreed its priority with the founder and scoped the sprints with the project manager, and we went from the content team's requirements to release in two weeks.",
+          "Integrated sensAI, an LLM-backed tutor, into the exercise page. Learners ask it about 300 questions a day.",
+          "Wrote Playwright tests for the payment modules and Cypress tests for the frontend, in a GitHub Actions pipeline that deployed four production apps to DigitalOcean: the course flow APIs, the certificate engine, the online compiler and the learner dashboard.",
           "Added Mixpanel and Microsoft Clarity to the landing pages, then rewrote the pages based on what people actually did on them."
         ],
-        "stack": ["Node.js", "TypeScript", "MySQL", "React", "Next.js", "Paddle", "C#", "Python", "Directus", "Mixpanel", "Playwright", "Cypress", "GitHub Actions"]
+        "stack": ["Node.js", "TypeScript", "MySQL", "React", "Next.js", "Paddle", "C#", "Python", "Directus", "Mixpanel", "Sentry", "Playwright", "Cypress", "GitHub Actions", "DigitalOcean"]
       }
     ]
   },
@@ -165,7 +179,7 @@
       {
         "id": "nexus",
         "name": "Nexus: warehouse management platform",
-        "description": "My team of three built this during my Master's. I run an anime-apparel side business where stock kept going missing and I packed every order by hand, and Nexus is the system I wanted for it. It syncs stock and order state with Aroma.",
+        "description": "Small clothing sellers lose track of their stock. Units go missing, and every order gets picked and packed by hand. Nexus set out to give them a warehouse that knows where each item is and what state each order is in. My team of three built it at Iruka, and it syncs stock and order state with Aroma.",
         "period": "Feb 2025 – Jan 2026",
         "tags": ["Systems Design", "Inventory", "State Machines"],
         "bullets": [
@@ -174,11 +188,11 @@
           "Designed the stock ledger in PostgreSQL. It locks rows with SELECT FOR UPDATE, so two buyers can't claim the same unit.",
           "Built lot-aware replenishment with a return-to-order path. A refund or exchange puts the stock back in the correct inventory state.",
           "Designed the fulfilment pipeline. Cron jobs batch retail orders, and each order is its own state machine, tracked until it completes.",
-          "I'm now rebuilding it as e-warehouse with an agentic workflow in Claude Code. I write the specs, agents implement them, and I review every change."
+          "What I learned about stock that sits too long carries into Ritulo, which I'm now building with AI coding agents. I write the specs, agents implement them, and I review every change."
         ],
         "stack": ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Redis"],
         "codeNote": {
-          "text": "The repo is private because it runs a live side business. I can walk you through the data model and the state machines.",
+          "text": "The repo is private and development stopped before launch. I can walk you through the data model and the state machines.",
           "linkLabel": "Ask for a walkthrough →",
           "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Nexus%20architecture%20walkthrough"
         }
@@ -186,11 +200,12 @@
       {
         "id": "aroma",
         "name": "Aroma: multi-tenant clothing e-commerce",
-        "description": "Built alongside Nexus by the same team. A multi-tenant storefront where sellers run their own shop on shared infrastructure.",
+        "description": "Built alongside Nexus at Iruka. A multi-tenant storefront that gives each small seller their own shop on shared infrastructure, with the checkout, payments and order tracking they can't offer when they sell only through social media.",
         "period": "Mar 2024 – Jan 2026",
         "tags": ["Multi-tenant", "E-commerce", "SSR / SSG"],
         "bullets": [
           "Designed the tenancy model. Each seller gets an isolated storefront, and all of them run on one shared backend.",
+          "Moved Aroma from MongoDB to PostgreSQL. Related entities that took several network round trips now come back in one join.",
           "Specified checkout to reserve stock when an order is confirmed. An idempotency key stops a retry from creating a duplicate order.",
           "Moved payments into their own service, with the eSewa and Khalti gateways behind one interface.",
           "Orders go to Nexus through a shared Redis instance, with REST as the fallback. The catalogue is cached in Redis too.",
@@ -201,7 +216,7 @@
         ],
         "stack": ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Redis", "Directus", "React Query", "Zustand"],
         "codeNote": {
-          "text": "The repo is private. It hasn't launched yet and it's wired into Nexus. Happy to walk through the tenancy model and how I split rendering.",
+          "text": "The repo is private. It never launched, and it's wired into Nexus. Happy to walk through the tenancy model and how I split rendering.",
           "linkLabel": "Ask for a walkthrough →",
           "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Aroma%20architecture%20walkthrough"
         }
@@ -235,8 +250,8 @@
         "name": "Futsal Finder",
         "period": "Oct 2020 – Jul 2021",
         "tags": ["Matchmaking", "Android"],
-        "summary": "Tinder-style matchmaking for competitive futsal teams, as an Android app built in Kotlin. Teams set their preferences and get matched with nearby opponents and venues. It also had league and knockout tournaments, tiered battle seasons and court booking. This was the first full system I built.",
-        "stack": ["Kotlin", "Android", "Node.js", "MongoDB"],
+        "summary": "Tinder-style matchmaking for competitive futsal teams, as an Android app built in Kotlin, with a MERN web app alongside it. Teams set their preferences and get matched with nearby opponents and venues. It also had league and knockout tournaments, tiered battle seasons and court booking. This was the first full system I built.",
+        "stack": ["Kotlin", "Android", "React", "Node.js", "MongoDB"],
         "links": [
           {
             "label": "Backend",
@@ -261,21 +276,21 @@
     ],
     "blocks": [
       {
-        "id": "e-warehouse",
-        "heading": "e-warehouse",
+        "id": "ritulo",
+        "heading": "Ritulo",
         "meta": "Pre-launch · started Sep 2026 · private repo",
         "body": [
-          "A web app for clothing merchants. Version 1 is an age-aware lot ledger. Each batch of stock, called a lot, is recorded with its variants, quantities and arrival date, so the merchant always knows how old the stock is.",
-          "Clothes don't rot. They go out of season. So every lot gets a market-level expiry date, the date it should be sold by. The bigger idea is a timeline where the merchant sketches each lot's life from ordered to closed, with notes like \"the offer should have started on 25 Sep\". When a lot closes, those lessons carry into the next order. The merchant makes the calls, and the app only guides."
+          "A web app for clothing merchants. Each batch of stock, called a lot, is recorded with its variants, quantities and arrival date, and Ritulo draws a timeline over it: when the lot was ordered, arrived, was priced and sold, the plans along the way, and the look-backs that become lessons for the next lot of the same product.",
+          "Clothes don't rot. They go out of season. So every lot gets a market-level expiry date, the date it should be sold by. The aim is that a small merchant stops repeating the same buying mistakes, with notes like \"the offer should have started on 25 Sep\" carrying into the next order, and less stock left unsold. The merchant makes the calls, and the app only guides."
         ],
         "items": [
           {
             "name": "Backend",
-            "text": "The skeleton is built and merged. It starts, validates its settings, connects to Postgres, reports its health and shuts down cleanly. There are no product features yet, and no tests yet either. That's on purpose, and ADR 0006 says why."
+            "text": "The skeleton is built and merged. It starts, validates its settings, connects to Postgres, reports its health and shuts down cleanly. The lot timeline is designed but not built yet."
           },
           {
             "name": "Architecture",
-            "text": "Ten decision records so far. Express stays at the edge, so business logic never imports it. The whole API shares one response envelope and a fixed set of error codes. Every response and log line carries a request ID. Stock changes are stored as new rows and never edited in place."
+            "text": "13 decision records so far. Express stays at the edge, so business logic never imports it. The whole API shares one response envelope and a fixed set of error codes. Every response and log line carries a request ID. Stock changes are stored as new rows and never edited in place."
           },
           {
             "name": "Design",
@@ -291,17 +306,17 @@
           },
           {
             "name": "Records",
-            "text": "11 merged pull requests since 13 Sep 2026, a dated log of every product decision with its source, and a log of open questions."
+            "text": "250+ commits since 13 Sep 2026, a dated log of every product decision with its source, and a log of open questions."
           }
         ],
         "notes": [
-          "The frontend comes next, in Vite, React and TypeScript, desktop first. One pnpm check command is the definition of done, and a commit hook blocks secrets before they reach the repo."
+          "The frontend is planned in Next.js with Radix and SCSS, desktop first. One pnpm check command is the definition of done, and a commit hook blocks secrets before they reach the repo."
         ],
         "stack": ["Node 24", "TypeScript 7", "Express 5", "PostgreSQL", "Drizzle", "zod", "pino", "helmet", "pnpm", "Biome", "knip", "secretlint", "husky"],
         "codeNote": {
           "text": "The repo is private. I can walk you through the ADRs and the decision log.",
           "linkLabel": "Ask for a walkthrough →",
-          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=e-warehouse%20walkthrough"
+          "linkHref": "mailto:sagarcrcoc@gmail.com?subject=Ritulo%20walkthrough"
         },
         "links": [
           {
@@ -333,7 +348,7 @@
           }
         ],
         "notes": [
-          "Some decisions never go to an agent, and the project's instructions say so. I decide what gets built next. I write every spec and get grilled on it before any code. I do code review and merging. And I keep one-way doors, meaning anything expensive to undo, like a database table, the API's shape, deleting data, security or a new package. Two-way doors go fast. The e-warehouse design is frozen, but its new tables still wait for a spec.",
+          "Some decisions never go to an agent, and the project's instructions say so. I decide what gets built next. I write every spec and get grilled on it before any code. I do code review and merging. And I keep one-way doors, meaning anything expensive to undo, like a database table, the API's shape, deleting data, security or a new package. Two-way doors go fast. Ritulo's design is frozen, but its new tables still wait for a spec.",
           "Every handoff comes back with a receipt: the objective, what changed, what was verified, what wasn't, the risks and the approval needed. I review against the receipt instead of taking the agent's word that it's done.",
           "When a mistake repeats, it moves down a ladder: first an explanation, then a checklist, a template, an automated check, and finally an enforced policy."
         ]
@@ -343,7 +358,7 @@
         "heading": "Skills for planning and deciding",
         "meta": "Private library · built from real project work",
         "body": [
-          "22 skills in a private library, each with one narrow job. Agents load them while they work, and a skill only goes public after it has held up in real use."
+          "30 skills in a private library, each with one narrow job. Agents load them while they work, and a skill only goes public after it has held up in real use."
         ],
         "items": [
           {
@@ -390,7 +405,7 @@
         "items": [
           {
             "name": "zippo",
-            "text": "An e-warehouse backend engineer that starts as an intern and learns only from lessons proven in separate tasks."
+            "text": "A Ritulo backend engineer that starts as an intern and learns only from lessons proven in separate tasks."
           },
           {
             "name": "clean-code",
@@ -398,7 +413,7 @@
           },
           {
             "name": "ew-code",
-            "text": "e-warehouse's own code rules in one skill. It replaced 19 separate rule files."
+            "text": "Ritulo's own code rules in one skill. It replaced 19 separate rule files."
           },
           {
             "name": "frontend-hero",
@@ -542,7 +557,7 @@
       "I reply to every message."
     ],
     "email": "sagarcrcoc@gmail.com",
-    "cvHref": "/Sagar_Mishra_FullStack_Resume.pdf",
+    "cvHref": "/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf",
     "links": [
       { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sagar-mishra-a3455121b/" },
       { "label": "GitHub", "href": "https://github.com/sagarmsraozil" },
