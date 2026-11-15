@@ -15,7 +15,7 @@ const manrope = Manrope({
 const SITE_TITLE = "Sagar Mishra | Full-Stack Engineer";
 
 const SITE_DESCRIPTION =
-  "Full-stack engineer in Melbourne. Two years of production work at Programiz (100,000+ paid learners), recent technical lead at Jobss.ai. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia.";
+  "Full-stack engineer in Melbourne. Two years at Programiz (100,000+ paid learners), then led four engineers at Jobss.ai and a team of three on a Next.js site. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full work rights (visa 485).";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,

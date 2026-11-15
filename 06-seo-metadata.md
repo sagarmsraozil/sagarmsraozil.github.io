@@ -10,9 +10,10 @@ The description is a single `SITE_DESCRIPTION` constant reused across meta, OG, 
 
 ```
 Title:       "Sagar Mishra -- Full-Stack Engineer"
-Description: "Full-stack engineer in Melbourne. Two years of production work at
-              Programiz (100,000+ paid learners), recent technical lead at Jobss.ai.
-              React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel. Full working rights in Australia."
+Description: "Full-stack engineer in Melbourne. Two years at Programiz (100,000+ paid
+              learners), then led four engineers at Jobss.ai and a team of three on a
+              Next.js site. React, Next.js, Node.js, TypeScript, PostgreSQL, Laravel.
+              Full work rights (visa 485)."
 Keywords:    Sagar Mishra, full-stack engineer Melbourne, software engineer Melbourne,
              React developer Melbourne, Next.js developer, Node.js engineer,
              Laravel developer, Django developer, hire software engineer Melbourne,

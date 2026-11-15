@@ -15,7 +15,7 @@
 | Email | sagarcrcoc@gmail.com |
 | Phone | 0424308228 (resume: +61 424 308 228) |
 | Location | Melbourne, Australia |
-| Work rights | Full working rights in Australia (subclass 485) |
+| Work rights | Full work rights (visa 485, to Oct. 2028) |
 | Origin | Nepal |
 | LinkedIn | https://www.linkedin.com/in/sagar-mishra-a3455121b/ |
 | GitHub | https://github.com/sagarmsraozil |
@@ -23,6 +23,14 @@
 | Site title | Full-Stack Engineer (matches the resume) |
 
 ## Professional Experience
+
+### Melbourne Cheap Rubbish Removal (Jan 2026 -- Sep 2026)
+
+Melbourne, Australia. Role: Lead Engineer, freelance, alongside other roles. Website: https://www.melbournecheaprubbishremoval.com.au/
+
+- Led a team of three (one senior engineer, one senior designer) to build the site where Melbourne customers find and order the service
+- Built in TypeScript and Next.js with a focus on SEO
+- The owner reports traffic up 20% and orders now arriving by WhatsApp and email, none before launch. Owner's report; Sagar can't check it
 
 ### Programiz Pro (Oct 2021 -- Nov 2023)
 

@@ -4,7 +4,7 @@
     "description": "Full-stack engineer in Melbourne with about 4 years in TypeScript, Node.js, React and PHP. Two years at Programiz, then led four engineers at Jobss.ai.",
     "phone": "0424 308 228",
     "location": "Melbourne, VIC",
-    "workRights": "Unrestricted Australian work rights (subclass 485, valid to Oct 2028).",
+    "workRights": "Full work rights (visa 485, to Oct. 2028)",
     "social": {
       "linkedin": "https://www.linkedin.com/in/sagar-mishra-a3455121b/",
       "github": "https://github.com/sagarmsraozil",
@@ -30,7 +30,7 @@
     "titleStack": "React · Next.js · Node.js · TypeScript · PostgreSQL · Laravel",
     "photoSrc": "/sagar.jpeg",
     "photoAlt": "Sagar Mishra",
-    "workRights": "Unrestricted Australian work rights (subclass 485, valid to Oct 2028).",
+    "workRights": "Full work rights (visa 485, to Oct. 2028)",
     "contact": {
       "location": "Melbourne, VIC",
       "phone": "0424 308 228",
@@ -48,8 +48,8 @@
     "label": "SUMMARY",
     "heading": "I ask a lot of questions before I write code.",
     "body": [
-      "I'm a full-stack engineer with about four years of production work. I spent two years at Programiz, which exists to make programming easier to learn, writing the code behind Programiz Pro for over 100,000 paid learners. I built the course flow APIs, the learner dashboard and the certificate engine, and I integrated Paddle, which every paid learner pays through. Most recently I was a software engineer at Jobss.ai, where I led four engineers on a Laravel work marketplace that's live in production. I was responsible for authentication, role-based access, the employer workspace and the marketplace search.",
-      "Before that I co-founded Iruka Technologies, a startup building stock and order tools for small clothing sellers. I led a team of three on two connected systems: a warehouse platform with a locking stock ledger in PostgreSQL, and a multi-tenant Next.js storefront with its own payment service. Development stopped in January 2026, before launch. Day to day I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
+      "I'm a full-stack engineer with about four years of production work. I spent two years at Programiz, which exists to make programming easier to learn, writing the code behind Programiz Pro for over 100,000 paid learners. I built the course flow APIs, the learner dashboard and the certificate engine, and I integrated Paddle, which every paid learner pays through. At Jobss.ai I was a software engineer and led four engineers on a Laravel work marketplace that's live in production. I was responsible for authentication, role-based access, the employer workspace and the marketplace search. Most recently I worked freelance as lead engineer for a team of three, building the Next.js site where Melbourne customers find and order a rubbish removal service.",
+      "Before Jobss.ai I co-founded Iruka Technologies, a startup building stock and order tools for small clothing sellers. I led a team of three on two connected systems: a warehouse platform with a locking stock ledger in PostgreSQL, and a multi-tenant Next.js storefront with its own payment service. Development stopped in January 2026, before launch. Day to day I work in React, Next.js, Node.js, TypeScript, PostgreSQL and Laravel.",
       "Some of those questions sound obvious. I ask them anyway, because now and then the answer isn't what anyone assumed, and I'd rather find that out before the code exists.",
       "I'm from Nepal and live in Melbourne, where I recently finished a Master's in Software Engineering. Outside work I read, travel when I can, and watch a lot of anime."
     ],
@@ -88,7 +88,7 @@
       },
       {
         "name": "Tools",
-        "items": ["Git", "Jira", "Trello", "Asana", "Postman", "Sentry", "Vercel", "DigitalOcean", "Claude Code", "Directus", "Mixpanel", "Microsoft Clarity", "Lighthouse"]
+        "items": ["Git", "Jira", "Trello", "Asana", "Postman", "Sentry", "Vercel", "DigitalOcean", "Claude Code", "Directus", "Mixpanel", "Microsoft Clarity", "Lighthouse", "Figma"]
       },
       {
         "name": "Currently learning",
@@ -100,6 +100,24 @@
     "label": "EXPERIENCE",
     "heading": "Where I've worked.",
     "entries": [
+      {
+        "id": "melbourne-cheap-rubbish-removal",
+        "company": "Melbourne Cheap Rubbish Removal",
+        "product": "A rubbish removal service in Melbourne. Its website is where customers find the service and order it. I did this work freelance, alongside my other roles.",
+        "links": [
+          { "label": "melbournecheaprubbishremoval.com.au", "href": "https://www.melbournecheaprubbishremoval.com.au/", "kind": "site" }
+        ],
+        "role": "Lead Engineer (freelance)",
+        "period": "Jan 2026 – Sep 2026",
+        "location": "Melbourne, Australia",
+        "tags": ["Team Leadership", "Next.js", "SEO"],
+        "bullets": [
+          "Led a team of three, with one senior engineer and one senior designer, to build the site where Melbourne customers find and order the service.",
+          "Built it in TypeScript and Next.js with a focus on SEO.",
+          "The owner reports traffic up 20%, and orders now arriving by WhatsApp and email, where none came through before launch."
+        ],
+        "stack": ["TypeScript", "Next.js"]
+      },
       {
         "id": "jobs-ai",
         "company": "Jobss.ai",
@@ -290,7 +308,7 @@
           },
           {
             "name": "Architecture",
-            "text": "13 decision records so far. Express stays at the edge, so business logic never imports it. The whole API shares one response envelope and a fixed set of error codes. Every response and log line carries a request ID. Stock changes are stored as new rows and never edited in place."
+            "text": "14 decision records so far. Express stays at the edge, so business logic never imports it. The whole API shares one response envelope and a fixed set of error codes. Every response and log line carries a request ID. Stock changes are stored as new rows and never edited in place."
           },
           {
             "name": "Design",
@@ -358,7 +376,7 @@
         "heading": "Skills for planning and deciding",
         "meta": "Private library · built from real project work",
         "body": [
-          "30 skills in a private library, each with one narrow job. Agents load them while they work, and a skill only goes public after it has held up in real use."
+          "31 skills in a private library, each with one narrow job. Agents load them while they work, and a skill only goes public after it has held up in real use."
         ],
         "items": [
           {
