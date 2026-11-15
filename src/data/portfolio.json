@@ -21,7 +21,7 @@
       { "label": "Projects", "href": "#projects" },
       { "label": "Education", "href": "#education" },
       { "label": "References", "href": "#references" },
-      { "label": "Resume", "href": "/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf", "download": true }
+      { "label": "Resume", "href": "/Sagar_Mishra_Full_Stack_Engineer_Resume_Final.pdf", "download": true }
     ]
   },
   "header": {
@@ -42,7 +42,7 @@
       ]
     },
     "ctaPrimary": { "label": "See my work →", "href": "#experience" },
-    "ctaSecondary": { "label": "Download resume", "href": "/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf" }
+    "ctaSecondary": { "label": "Download resume", "href": "/Sagar_Mishra_Full_Stack_Engineer_Resume_Final.pdf" }
   },
   "summary": {
     "label": "SUMMARY",
@@ -121,7 +121,7 @@
       {
         "id": "jobs-ai",
         "company": "Jobss.ai",
-        "product": "A work marketplace that puts hourly tasks and long-term jobs on one platform. The aim is one place where people find work, whether they need a few hours of it or a career, and where employers find them. Live in production, built in Laravel and PHP with Blade views from Figma designs.",
+        "product": "A work marketplace that puts hourly tasks and long-term jobs on one platform. Employers use it to hire applicants and allocate workers. The aim is one place where people find work, whether they need a few hours of it or a career, and where employers find them. Live in production, built in Laravel and PHP with Blade views from Figma designs.",
         "links": [
           { "label": "jobss.ai", "href": "https://jobss.ai/", "kind": "site" }
         ],
@@ -142,7 +142,7 @@
       {
         "id": "iruka",
         "company": "Iruka Technologies Pvt. Ltd.",
-        "product": "A startup I co-founded to give small clothing sellers the stock and order tools that large retailers have. Many of them sell through social media, track stock by hand and can't tell a buyer where an order is. We built two connected products for them: Nexus for the warehouse and Aroma for the storefront. Development stopped in January 2026, before launch.",
+        "product": "A registered Nepal startup I co-founded to give small clothing sellers the stock and order tools that large retailers have. Many of them sell through social media, track stock by hand and can't tell a buyer where an order is. There were three of us, two co-founders and one paid intern, and we built two connected products for them: Nexus for the warehouse and Aroma for the storefront. Development stopped in January 2026, before launch.",
         "role": "Co-founder & Software Engineer",
         "period": "Mar 2024 – Jan 2026",
         "location": "Kathmandu, Nepal (remote from Melbourne)",
@@ -150,7 +150,8 @@
         "bullets": [
           "Owned architecture, backend, frontend and code review for both products, and led a team of three with my co-founder and a paid intern.",
           "Wrote the specs, had AI coding tools build against them, and reviewed over 400 pull requests.",
-          "Ran CI/CD pipelines that tested each change and deployed it to DigitalOcean."
+          "Ran CI/CD pipelines that tested each change and deployed it to DigitalOcean.",
+          "Mentored our intern, a fresh graduate, on pragmatic code and tools by reviewing their work."
         ],
         "stack": ["TypeScript", "Next.js", "Node.js", "PostgreSQL", "Redis"]
       },
@@ -359,6 +360,10 @@
           {
             "name": "Claude Design",
             "text": "Generates UI directions for me to choose between and refine."
+          },
+          {
+            "name": "firstmate",
+            "text": "An open-source agent supervisor. I run parallel AI coding agents through it, while schema, API design, review and every merge stay with me."
           },
           {
             "name": "Excalidraw",
@@ -575,7 +580,7 @@
       "I reply to every message."
     ],
     "email": "sagarcrcoc@gmail.com",
-    "cvHref": "/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf",
+    "cvHref": "/Sagar_Mishra_Full_Stack_Engineer_Resume_Final.pdf",
     "links": [
       { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sagar-mishra-a3455121b/" },
       { "label": "GitHub", "href": "https://github.com/sagarmsraozil" },
