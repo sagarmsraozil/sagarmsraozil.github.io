@@ -2,7 +2,7 @@
 
 > Sagar Mishra's professional details, career history, education, skills, and contact info. Consult when updating portfolio content or ensuring accuracy of personal information.
 >
-> **Source of truth is `public/Sagar_Mishra_Full_Stack_Engineer_Resume.pdf`** (Oct 2026). It replaces the earlier Oct 2026 resume and the Sept 2026 CV. Items marked *(earlier resume)* were on the previous Oct 2026 resume but cut from this one for space; they are still true and stay on the site. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
+> **Source of truth is `public/Sagar_Mishra_Full_Stack_Engineer_Resume_Final.pdf`** (Nov 2026). It replaces the earlier Oct 2026 resume and the Sept 2026 CV. Items marked *(earlier resume)* were on the previous Oct 2026 resume but cut from this one for space; they are still true and stay on the site. Where this file and the resume disagree, the resume wins; this file was re-synced to it in Oct 2026.
 >
 > **Deliberate exceptions (Sagar's decision):** the site uses the "Full-Stack Engineer" title (the resume says "Full stack software engineer"), and keeps site-only details the resume omits. Those are marked *(site-only)* below. Don't delete them.
 
@@ -15,7 +15,7 @@
 | Email | sagarcrcoc@gmail.com |
 | Phone | 0424308228 (resume: +61 424 308 228) |
 | Location | Melbourne, Australia |
-| Work rights | Full working rights in Australia (subclass 485) |
+| Work rights | Full work rights (visa 485, to Oct. 2028) |
 | Origin | Nepal |
 | LinkedIn | https://www.linkedin.com/in/sagar-mishra-a3455121b/ |
 | GitHub | https://github.com/sagarmsraozil |
@@ -23,6 +23,14 @@
 | Site title | Full-Stack Engineer (matches the resume) |
 
 ## Professional Experience
+
+### Melbourne Cheap Rubbish Removal (Jan 2026 -- Sep 2026)
+
+Melbourne, Australia. Role: Lead Engineer, freelance, alongside other roles. Website: https://www.melbournecheaprubbishremoval.com.au/
+
+- Led a team of three (one senior engineer, one senior designer) to build the site where Melbourne customers find and order the service
+- Built in TypeScript and Next.js with a focus on SEO
+- The owner reports traffic up 20% and orders now arriving by WhatsApp and email, none before launch. Owner's report; Sagar can't check it
 
 ### Programiz Pro (Oct 2021 -- Nov 2023)
 
